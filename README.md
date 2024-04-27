@@ -248,7 +248,13 @@ Proporciona informes detallados sobre los pasos de prueba, resultados, errores y
 Muestra el punto exacto en donde hubo un error con un pantallazo y su descripción. | Para poder ver el reporte en HTML de la prueba es necesario lanzar un servidor local o una herramienta que sirva como tal.
 
 
-## 6. Comparativa de las dos herramientas
+## 6. Incidente encontrado
+Comportamiento esperado | Comportamiento actual | Enlace del Incidente
+-- | -- | --
+Se espera que el selector CSS utilizado en la función querySelectorAll identifique correctamente los elementos del DOM especificados sin lanzar errores, permitiendo la manipulación o análisis de estos elementos en el documento. | Al ejecutar el comando cypress run --config-file ./monkey-config.json, se reporta el error SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '.gh-content > table:not(.gist table)' is not a valid selector. Este error indica que el selector utilizado no es válido, impidiendo la ejecución de pruebas que dependan de la selección de estos elementos en el documento. | [Issue 28](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/issues/28)
+
+
+## 7. Comparativa de las dos herramientas
 Las dos herramientas son muy buenas para realizar pruebas de reconocimiento sobre las interfaces de la aplicación, siendo Monkey Cypress mucho más intuitiva de usar y de modificar su código fuente en especial para alguien que no es experto en pruebas y/o en esta herramienta.
 
 De igual manera, la replicabilidad del set de pruebas es muy fácil de hacer con Monkey-Cypress, ya que en su código fuente se encuentra la semilla con la que se realizaron los eventos aleatorios y en caso de tener que replicarlo en otra máquina, el usuario podría ver el mismo paso a paso de eventos.
