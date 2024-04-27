@@ -242,9 +242,10 @@ El valor de **url** debe ser cambiado por el servidor local donde está corriend
 
 Pros | Contras
 -- | --
-Realiza un mapeo completo de los comportamientos de la aplicación, identificando las acciones y transiciones entre diferentes estados de la interfaz. | Requiere mayor conocimiento técnico y experiencia en pruebas automatizadas.
-Permite pruebas en el navegador real, lo que puede proporcionar resultados más precisos en pruebas de interfaz. | Se ejecuta más lentamente que Cypress Monkey debido a su enfoque sistemático.
+Realiza un mapeo de la interacción de la prueba sobre la aplicación. | Requiere mayor conocimiento técnico y experiencia en pruebas automatizadas.
+Puede proporcionar resultados más precisos en pruebas de interfaz. | Se ejecuta más lentamente que Cypress Monkey debido a su enfoque sistemático.
 Proporciona informes detallados sobre los pasos de prueba, resultados, errores y métricas relevantes. | Posibilidad de generación de eventos inválidos o sin efecto.
+Muestra el punto exacto en donde hubo un error con un pantallazo y su descripción. | Para poder ver el reporte en HTML de la prueba es necesario lanzar un servidor local o una herramienta que sirva como tal.
 
 
 ## 6. Comparativa de las dos herramientas
