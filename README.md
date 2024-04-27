@@ -1,4 +1,4 @@
-# Reporte de experiencia
+# Reporte de la experiencia
 * **Autores:** 
     * María Camila Martínez
     * Manuel Bejarano
@@ -75,11 +75,7 @@ Esto descargará e instalará las dependencias necesarias para poder ejecutar la
 Las pruebas de reconocimiento se ejecutarán sobre la versión de Ghost `v5.81.1`. Para levantar el servicio de Ghost se deben realiza dos pasos muy simples:
 
 1. Dirigirise a la ruta donde está instalada la instancia de Ghost CLI y el Cliente de Ghost
-ejemplo:
-```
-🗂️ ghost_cli
-    🗂️ ghost
-```
+ejemplo: <img width="296" alt="Screenshot 2024-04-27 at 6 35 50 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e706956b-2d74-4908-8006-8b416324ba7b">
 2. Ejecutar el siguiente comando sobre la carpeta ```ghost```
 
 ```bash
