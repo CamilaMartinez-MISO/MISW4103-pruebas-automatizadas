@@ -7,9 +7,9 @@ Feature: Login into Ghost and manage my admin page
     And I wait for 3 seconds
     
     # When Section
-    When I enter my email "<emailHector>"
+    When I enter my email "<email>"
     And I wait for 1 seconds
-    And I enter my password "<passwordHector>"
+    And I enter my password "<password>"
     And I wait for 1 seconds
     And I click on login
     And I wait for 5 seconds
@@ -28,7 +28,7 @@ Feature: Login into Ghost and manage my admin page
     And I click on "Sign out"
     And I wait for 4 seconds
     # Then Section
-    Then I sigin again into Ghost "<emailHector>" "<passwordHector>"
+    Then I sigin again into Ghost "<email>" "<password>"
     Then I wait for 5 seconds
     Then I go to see my saved Drafts
     Then I wait for 3 seconds

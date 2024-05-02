@@ -3,6 +3,7 @@ const { faker } = require('@faker-js/faker');
 
 // Faker objetcts
 const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
+const fakeBody = faker.lorem.paragraphs({ min: 5, max: 10 })
 
 When('I enter my email {kraken-string}', async function (email) {
     // Write code here that turns the phrase above into concrete actions
@@ -38,7 +39,7 @@ When('I fill a body on "Begin writing your post..."', async function () {
     // Write code here that turns the phrase above into concrete actions
     const articleSection = await this.driver.$('article.koenig-editor.w-100')
     await articleSection.click()
-    return await articleSection.setValue(faker.lorem.paragraphs({ min: 5, max: 10 }))
+    return await articleSection.setValue(fakeBody)
 });
 
 When('I click on "Back button"', async function () {
