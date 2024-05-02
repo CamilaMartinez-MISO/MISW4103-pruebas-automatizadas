@@ -7,32 +7,32 @@ const fakeBody = faker.lorem.paragraphs({ min: 5, max: 10 })
 
 When('I enter my email {kraken-string}', async function (email) {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('#ember6').setValue(email)
+    return await this.driver.$('input[name="identification"]').setValue(email)
 });
 
 When('I enter my password {kraken-string}', async function (password) {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('#ember8').setValue(password)
+    return await this.driver.$('input[name="password"]').setValue(password)
 });
 
 When('I click on login', async function () {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('#ember10').click()
+    return await this.driver.$('button.login.gh-btn').click()
 });
 
 When('I go to Drafts', async function () {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('#ember44').click()
+    return await this.driver.$('a[title="Drafts"]').click()
 });
 
 When('I click on "New post"', async function () {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('a.ember-view.gh-btn').click()
+    return await this.driver.$('a.ember-view.gh-btn.gh-btn-primary').click()
 });
 
 When('I fill a title on "Post title"', async function () {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('textarea.gh-editor-title').setValue(fakeTitle)
+    return await this.driver.$('textarea[placeholder="Post title"]').setValue(fakeTitle)
 });
 
 When('I fill a body on "Begin writing your post..."', async function () {
@@ -59,14 +59,14 @@ When('I click on "Sign out"', async function () {
 
 Then('I sigin again into Ghost {kraken-string} {kraken-string}', async function (email, password) {
     // Write code here that turns the phrase above into concrete actions
-    await this.driver.$('#ember6').setValue(email)
-    await this.driver.$('#ember8').setValue(password)
-    return await this.driver.$('#ember10').click()
+    await this.driver.$('input[name="identification"]').setValue(email)
+    await this.driver.$('input[name="password"]').setValue(password)
+    return await this.driver.$('button.login.gh-btn').click()
 });
 
 Then('I go to see my saved Drafts', async function () {
     // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('#ember44').click()
+    return await this.driver.$('a[title="Drafts"]').click()
 });
 
 Then('I proof that there is one Draft with the fakeTitle I used', async function () {

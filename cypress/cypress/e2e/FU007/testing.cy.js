@@ -45,11 +45,11 @@ describe('FEATURE: Login into Ghost and manage my admin page', function () {
 const when_signIn = (email, password) => {
 
     cy.wait(1000)
-    cy.get('#ember6').type(email)
+    cy.get('input[name="identification"]').type(email)
     cy.wait(500)
-    cy.get('#ember8').type(password)
+    cy.get('input[name="password"]').type(password)
     cy.wait(500)
-    cy.get('#ember10').click({ force: true })
+    cy.get('button.login.gh-btn').click({ force: true })
 }
 
 /**
@@ -57,7 +57,7 @@ const when_signIn = (email, password) => {
  */
 const when_goToDrafts = () => {
     cy.wait(2000)
-    cy.get('#ember44').click({ force: true })
+    cy.get('a[title="Drafts"]').click({ force: true })
 }
 
 /**
@@ -112,11 +112,11 @@ const when_clickOnSignOut = () => {
 const then_signInAgain = (email, password) => {
 
     cy.wait(1000)
-    cy.get('#ember6').type(email)
+    cy.get('input[name="identification"]').type(email)
     cy.wait(500)
-    cy.get('#ember8').type(password)
+    cy.get('input[name="password"]').type(password)
     cy.wait(500)
-    cy.get('#ember10').click({ force: true })
+    cy.get('button.login.gh-btn').click({ force: true })
 }
 
 /**
@@ -125,7 +125,7 @@ const then_signInAgain = (email, password) => {
 const then_goToSeeMySavedDrafts = () => {
 
     cy.wait(1000)
-    cy.get('#ember44').click({ force: true })
+    cy.get('a[title="Drafts"]').click({ force: true })
 }
 
 /**
