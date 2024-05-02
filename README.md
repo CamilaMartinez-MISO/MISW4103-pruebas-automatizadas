@@ -41,7 +41,7 @@ Para la correcta ejecución de las dos herramientas es requerido instalar [Googl
 ## 2.4 Instalación IDE 
 Aunque usted mo vaya a tocar una línea de código del proyecto, le recomendamos qué por favor instale el IDE [Visual Studio Code](https://code.visualstudio.com/) el cual le permitirá ver el proyecto como un todo y explorar las distintas carpetas que este posee en orden de entender mejor ambas herramientas.
 
-### 2.5 Instalar GIT
+## 2.5 Instalar GIT
 Para clonar los repositorios en donde se cuentran las herramientas, es necesario usar la herramienta GIT, la cual puede ser instalada siguiendo los pasos de su [página oficial](https://git-scm.com/downloads) en la sección downloads.
 
 Una vez instalada la herramientas, se puede comprobar su correcto funcionamiento con el siguiente comando. El resultado debe ser algo parecido a esto.
@@ -63,17 +63,9 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 
 ## 3.2 Estructura del proyecto
 
-A continuaciòn se muestra la estructura global del proyecto, más adelanta se mostrará la estructuta independiente de las dos herramientas por separado
+A continuación se muestra la estructura global del proyecto, más adelanta se mostrará la estructuta independiente de las dos herramientas por separado
 
-```
-MISW4103-pruebas-automatizadas
-|cypress
-|kraken
-|_.gitignore
-|_package-lock.json
-|_package.json
-|_README.md
-```
+<img width="372" alt="Screenshot 2024-05-02 at 11 10 57 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d688af51-e2eb-41b4-806a-a0007fa671f9">
 
 ## 3.3 Instalar las librerías locales del proyecto
 Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas, Kraken y Cypress. Para ello solo es necesario hacer dos pasos:
@@ -98,4 +90,24 @@ Si desea consultar más sobre esto, puede ver el archivo *package.json*
 
 ## 3.4 Servicio de Ghost
 La instancia de Ghost sobre la cual se ejecutarán las pruebas E2E se encuentra en la plataforma render.com y puede ser accedida desde el siguiente enlace. [Instancia de Ghost](https://ghost-fcj4.onrender.com/ghost)
+
+# 4. Ejecución de las pruebas
+Es el momento de ejecutar los escenarios de pruebas disponibles en las dos herramientas. Se mostrará la forma de ejecutar Kraken y posteriormente Cypresss
+
+## 4.1 Ejecución de pruebas E2E con Kraken
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas**, dirigirse a la carpeta kraken con la ayuda de la línea de comandos del computador o la terminal integrada en VS Code. El comando para ir a la carpeta kraken es el siguiente
+
+```bash
+> cd kraken
+```
+La estructura del proyecto debe verse así:
+
+**TODO: Poner Imagen Luego**
+
+Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios del prueba disponibles.
+```bash
+> npx kraken-node run
+```
+### 4.1.1 Ejecución de las pruebas.
+
 
