@@ -130,34 +130,34 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 > cd cypress
 ```
 La estructura del proyecto debe verse así:
+
 <img width="322" alt="Screenshot 2024-05-02 at 11 23 38 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/15943a0e-c3a7-4b29-8487-ad76885c94b3">
 
-### 4.2.1 Ejecución de las pruebas
-Para ejecutar las pruebas E2E con Cypress procedemos a realizar los siguientes pasos:
-
-### 4.2.2 Instalar Cypress v13.7.3
-Una vez instalado Node en la máquina local procedemos a instalar cypress de forma global con el siguiente comando
+### 4.2.1 Instalar Cypress v13.7.3
+Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando.
 ```bash
 > npm -g install cypress@13.7.3
 ```
-### 4.2.3 Correr instancia de Cypress
-En una terminal o consola de comandos abierta corremos el siguiente comando:
+Esto instalará Cypress de forma global en el PC para ser usado desde cualquier punto.
+
+### 4.2.2 Correr instancia de Cypress
+Después en una terminal o consola de comandos abierta corremos el siguiente comando:
 ```bash
 > cypress open
 ```
-### 4.2.4 Seleccionar la carpeta del proyecto Cypress:
-Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada **MISW4103-pruebas-automatizadas**.
+### 4.2.3 Seleccionar la carpeta del proyecto Cypress:
+Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada **MISW4103-pruebas-automatizadas/cypress**.
 
 *NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que cargue completamente.*
 
-### 4.2.5 Seleccionar la prueba E2E
+### 4.2.4 Seleccionar la prueba E2E
 Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
 
-### 4.2.6 Iniciar la prubeba E2E
+### 4.2.5 Iniciar la prubeba E2E
 Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos precionar y que dice **Start E2E Testing in < Navegador >**,
 
-### 4.2.7 Ejecutar la prueba
-Una vez presionado el botón de la sección anterior, se abrirá una ventana de Google Chrome en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
+### 4.2.6 Ejecutar la prueba
+Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
 ```
 🗂️ cypress
    🗂️ e2e
@@ -167,4 +167,4 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana de 
       🗂️ FUXX2
         📄 esc_1.cy.js
 ```
-Damos click al archivo del escenario en específico que se quiere correr
+Damos click al archivo del escenario en específico que se quiere correr. El programa empezará a realizar el escenario de prueba y se mostrará el paso a paso en el log de la página web.
