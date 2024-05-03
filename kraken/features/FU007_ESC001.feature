@@ -6,11 +6,7 @@ Feature: Login into Ghost and manage my admin page
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds
     # When Section
-    When I enter my email "<email>"
-    And I wait for 1 seconds
-    And I enter my password "<password>"
-    And I wait for 1 seconds
-    And I click on login
+    When I sigin into Ghost "<email>" "<password>"
     And I wait for 5 seconds
     And I go to Drafts
     And I wait for 5 seconds
@@ -22,12 +18,12 @@ Feature: Login into Ghost and manage my admin page
     And I wait for 2 seconds
     And I click on "Back button"
     And I wait for 2 seconds
-    And I click on "Menu Avatar button"
+    And I click on "Menu button"
     And I wait for 2 seconds
     And I click on "Sign out"
     And I wait for 4 seconds
     # Then Section
-    Then I sigin again into Ghost "<email>" "<password>"
+    Then I sigin into Ghost "<email>" "<password>"
     Then I wait for 5 seconds
     Then I go to see my saved Drafts
     Then I wait for 3 seconds

@@ -1,25 +1,15 @@
 const { When, Then } = require('@cucumber/cucumber');
 const { faker } = require('@faker-js/faker');
+const assert = require('assert')
 
 // Faker objetcts
 const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } }) + ' - ' + new Date().getMilliseconds()
 const fakeBody = faker.lorem.paragraphs({ min: 5, max: 10 })
 
-When('I sigin into Ghost {kraken-string} {kraken-string}', async function (email, password) {
-    // Write code here that turns the phrase above into concrete actions
-    await this.driver.$('#ember6').setValue(email)
-    await this.driver.$('#ember8').setValue(password)
-    return await this.driver.$('#ember10').click()
-});
 
 When('I go to Scheduled', async function () {
     // Write code here that turns the phrase above into concrete actions
     return await this.driver.$('#ember45').click()
-});
-
-When('I click on "New post" in Scheduled', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('a.ember-view.gh-btn').click()
 });
 
 When('I fill the form for a new Post', async function () {
@@ -65,11 +55,6 @@ When('I go back to main menu', async function () {
     return await this.driver.$('a.gh-editor-back-button').click()
 });
 
-When('I click on "Menu button"', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('div.gh-user-avatar').click()
-});
-
 When('I click on "Sign out..."', async function () {
     // Write code here that turns the phrase above into concrete actions
     return await this.driver.$('a.user-menu-signout').click()
@@ -85,4 +70,11 @@ Then('I sigin again {kraken-string} {kraken-string}', async function (email, pas
 Then('I go to see my sheduled posts', async function () {
     // Write code here that turns the phrase above into concrete actions
     return await this.driver.$('a[title="Scheduled"]').click()
+});
+
+Then('I proof that there is one Scheduled post with the fakeTitle I used', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    const bodyText = await this.driver.$('body').getText();
+    assert(bodyText.includes(fakeTitle), `Expected title post "${fakeTitle}" wasn't found in page`);
+    return true
 });

@@ -10,7 +10,7 @@ Feature: Login into Ghost and schedule a Post
     And I wait for 3 seconds
     And I go to Scheduled
     And I wait for 3 seconds
-    And I click on "New post" in Scheduled
+    And I click on "New post"
     And I wait for 3 seconds
     And I fill the form for a new Post
     And I wait for 2 seconds
@@ -30,9 +30,11 @@ Feature: Login into Ghost and schedule a Post
     And I wait for 2 seconds
     And I click on "Menu button"
     And I wait for 2 seconds
-    And I click on "Sign out..."
+    And I click on "Sign out"
     And I wait for 3 seconds
     # Then Section
     Then I sigin again "<email>" "<password>"
     Then I wait for 3 seconds
     Then I go to see my sheduled posts
+    Then I wait for 3 seconds
+    Then I proof that there is one Scheduled post with the fakeTitle I used
