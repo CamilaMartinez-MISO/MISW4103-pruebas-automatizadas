@@ -2,19 +2,19 @@
 
 Nombre | Email Uniandes
 -- | --
-Héctor O. Franco   | h.franco@uniandes.edu.co 
-Manuel F. Bejarano | mf.bejaranob1@uniandes.edu.co
-Juan S. Vargas     | js.vargasq1@uniandes.edu.co
-María C. Martínez  | mc.martinezm12@uniandes.edu.co
+Héctor Oswaldo Franco   | h.franco@uniandes.edu.co 
+Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
+Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
+María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
 # 1. Descripción del set de pruebas E2E
-Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de los flujos de trabajo de los usuarios, de principio a fin, imitando las condiciones de los usuarios. Verifican la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema.
+Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de los flujos de ejecución como usuario final, de principio a fin, imitando las condiciones de los usuarios. Verifican la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema como lo pueden ser bases de datos, APIs extrernas, almacenamiento, etc.
 
 # 2. Instalación tecnologías globales
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
-* SO: Windows 10+ y MacOS 10+
+* SO: Windows 10 y MacOS Sonoma 14.1.1
 * Node Version: v20.12.0
 * NPM Versión: v10.5.0
 * GIT: Versión más reciente o predefinida en sistemas UNIX
@@ -89,7 +89,14 @@ Si desea consultar más sobre esto, puede ver el archivo *package.json*
 
 
 ## 3.4 Servicio de Ghost
+
+<p align="center">
+<img width="300" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://ptimofeev.com/images/render.png">
+<p align="center">render.com</p>
+
+
 La instancia de Ghost sobre la cual se ejecutarán las pruebas E2E se encuentra en la plataforma render.com y puede ser accedida desde el siguiente enlace. [Instancia de Ghost](https://ghost-fcj4.onrender.com/ghost)
+
 
 # 4. Ejecución de las pruebas
 Es el momento de ejecutar los escenarios de pruebas disponibles en las dos herramientas. Se mostrará la forma de ejecutar Kraken y posteriormente Cypresss
