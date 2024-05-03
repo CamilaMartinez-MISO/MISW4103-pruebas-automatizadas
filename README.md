@@ -94,7 +94,12 @@ La instancia de Ghost sobre la cual se ejecutarán las pruebas E2E se encuentra 
 # 4. Ejecución de las pruebas
 Es el momento de ejecutar los escenarios de pruebas disponibles en las dos herramientas. Se mostrará la forma de ejecutar Kraken y posteriormente Cypresss
 
-## 4.1 Ejecución de pruebas E2E con Kraken
+## 4.1 Herramienta Kraken
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
+<p align="center">Kraken</p>
+    
 Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas**, dirigirse a la carpeta kraken con la ayuda de la línea de comandos del computador o la terminal integrada en VS Code. El comando para ir a la carpeta kraken es el siguiente
 
 ```bash
@@ -102,12 +107,64 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 ```
 La estructura del proyecto debe verse así:
 
-**TODO: Poner Imagen Luego**
+<img width="256" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e40dcf0b-4ea8-491e-a1ba-9b009f1a6c81">
 
+
+*NOTA:* Cada *feature* y su respectivo archivo de *steps* están nombrados con la siguiente nomenclatura **FUXXX_Y**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
+
+### 4.1.1 Ejecución de las pruebas
 Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios del prueba disponibles.
 ```bash
 > npx kraken-node run
 ```
-### 4.1.1 Ejecución de las pruebas.
+Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
 
+## 4.2 Herramienta Cypress
+<p align="center">
+<img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
+<p align="center">Cypress</p>
 
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas**, dirigirse a la carpeta kraken con la ayuda de la línea de comandos del computador o la terminal integrada en VS Code. El comando para ir a la carpeta kraken es el siguiente
+
+```bash
+> cd cypress
+```
+La estructura del proyecto debe verse así:
+<img width="322" alt="Screenshot 2024-05-02 at 11 23 38 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/15943a0e-c3a7-4b29-8487-ad76885c94b3">
+
+### 4.2.1 Ejecución de las pruebas
+Para ejecutar las pruebas E2E con Cypress procedemos a realizar los siguientes pasos:
+
+### 4.2.2 Instalar Cypress v13.7.3
+Una vez instalado Node en la máquina local procedemos a instalar cypress de forma global con el siguiente comando
+```bash
+> npm -g install cypress@13.7.3
+```
+### 4.2.3 Correr instancia de Cypress
+En una terminal o consola de comandos abierta corremos el siguiente comando:
+```bash
+> cypress open
+```
+### 4.2.4 Seleccionar la carpeta del proyecto Cypress:
+Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada **MISW4103-pruebas-automatizadas**.
+
+*NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que cargue completamente.*
+
+### 4.2.5 Seleccionar la prueba E2E
+Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
+
+### 4.2.6 Iniciar la prubeba E2E
+Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos precionar y que dice **Start E2E Testing in < Navegador >**,
+
+### 4.2.7 Ejecutar la prueba
+Una vez presionado el botón de la sección anterior, se abrirá una ventana de Google Chrome en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
+```
+🗂️ cypress
+   🗂️ e2e
+      🗂️ FUXX1
+        📄 esc_1.cy.js
+        📄 esc_2.cy.js
+      🗂️ FUXX2
+        📄 esc_1.cy.js
+```
+Damos click al archivo del escenario en específico que se quiere correr
