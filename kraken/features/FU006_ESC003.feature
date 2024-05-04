@@ -1,7 +1,7 @@
 Feature: Search a post
 
   @user2 @web
-  Scenario: As an user I want to add a Post and search for it in published
+  Scenario: As an user I want to add a Post and search it outside the administrator view by body content
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds
@@ -13,24 +13,22 @@ Feature: Search a post
     And I wait for 3 seconds
     And I fill a title
     And I wait for 1 seconds
-    And I fill a body on "Begin writing your post..."
-    And I wait for 8 seconds
+    And I fill a body with fake description
+    And I wait for 10 seconds
     And I click on "Publish button"
     And I wait for 2 seconds
     And I click on "Continue button"
     And I wait for 2 seconds
     And I click on "Publish post, right now"
     And I wait for 2 seconds
-    And I go back to to editor
-    And I wait for 2 seconds
-    And I go back to main menu
-    And I wait for 1 seconds
 
     # Then Section
-    And I go to search while i am logged in
+    And I navigate to page "<baseURLHome>"
     And I wait for 1 seconds
-    And I type the title post in search input while i am logged in
+    And I go to search
     And I wait for 1 seconds
-    And I go to edit published post
+    And I type the fragment on post in search input
     And I wait for 1 seconds
-    Then Validate the name title in edit view
+    And I go to created post
+    And I wait for 1 seconds
+    Then Validate the description of post

@@ -27,8 +27,8 @@ Feature: Change description
     And I wait for 3 seconds
 
    # Then Section
-    Then I navigate to page "<baseURLHome>"
-    Then I wait for 3 seconds
+    And I navigate to page "<baseURLHome>"
+    And I wait for 3 seconds
     Then I validate the description of site
 
 

@@ -1,7 +1,7 @@
 Feature: Search a post
 
   @user2 @web
-  Scenario: As an user I want to add a Post and search it outside the administrator view
+  Scenario: As an user I want to add a Post and search it outside the administrator view by title
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds
@@ -31,12 +31,12 @@ Feature: Search a post
     And I wait for 3 seconds
 
     # Then Section
-    Then I navigate to page "<baseURLHome>"
-    Then I wait for 1 seconds
-    Then I go to search
-    Then I wait for 1 seconds
-    Then I type the title post in search input
-    Then I wait for 1 seconds
-    Then I go to created post
-    Then I wait for 1 seconds
+    And I navigate to page "<baseURLHome>"
+    And I wait for 1 seconds
+    And I go to search
+    And I wait for 1 seconds
+    And I type the title post in search input
+    And I wait for 1 seconds
+    And I go to created post
+    And I wait for 1 seconds
     Then Validate the name title
