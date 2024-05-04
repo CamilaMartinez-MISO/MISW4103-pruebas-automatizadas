@@ -8,22 +8,22 @@ Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
 # 1. Descripción del set de pruebas E2E
-Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de los flujos de ejecución como usuario final, de principio a fin, imitando las condiciones de los usuarios. Verifican la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema como lo pueden ser bases de datos, APIs extrernas, almacenamiento, etc.
+Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de los flujos de ejecución como usuario final, de principio a fin, imitando las condiciones de los usuarios. Verifican la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema como lo pueden ser bases de datos, APIs externas, almacenamiento, etc.
 
 # 2. Instalación tecnologías globales
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
 * SO: Windows 11+ y MacOS Sonoma 14.1.1
-* Node Version: v20.12.0
+* Node Versión: v20.12.0
 * NPM Versión: v10.5.0
 * GIT: Versión más reciente o predefinida en sistemas UNIX
 * Visual Studio Code
 
 ## 2.2 Instalación Node JS o NVM
-Para poder replicar bien este set de pruebas es requerido instalar en su máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aun, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
+Para poder replicar bien este set de pruebas es requerido instalar en su máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aún, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
 
-Una vez instalado, se puede comprobar con el siguiente comando en la terminal o lìnea de comando de windows: 
+Una vez instalado, se puede comprobar con el siguiente comando en la terminal o línea de comando de windows: 
 Node: 
 ```bash
 > node --version
@@ -35,16 +35,16 @@ npm:
 10.5.0
 ```
 
-## 2.3 Instalación naegador Google Chrome
+## 2.3 Instalación navegador Google Chrome
 Para la correcta ejecución de las dos herramientas es requerido instalar [Google Chrome](https://www.google.com/intl/es-419/chrome/). Por favor asegurarse que su versión de Chrome es la 124 o posterior tanto para UNIX como Windows
 
 ## 2.4 Instalación IDE 
 Aunque usted mo vaya a tocar una línea de código del proyecto, le recomendamos qué por favor instale el IDE [Visual Studio Code](https://code.visualstudio.com/) el cual le permitirá ver el proyecto como un todo y explorar las distintas carpetas que este posee en orden de entender mejor ambas herramientas.
 
 ## 2.5 Instalar GIT
-Para clonar los repositorios en donde se cuentran las herramientas, es necesario usar la herramienta GIT, la cual puede ser instalada siguiendo los pasos de su [página oficial](https://git-scm.com/downloads) en la sección downloads.
+Para clonar los repositorios en donde se encuentran las herramientas, es necesario usar la herramienta GIT, la cual puede ser instalada siguiendo los pasos de su [página oficial](https://git-scm.com/downloads) en la sección downloads.
 
-Una vez instalada la herramientas, se puede comprobar su correcto funcionamiento con el siguiente comando. El resultado debe ser algo parecido a esto.
+Una vez instaladas la herramientas, se puede comprobar su correcto funcionamiento con el siguiente comando. El resultado debe ser algo parecido a esto.
 
 ```bash
 > git --version
@@ -63,13 +63,13 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 
 ## 3.2 Estructura del proyecto
 
-A continuación se muestra la estructura global del proyecto, más adelanta se mostrará la estructuta independiente de las dos herramientas por separado
+A continuación se muestra la estructura global del proyecto, más adelanta se mostrará la estructura independiente de las dos herramientas por separado
 
 <img width="372" alt="Screenshot 2024-05-02 at 11 10 57 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d688af51-e2eb-41b4-806a-a0007fa671f9">
 
 ## 3.3 Instalar las librerías locales del proyecto
 Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas, Kraken y Cypress. Para ello solo es necesario hacer dos pasos:
-1. Abrir una terminal o consola de comandos (CMD) sobre la carpeta raiz del proyecto
+1. Abrir una terminal o consola de comandos (CMD) sobre la carpeta raíz del proyecto
 2. Ejecutar el siguiente comando de Node:
 ```bash
 > npm install
@@ -137,16 +137,16 @@ Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de lo
 ```
 
 ### 4.1.3 Ejecución de las pruebas
-Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios del prueba disponibles.
+Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios de prueba disponibles.
 ```bash
 > npx kraken-node run
 ```
 Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
 
 ### 4.1.4 Posibles situaciones que se pueden presentar
-Dependiendo del sistema operativo en el que se ejcuten las pruebas, estas pueden o no correr automaticamente una detrás de la otra.
+Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
 
-Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automaticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabetico y al finalizar no siga con los demás.
+Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
 
 Para remediar esto por favor en la carpeta de features solo dejar un escenario y ejecutar así cada uno de ellos.
 
@@ -196,7 +196,7 @@ Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo)
 <img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
 
 ### 4.2.5 Iniciar la prubeba E2E
-Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos precionar y que dice **Start E2E Testing in < Navegador >**,
+Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
 
 <img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
 
