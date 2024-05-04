@@ -28,9 +28,10 @@ describe('FEATURE: Login into Ghost saved a post as a draft', function () {
         when_clickOnBackButton()
         when_clickOnMenuAvatar()
         when_clickOnSignOut()
-
-        then_signInAgain(email, password)
-        then_goToSeeMySavedDrafts()
+        
+        // Then Section
+        when_signIn(email, password)
+        when_goToDrafts()
         then_expectToSeeMyDraft(fakeTitle)
 
     })
@@ -64,7 +65,7 @@ const when_goToDrafts = () => {
  */
 const when_clickOnNewPost = () => {
     cy.wait(1000)
-    cy.get('a.ember-view.gh-btn').click({ force: true })
+    cy.get('a.ember-view.gh-btn.gh-btn-primary.view-actions-top-row').click({ force: true })
 }
 
 /**
@@ -103,29 +104,6 @@ const when_clickOnSignOut = () => {
     cy.get('a.user-menu-signout').click({ force: true })
 }
 
-/**
- * THEN: I sigin again into Ghost
- * @param {String} email email of the admin
- * @param {String} password password for the platform
- */
-const then_signInAgain = (email, password) => {
-
-    cy.wait(1000)
-    cy.get('input[name="identification"]').type(email)
-    cy.wait(500)
-    cy.get('input[name="password"]').type(password)
-    cy.wait(500)
-    cy.get('button.login.gh-btn').click({ force: true })
-}
-
-/**
- * THEN: I go to see my saved Drafts
- */
-const then_goToSeeMySavedDrafts = () => {
-
-    cy.wait(1000)
-    cy.get('a[title="Drafts"]').click({ force: true })
-}
 
 /**
  * THEN: I proof that there is one Draft with the fakeTitle I used

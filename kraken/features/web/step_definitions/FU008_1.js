@@ -55,23 +55,6 @@ When('I go back to main menu', async function () {
     return await this.driver.$('a.gh-editor-back-button').click()
 });
 
-When('I click on "Sign out..."', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('a.user-menu-signout').click()
-});
-
-Then('I sigin again {kraken-string} {kraken-string}', async function (email, password) {
-    // Write code here that turns the phrase above into concrete actions
-    await this.driver.$('input[name="identification"]').setValue(email)
-    await this.driver.$('input[name="password"]').setValue(password)
-    return await this.driver.$('button.login.gh-btn').click()
-});
-
-Then('I go to see my sheduled posts', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('a[title="Scheduled"]').click()
-});
-
 Then('I proof that there is one Scheduled post with the fakeTitle I used', async function () {
     // Write code here that turns the phrase above into concrete actions
     const bodyText = await this.driver.$('body').getText();

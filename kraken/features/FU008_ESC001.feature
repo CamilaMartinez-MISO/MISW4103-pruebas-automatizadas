@@ -33,8 +33,8 @@ Feature: Login into Ghost and schedule a Post
     And I click on "Sign out"
     And I wait for 3 seconds
     # Then Section
-    Then I sigin again "<email>" "<password>"
+    Then I sigin into Ghost "<email>" "<password>"
     Then I wait for 3 seconds
-    Then I go to see my sheduled posts
+    Then I go to Scheduled
     Then I wait for 3 seconds
     Then I proof that there is one Scheduled post with the fakeTitle I used
