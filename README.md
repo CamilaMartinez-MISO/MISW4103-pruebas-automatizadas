@@ -166,12 +166,13 @@ Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome
 ### 4.2.6 Ejecutar la prueba
 Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
 ```
-🗂️ cypress
-   🗂️ e2e
-      🗂️ FUXX1
-        📄 esc_1.cy.js
-        📄 esc_2.cy.js
-      🗂️ FUXX2
-        📄 esc_1.cy.js
+🗂️ cypress/e2e
+    🗂️ FUXX1
+      📄 esc001.cy.js
+      📄 esc002.cy.js
+      📄 esc003.cy.js
+    🗂️ FUXX2
+      📄 esc001.cy.js
+      📄 esc002.cy.js
 ```
 Damos click al archivo del escenario en específico que se quiere correr. El programa empezará a realizar el escenario de prueba y se mostrará el paso a paso en el log de la página web.

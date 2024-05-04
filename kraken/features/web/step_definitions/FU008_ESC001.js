@@ -3,7 +3,8 @@ const { faker } = require('@faker-js/faker');
 const assert = require('assert')
 
 // Faker objetcts
-const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } }) + ' - ' + new Date().getMilliseconds()
+const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
+const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
 const fakeBody = faker.lorem.paragraphs({ min: 5, max: 10 })
 
 
@@ -60,4 +61,28 @@ Then('I proof that there is one Scheduled post with the fakeTitle I used', async
     const bodyText = await this.driver.$('body').getText();
     assert(bodyText.includes(fakeTitle), `Expected title post "${fakeTitle}" wasn't found in page`);
     return true
+});
+
+Then('I choose the latest Scheduled post', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    return await this.driver.$(`h3.gh-content-entry-title`).click()
+});
+
+When('I change its title to a newer one Scheduled', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    const titleInput = await this.driver.$('textarea[placeholder="Post title"]')
+    await titleInput.setValue('')
+    return await titleInput.setValue(newFakeTitle)
+});
+
+Then('I click on "Update"', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    return await this.driver.$(`button.gh-btn.gh-btn-editor.gh-editor-save-trigger.green.ember-view`).click()
+});
+
+Then('I proof that there is one Scheduled with the newer title', async function () {
+    // Write code here that turns the phrase above into concrete actions
+    const bodyText = await this.driver.$('body').getText();
+    assert(bodyText.includes(newFakeTitle), `Expected title post "${newFakeTitle}" wasn't found in page`);
+    return true;
 });
