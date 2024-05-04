@@ -5,16 +5,17 @@ import data from '../properties.json'
 const { baseURL, email, password } = data
 
 /**
- * FEATURE: Login into Ghost and schedule a Post
+ * FEATURE: Login into Ghost, schedule a Post and edit its title later
  */
-describe('FEATURE: Login into Ghost and schedule a Post', function () {
+describe('FEATURE: Login into Ghost, schedule a Post and edit its title later', function () {
 
     /**
-     * SCENARIO: As an admin user I want to schedule a Post
+     * SCENARIO: As an admin user I want to schedule a Post and change its content later
      */
-    it('SCENARIO: As an admin user I want to schedule a Post', function () {
+    it('SCENARIO: As an admin user I want to schedule a Post and change its content later', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
+        const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
 
         // Given Section
@@ -34,12 +35,16 @@ describe('FEATURE: Login into Ghost and schedule a Post', function () {
         when_clickOnBackButton()
         when_clickOnMenuAvatar()
         when_clickOnSignOut()
-
-        // Then Section
         when_signIn(email, password)
         when_goToScheduled()
         then_expectToSeeMyScheduledPost(fakeTitle)
 
+        // Then Section
+        then_chooseTheLatestSheduledPost()
+        then_changeTitleToNewerOne(newFakeTitle)
+        then_clickOnUpdateButton()
+        when_clickOnBackButton()
+        then_expectToSeeMyScheduledPost(newFakeTitle)
     })
 })
 
@@ -181,5 +186,30 @@ const then_expectToSeeMyScheduledPost = (fakeTitle) => {
 }
 
 
+/**
+ * THEN: I choose the latest draft post
+ */
+const then_chooseTheLatestSheduledPost = () => {
+    cy.wait(3000)
+    cy.get('h3.gh-content-entry-title').then(($el) => {
+        const el = $el.get(0)
+        cy.wrap(el).click({ force: true });
+    })
+}
 
 
+/**
+ * THEN: I choose the latest draft post
+ */
+const then_changeTitleToNewerOne = (newTitle) => {
+    cy.wait(3000)
+    cy.get('textarea.gh-editor-title').clear().type(newTitle)
+}
+
+/**
+ * THEN: I click on "Update"
+ */
+const then_clickOnUpdateButton = (newTitle) => {
+    cy.wait(3000)
+    cy.get(`button.gh-btn.gh-btn-editor.gh-editor-save-trigger.green.ember-view`).click({ force: true })
+} 

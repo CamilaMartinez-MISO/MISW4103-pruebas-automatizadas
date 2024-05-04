@@ -14,7 +14,7 @@ Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
-* SO: Windows 10 y MacOS Sonoma 14.1.1
+* SO: Windows 11+ y MacOS Sonoma 14.1.1
 * Node Version: v20.12.0
 * NPM Versión: v10.5.0
 * GIT: Versión más reciente o predefinida en sistemas UNIX
@@ -152,16 +152,28 @@ Después en una terminal o consola de comandos abierta corremos el siguiente com
 ```bash
 > cypress open
 ```
+Una vez ejecutado el comando, debe abrirse una ventana similar a esta.
+
+<img width="1205" alt="Screenshot 2024-05-04 at 11 52 14 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7967dd94-6d31-4cb7-9739-8ded0aa04524">
+
 ### 4.2.3 Seleccionar la carpeta del proyecto Cypress:
 Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada **MISW4103-pruebas-automatizadas/cypress**.
+
+<img width="1205" alt="Screenshot 2024-05-04 at 11 53 19 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/847aceee-48d8-464a-875d-a1ad05ec6799">
+
+<img width="1206" alt="Screenshot 2024-05-04 at 11 55 03 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/709fbd2d-a8f3-4b24-b4a5-c72784c76b62">
 
 *NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que cargue completamente.*
 
 ### 4.2.4 Seleccionar la prueba E2E
 Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
 
+<img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
+
 ### 4.2.5 Iniciar la prubeba E2E
 Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos precionar y que dice **Start E2E Testing in < Navegador >**,
+
+<img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
 
 ### 4.2.6 Ejecutar la prueba
 Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
@@ -175,4 +187,8 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
       📄 esc001.cy.js
       📄 esc002.cy.js
 ```
+<img width="1727" alt="Screenshot 2024-05-04 at 11 59 17 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/8c4de6ca-71e3-4213-9015-149f255e543c">
+
 Damos click al archivo del escenario en específico que se quiere correr. El programa empezará a realizar el escenario de prueba y se mostrará el paso a paso en el log de la página web.
+
+<img width="1728" alt="Screenshot 2024-05-04 at 12 00 55 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/0fe6cd1a-c5ee-4289-b162-60c7f6362bf2">

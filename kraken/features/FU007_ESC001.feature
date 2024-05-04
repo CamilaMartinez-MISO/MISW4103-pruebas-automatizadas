@@ -25,6 +25,6 @@ Feature: Login into Ghost saved a post as a draft
     # Then Section
     Then I sigin into Ghost "<email>" "<password>"
     Then I wait for 5 seconds
-    Then I go to see my saved Drafts
+    Then I go to Drafts
     Then I wait for 3 seconds
     Then I proof that there is one Draft with the fakeTitle I used

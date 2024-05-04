@@ -5,16 +5,17 @@ import data from '../properties.json'
 const { baseURL, email, password } = data
 
 /**
- * FEATURE: Login into Ghost and schedule a Post
+ * Feature: Login into Ghost and manage my admin page
  */
-describe('FEATURE: Login into Ghost and schedule a Post', function () {
+describe('FEATURE: Login into Ghost saved a post as a draft and edit its title later', function () {
 
     /**
-     * SCENARIO: As an admin user I want to schedule a Post
+     * SCENARIO: As an admin user I want to save a Post as a draft and change its content later
      */
-    it('SCENARIO: As an admin user I want to schedule a Post', function () {
+    it(`SCENARIO: As an admin user I want to save a Post as a draft and change its content later`, function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
+        const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
 
         // Given Section
@@ -22,26 +23,27 @@ describe('FEATURE: Login into Ghost and schedule a Post', function () {
 
         // When Section
         when_signIn(email, password)
-        when_goToScheduled()
+        when_goToDrafts()
         when_clickOnNewPost()
         when_fillContentPost(fakeTitle, fakeBody)
-        when_clickOnPublishButton()
-        when_clickOnRightNow()
-        when_clickOnScheduled()
-        when_clickOnFinalReview()
-        when_clickOnPostOnSelectedDate()
-        when_clickOnBackToEditor()
         when_clickOnBackButton()
         when_clickOnMenuAvatar()
         when_clickOnSignOut()
+        when_signIn(email, password)
+        when_goToDrafts()
+        then_expectToSeeMyDraft(fakeTitle)
 
         // Then Section
-        when_signIn(email, password)
-        when_goToScheduled()
-        then_expectToSeeMyScheduledPost(fakeTitle)
+        then_chooseTheLatestDraftPost()
+        then_changeTitleToNewerOne(newFakeTitle)
+        when_clickOnBackButton()
+        then_expectToSeeMyDraft(newFakeTitle)
+
+
+
 
     })
-})
+});
 
 /**
  * GIVEN: Navigate to the webiste
@@ -68,11 +70,11 @@ const when_signIn = (email, password) => {
 }
 
 /**
- * AND: I go to Scheduled
+ * AND: I go to Drafts
  */
-const when_goToScheduled = () => {
+const when_goToDrafts = () => {
     cy.wait(2000)
-    cy.get('a[title="Scheduled"]').click({ force: true })
+    cy.get('a[title="Drafts"]').click({ force: true })
 }
 
 /**
@@ -93,57 +95,6 @@ const when_fillContentPost = (fakeTitle, fakeBody) => {
     cy.get('textarea.gh-editor-title').type(fakeTitle)
     cy.wait(1000)
     cy.get('article.koenig-editor.w-100').type(fakeBody)
-}
-
-/**
- * WHEN: I click on "Publish"
- */
-const when_clickOnPublishButton = () => {
-    cy.wait(2000)
-    cy.get('button.gh-publish-trigger').click({ force: true })
-}
-
-/**
- * WHEN: I click on "Right now" menu
- */
-const when_clickOnRightNow = () => {
-    cy.wait(2000)
-    cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger').click({ force: true })
-}
-
-/**
- * WHEN: I click on "Schedule for later"
- */
-const when_clickOnScheduled = () => {
-    cy.wait(2000)
-    cy.get('fieldset > div.gh-publish-schedule > div.gh-radio > div.gh-radio-button').then(($el) => {
-        const el = $el.get(1)
-        cy.wrap(el).click({ force: true });
-    })
-}
-
-/**
- * WHEN: I click on "Continue, final review"
- */
-const when_clickOnFinalReview = () => {
-    cy.wait(2000)
-    cy.get('div.gh-publish-cta > button.gh-btn.gh-btn-black.gh-btn-large').click({ force: true })
-}
-
-/**
- * WHEN: I click on "Publish post on the selected date"
- */
-const when_clickOnPostOnSelectedDate = () => {
-    cy.wait(2000)
-    cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click({ force: true })
-}
-
-/**
- * WHEN: I go back to to editor
- */
-const when_clickOnBackToEditor = () => {
-    cy.wait(2000)
-    cy.get('button.gh-btn-editor.gh-publish-back-button').click({ force: true })
 }
 
 /**
@@ -171,15 +122,30 @@ const when_clickOnSignOut = () => {
 }
 
 /**
- * THEN: I proof that there is one Scheduled with the fakeTitle I used
+ * THEN: I proof that there is one Draft with the fakeTitle I used
  * @param {String} fakeTitle the title to asset with
  */
-const then_expectToSeeMyScheduledPost = (fakeTitle) => {
+const then_expectToSeeMyDraft = (fakeTitle) => {
 
     cy.wait(1000)
     cy.contains('h3.gh-content-entry-title', fakeTitle).should('exist')
 }
 
+/**
+ * THEN: I choose the latest draft post
+ */
+const then_chooseTheLatestDraftPost = () => {
+    cy.wait(3000)
+    cy.get('h3.gh-content-entry-title').then(($el) => {
+        const el = $el.get(0)
+        cy.wrap(el).click({ force: true });
+    })
+} 
 
-
-
+/**
+ * THEN: I choose the latest draft post
+ */
+const then_changeTitleToNewerOne = (newTitle) => {
+    cy.wait(3000)
+    cy.get('textarea.gh-editor-title').clear().type(newTitle)
+} 

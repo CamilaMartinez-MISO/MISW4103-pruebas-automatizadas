@@ -24,7 +24,7 @@ Feature: Login into Ghost saved a post as a draft and delete it later
     And I wait for 4 seconds
     And I sigin into Ghost "<email>" "<password>"
     And I wait for 5 seconds
-    And I go to see my saved Drafts
+    And I go to Drafts
     And I wait for 3 seconds
     And I proof that there is one Draft with the fakeTitle I used
     And I wait for 3 seconds

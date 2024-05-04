@@ -1,4 +1,3 @@
-
 import { faker } from '@faker-js/faker'
 import data from '../properties.json'
 
@@ -11,16 +10,17 @@ const { baseURL, email, password } = data
 describe('FEATURE: Login into Ghost saved a post as a draft', function () {
 
     /**
-     * Given I navigate to page "<baseURL>"
+     * SCENARIO: As an admin user I want to save a Post as a draft
      */
-    it(`GIVEN: I navigate to page ${data.baseURL}`, function () {
-
-        cy.visit(baseURL);
-        cy.wait(1500);
+    it('SCENARIO: As an admin user I want to save a Post as a draft', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
 
+        // Given Section
+        given_navigateToPage(baseURL)
+
+        // When Section
         when_signIn(email, password)
         when_goToDrafts()
         when_clickOnNewPost()
@@ -28,14 +28,23 @@ describe('FEATURE: Login into Ghost saved a post as a draft', function () {
         when_clickOnBackButton()
         when_clickOnMenuAvatar()
         when_clickOnSignOut()
-        
-        // Then Section
         when_signIn(email, password)
         when_goToDrafts()
+        
+        // Then Section
         then_expectToSeeMyDraft(fakeTitle)
 
     })
 });
+
+/**
+ * GIVEN: Navigate to the webiste
+ * @param {String} baseURL URL del sitio web
+ */
+const given_navigateToPage = (baseURL) => {
+    cy.visit(baseURL);
+    cy.wait(1500);
+}
 
 /**
  * WHEN: I sigin into Ghost

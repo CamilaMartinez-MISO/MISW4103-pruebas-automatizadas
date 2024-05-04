@@ -26,10 +26,6 @@ When('I fill a body on "Begin writing your post..."', async function () {
     return await articleSection.setValue(fakeBody)
 });
 
-Then('I go to see my saved Drafts', async function () {
-    // Write code here that turns the phrase above into concrete actions
-    return await this.driver.$('a[title="Drafts"]').click()
-});
 
 Then('I proof that there is one Draft with the fakeTitle I used', async function () {
     // Write code here that turns the phrase above into concrete actions
