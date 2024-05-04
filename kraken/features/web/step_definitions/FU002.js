@@ -36,22 +36,22 @@ When('I click on Continue', async function () {
     return await element.click();
 });
 
-When('I click on Publish post, right now', async function () {
+When('I click on Publish post', async function () {
     const element = await this.driver.$('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view');
     return await element.click();
 });
 
-When('I change publication time to Schedule for later', async function () {
-    await this.driver.$('.gh-publish-setting.last').click();
-    return await this.driver.$$('.gh-radio')[1].click();
+When('I click on Back to editor', async function () {
+    const element = await this.driver.$('button.gh-back-to-editor');
+    return await element.click();
 });
 
-Then('I see the post confirmation', async function(){
-    const element = await this.driver.$('.gh-publish-title').getText();
-    assert.ok(element.includes('Boom. It’s out there.'), 'Post was not published');
-})
+When('I click on Published', async function () {
+    const element = await this.driver.$('a[title="Published"]');
+    return await element.click();
+});
 
-Then('I see the scheduling confirmation', async function(){
-    const element = await this.driver.$('.gh-publish-title').getText();
-    assert.ok(element.includes('All set! Your post will be published'), 'Post was not scheduled');
+Then('I see the post with title {kraken-string} in the list of published posts', async function(title){
+    const element = await this.driver.$$('h3.gh-content-entry-title')[0].getText();
+    assert.equal(element, title, 'Post was not published');
 })
