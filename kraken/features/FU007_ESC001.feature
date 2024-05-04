@@ -1,4 +1,4 @@
-Feature: Login into Ghost and manage my admin page
+Feature: Login into Ghost saved a post as a draft
 
   @user2 @web
   Scenario: As an admin user I want to save a Post as a draft

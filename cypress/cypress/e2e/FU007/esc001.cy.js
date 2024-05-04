@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import { faker } from '@faker-js/faker'
 import data from '../properties.json'
 
@@ -9,7 +8,7 @@ const { baseURL, email, password } = data
 /**
  * Feature: Login into Ghost and manage my admin page
  */
-describe('FEATURE: Login into Ghost and manage my admin page', function () {
+describe('FEATURE: Login into Ghost saved a post as a draft', function () {
 
     /**
      * Given I navigate to page "<baseURL>"
@@ -135,5 +134,5 @@ const then_goToSeeMySavedDrafts = () => {
 const then_expectToSeeMyDraft = (fakeTitle) => {
 
     cy.wait(1000)
-    cy.get('h3.gh-content-entry-title').contains(fakeTitle)
+    cy.contains('h3.gh-content-entry-title', fakeTitle).should('exist')
 }

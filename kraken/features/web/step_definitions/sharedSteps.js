@@ -2,9 +2,9 @@ const { When } = require('@cucumber/cucumber');
 
 When('I sigin into Ghost {kraken-string} {kraken-string}', async function (email, password) {
     // Write code here that turns the phrase above into concrete actions
-    await this.driver.$('#ember6').setValue(email)
-    await this.driver.$('#ember8').setValue(password)
-    return await this.driver.$('#ember10').click()
+    await this.driver.$('input[name="identification"]').setValue(email)
+    await this.driver.$('input[name="password"]').setValue(password)
+    return await this.driver.$('button.login.gh-btn').click()
 });
 
 When('I click on "New post"', async function () {
@@ -26,3 +26,4 @@ When('I click on "Sign out"', async function () {
     // Write code here that turns the phrase above into concrete actions
     return await this.driver.$('a.user-menu-signout').click()
 });
+
