@@ -112,19 +112,44 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 ```bash
 > cd kraken
 ```
-La estructura del proyecto debe verse así:
+### 4.1.1 Estructura del proyecto:
+
+La estructura del proyecto debe verse de la siguiente manera
 
 <img width="256" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e40dcf0b-4ea8-491e-a1ba-9b009f1a6c81">
 
 
 *NOTA:* Cada *feature* y su respectivo archivo de *steps* están nombrados con la siguiente nomenclatura **FUXXX_Y**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
 
-### 4.1.1 Ejecución de las pruebas
+### 4.1.2 Nomenclatura de los escenarios
+
+Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de los otros y correr en instancias separadas.
+```
+🗂️ kraken
+  🗂️ features
+    🗂️ web
+      🗂️ steps_definitions
+        📄 steps.js
+
+    📄 FU001_ESC001.cy.js
+    📄 FU001_ESC002.cy.js
+    📄 FU002_ESC002.cy.js
+```
+
+### 4.1.3 Ejecución de las pruebas
 Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios del prueba disponibles.
 ```bash
 > npx kraken-node run
 ```
 Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
+
+### 4.1.4 Posibles situaciones que se pueden presentar
+Dependiendo del sistema operativo en el que se ejcuten las pruebas, estas pueden o no correr automaticamente una detrás de la otra.
+
+Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automaticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabetico y al finalizar no siga con los demás.
+
+Para remediar esto por favor en la carpeta de features solo dejar un escenario y ejecutar así cada uno de ellos.
+
 
 ## 4.2 Herramienta Cypress
 <p align="center">
