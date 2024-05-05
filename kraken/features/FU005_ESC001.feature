@@ -1,4 +1,4 @@
-Feature: Create a papge
+Feature: Create a page
 
   @user2 @web
   Scenario: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.
