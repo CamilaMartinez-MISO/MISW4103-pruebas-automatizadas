@@ -21,6 +21,7 @@ When('I add content to the post', async function () {
 });
 
 When('I submit the post for publishing', async function () {
+    await this.driver.$('.gh-publish-trigger').waitForClickable();
     const element = await this.driver.$('.gh-publish-trigger');
     return await element.click();
 });
@@ -49,6 +50,7 @@ When('I search title in post view', async function () {
     let element = await this.driver.$('input.gh-input-with-select-input')
     await this.driver.keys(Array.from(fakeTitle))
     await this.driver.keys(Array.from(fakeTitle))
+    await this.driver.pause(1000)
     await element.clearValue()
     await element.keys('Enter');
     await element.click()

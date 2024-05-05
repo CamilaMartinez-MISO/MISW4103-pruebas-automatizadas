@@ -19,7 +19,7 @@ Feature: Schedule a post
     And I click on "Right now" menu
     And I wait for 3 seconds
     And I click on "Schedule for later"
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I click on "Continue, final review"
     And I wait for 2 seconds
     And I click on "Publish post on the selected date"

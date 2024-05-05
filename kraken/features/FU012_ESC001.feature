@@ -11,15 +11,15 @@ Feature: Change description
     And I wait for 2 seconds
 
     And I go to general settings of site
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I go to general settings
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I expand title and description section
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I type new description
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I save changes of general settings
-    And I wait for 1 seconds
+    And I wait for 2 seconds
 
     And I click on "Menu button"
     And I wait for 2 seconds
