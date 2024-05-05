@@ -48,13 +48,11 @@ When('I search in de admin view', async function () {
 When('I search title in post view', async function () {
     let element = await this.driver.$('input.gh-input-with-select-input')
     await this.driver.keys(Array.from(fakeTitle))
+    await this.driver.keys(Array.from(fakeTitle))
     await element.clearValue()
     await element.keys('Enter');
     await element.click()
-    await element.clearValue()
-    await element.keys('Enter');
-    await element.click()
-    return this.driver.keys(Array.from(fakeTitle))
+    return await this.driver.keys(Array.from(fakeTitle))
 });
 
 When('I go to edit searched post', async function () {

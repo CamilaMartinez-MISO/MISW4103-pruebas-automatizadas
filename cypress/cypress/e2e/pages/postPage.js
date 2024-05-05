@@ -119,6 +119,8 @@ class postPage {
 
     typeOnSearchInput(search) {
         this.elements.searchInput().type(search, {force: true})
+        this.elements.searchInput().type(search, {force: true})
+        this.elements.searchInput().clear().type(search, {force: true})
         cy.wait(3000)
     }
 
