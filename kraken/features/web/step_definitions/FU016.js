@@ -4,7 +4,8 @@ const { faker } = require('@faker-js/faker');
 
 When('I click on Members', async function () {
     const element = await this.driver.$('a[href="#/members/"]');
-    return await element.click();
+    await element.click();
+    return await this.driver.refresh()
 });
 
 When('I click on New member', async function () {
