@@ -210,14 +210,13 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
     🗂️ FU001
       📄 FU001.cy.js
     🗂️ FU002
-      📄 esc002.cy.js
+      📄 FU002.cy.js
 ```
 <img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
 
 El archivo `allTests.cy.js` contiene todo los 20 escenarios juntos para que se ejecuten uno tras del otro. Sin embargo si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
 
-<img width="1728" alt="Screenshot 2024-05-04 at 12 00 55 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/0fe6cd1a-c5ee-4289-b162-60c7f6362bf2">
-
+<img width="1728" alt="Screenshot 2024-05-05 at 12 28 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/3c4807c3-1590-47c5-9549-976f9f0c3af0">
 
 ## 5. Documentación extra
 Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herrameintas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
