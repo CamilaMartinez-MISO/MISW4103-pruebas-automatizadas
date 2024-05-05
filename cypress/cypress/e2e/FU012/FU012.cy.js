@@ -35,6 +35,7 @@ describe('Feature: Change the description of page', function () {
 
         // Then Section
         cy.visit(baseURLHome)
+        cy.reload()
         indexPage.elements.siteDescription().contains(fakeDescription).should('exist')
     })
 })
