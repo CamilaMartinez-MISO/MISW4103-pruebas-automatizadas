@@ -21,6 +21,7 @@ When('I add content to the post', async function () {
 });
 
 When('I submit the post for publishing', async function () {
+    await this.driver.$('.gh-publish-trigger').waitForClickable();
     const element = await this.driver.$('.gh-publish-trigger');
     return await element.click();
 });
