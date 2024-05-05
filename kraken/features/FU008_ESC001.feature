@@ -1,4 +1,4 @@
-Feature: Login into Ghost and schedule a Post
+Feature: Schedule a post
 
   @user1 @web
   Scenario: As an admin user I want to schedule a Post

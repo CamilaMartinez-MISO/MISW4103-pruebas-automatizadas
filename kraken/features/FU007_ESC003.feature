@@ -1,4 +1,4 @@
-Feature: Login into Ghost saved a post as a draft and delete it later
+Feature: Save post as a draft
 
   @user2 @web
   Scenario: As an admin user I want to save a Post as a draft and delete it seconds after
@@ -28,7 +28,6 @@ Feature: Login into Ghost saved a post as a draft and delete it later
     And I wait for 3 seconds
     And I proof that there is one Draft with the fakeTitle I used
     And I wait for 3 seconds
-
     # Then Section
     Then I choose the latest draft post
     Then I wait for 3 seconds
