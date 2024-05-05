@@ -65,9 +65,7 @@ When('I type the title post in search input', async function () {
 When('I type the title post in search input while i am logged in', async function () {
     let element = await this.driver.$('input.gh-input-with-select-input')
     await this.driver.keys(Array.from(fakeTitle))
-    await element.clearValue()
-    await element.keys('Enter');
-    await element.click()
+    await this.driver.keys(Array.from(fakeTitle))
     await element.clearValue()
     await element.keys('Enter');
     await element.click()
