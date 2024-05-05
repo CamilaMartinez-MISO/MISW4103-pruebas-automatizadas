@@ -22,7 +22,7 @@ class postPage {
         editedPostTitle: () => cy.get('h1.article-title'),
         deletePostButton: () => cy.get('button.settings-menu-delete-button'),
         confirmDeleteButton: () => cy.get('div.modal-footer > button.gh-btn.gh-btn-red'),
-
+        firstPost: () => cy.get('.gh-list-row.gh-posts-list-item').first(),
         searchButton: () => cy.get('button.gh-nav-btn-search'),
         searchInput: () => cy.get('input.gh-input-with-select-input'),
     }
@@ -131,6 +131,10 @@ class postPage {
             .contains(title)
             .parent('li')
             .click();
+    }
+
+    clickOnFirstPost() {
+        this.elements.firstPost().click();
     }
 
     clickOnDeletePost() {
