@@ -217,3 +217,7 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
 Damos click al archivo del escenario en específico que se quiere correr. El programa empezará a realizar el escenario de prueba y se mostrará el paso a paso en el log de la página web.
 
 <img width="1728" alt="Screenshot 2024-05-04 at 12 00 55 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/0fe6cd1a-c5ee-4289-b162-60c7f6362bf2">
+
+
+## 5. Documentación extra
+Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herrameintas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
