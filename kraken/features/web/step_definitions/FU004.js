@@ -61,6 +61,16 @@ When('I go to edit searched post', async function () {
     return await element.keys('Enter')
 });
 
+When('I click on Published posts', async function () {
+    const element = await this.driver.$('a[title="Published"]');
+    return await element.click();
+});
+
+When('I click on the first post', async function () {
+    const element = await this.driver.$('.gh-list-row.gh-posts-list-item');
+    return await element.click();
+});
+
 Then('I access the post settings', async function () {
     return await this.driver.$('button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').click()
 });
