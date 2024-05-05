@@ -32,9 +32,9 @@ Feature: Save post as a draft
     Then I choose the latest draft post
     Then I wait for 3 seconds
     Then I click on "Settings" button
-    Then I wait for 1 seconds
+    Then I wait for 2 seconds
     Then I click on "Delete" button
-    Then I wait for 1 seconds
+    Then I wait for 2 seconds
     Then I confirm I want to delete de drafted post
-    Then I wait for 1 seconds
+    Then I wait for 2 seconds
     Then I see that my drafted post was deleted

@@ -28,5 +28,17 @@ Feature: Create a page
     And I wait for 2 seconds  
     And I click on Published pages
     And I wait for 2 seconds  
-    Then I verify that the page was created
-    
+    And I click on the first page
+    And I wait for 2 seconds  
+    And I click on Unpublish page
+    And I wait for 2 seconds 
+    And I confirm the unpublishing page 
+    And I wait for 2 seconds 
+
+
+
+
+
+
+
+

@@ -50,6 +50,7 @@ When('I search title in post view', async function () {
     let element = await this.driver.$('input.gh-input-with-select-input')
     await this.driver.keys(Array.from(fakeTitle))
     await this.driver.keys(Array.from(fakeTitle))
+    await this.driver.pause(1000)
     await element.clearValue()
     await element.keys('Enter');
     await element.click()
@@ -60,6 +61,16 @@ When('I go to edit searched post', async function () {
     await this.driver.$('//span[@class="ember-power-select-group-name" and text()="Posts"]').waitForClickable();
     let element = await this.driver.$('//span[@class="highlight" and text()="'+fakeTitle+'"]')
     return await element.keys('Enter')
+});
+
+When('I click on Published posts', async function () {
+    const element = await this.driver.$('a[title="Published"]');
+    return await element.click();
+});
+
+When('I click on the first post', async function () {
+    const element = await this.driver.$('.gh-list-row.gh-posts-list-item');
+    return await element.click();
 });
 
 Then('I access the post settings', async function () {
