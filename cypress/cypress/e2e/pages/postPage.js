@@ -17,7 +17,12 @@ class postPage {
         changePublicationTime: () => cy.get('.gh-publish-setting.last'),
         scheduleForLaterButton: () => cy.get('.gh-radio').eq(1),
         editorButton: () => cy.get('button.gh-btn-editor.gh-publish-back-button'),
-        editedPostTitle: () => cy.get('h1.article-title')
+        editedPostTitle: () => cy.get('h1.article-title'),
+        deletePostButton: () => cy.get('button.settings-menu-delete-button'),
+        confirmDeleteButton: () => cy.get('div.modal-footer > button.gh-btn.gh-btn-red'),
+
+        searchButton: () => cy.get('button.gh-nav-btn-search'),
+        searchInput: () => cy.get('input.gh-input-with-select-input'),
     }
 
     enterTitle(title) {
@@ -95,6 +100,31 @@ class postPage {
 
     clickOnEditor() {
         this.elements.editorButton().click()
+    }
+
+    clickOnSearchButton() {
+        this.elements.searchButton().click()
+    }
+
+    typeOnSearchInput(search) {
+        this.elements.searchInput().type(search, {force: true})
+        cy.wait(3000)
+    }
+
+    clickOnPostByTitle(title) {
+        cy.get('li')
+            .find('span.highlight')
+            .contains(title)
+            .parent('li')
+            .click();
+    }
+
+    clickOnDeletePost() {
+        this.elements.deletePostButton().click()
+    }
+
+    clickOnConfirmDeletePost() {
+        this.elements.confirmDeleteButton().click()
     }
 }
 

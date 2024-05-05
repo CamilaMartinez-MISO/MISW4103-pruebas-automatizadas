@@ -7,6 +7,7 @@ class homePage {
         scheduledButton: () => cy.get('a[title="Scheduled"]'),
         scheduledPosts: () => cy.get('h3.gh-content-entry-title'),
         membersButton: () => cy.get('a[href="#/members/"]'),
+        settingsButton: () => cy.get('a[href="#/settings/"]'),
     }
 
     clickOnPosts() {
@@ -31,6 +32,10 @@ class homePage {
 
     clickOnMembers() {
         this.elements.membersButton().click()
+    }
+
+    clickOnSettings() {
+        this.elements.settingsButton().click()
     }
 }
 
