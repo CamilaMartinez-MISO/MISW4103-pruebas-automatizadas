@@ -52,7 +52,7 @@ When('I search title in post view', async function () {
     await element.clearValue()
     await element.keys('Enter');
     await element.click()
-    return this.driver.keys(Array.from(fakeTitle))
+    return await this.driver.keys(Array.from(fakeTitle))
 });
 
 When('I go to edit searched post', async function () {
