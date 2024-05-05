@@ -5,12 +5,14 @@ class postPage {
         title: () => cy.get('textarea[placeholder="Post title"]'),
         body: () => cy.get('p[data-koenig-dnd-droppable=true]'),
         publishButton: () => cy.get('.gh-publish-trigger'),
+        rightNowButton :() => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
         continueButton: () => cy.get('.gh-publish-cta'),
         publishPostButton: () => cy.get('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view'),
         backToEditorButton: () => cy.get('button.gh-back-to-editor'),
         postsButton: () => cy.get('a.ember-view.gh-btn-editor.gh-editor-back-button'),
         updateButton: () => cy.get('button.gh-btn.gh-btn-editor.gh-editor-save-trigger'),
         settingsButton: () => cy.get('button[title="Settings"]'),
+        settingsSmallButton: () => cy.get('button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon'),
         viewPostButton: () => cy.get('a.post-view-link'),
         unpublishButton: () => cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-unpublish-trigger'),
         confirmUnpublishButton: () => cy.get('button.gh-revert-to-draft'),
@@ -25,8 +27,12 @@ class postPage {
         searchInput: () => cy.get('input.gh-input-with-select-input'),
     }
 
+    clickOnRightNow() {
+        this.elements.rightNowButton().click()
+    }
+
     enterTitle(title) {
-        this.elements.title().type(title)
+        this.elements.title().clear().type(title)
     }
 
     clickOnTitle() {
@@ -74,6 +80,10 @@ class postPage {
         this.elements.settingsButton().click()
     }
 
+    clickOnSettingsSmall() {
+        this.elements.settingsSmallButton().click()
+    }
+
     clickOnViewPost() {
         this.elements.viewPostButton().then($button => {
             // Modificar el atributo target para que se abra en la misma ventana (_self)
@@ -99,6 +109,7 @@ class postPage {
     }
 
     clickOnEditor() {
+        cy.wait(2000)
         this.elements.editorButton().click()
     }
 
@@ -112,6 +123,7 @@ class postPage {
     }
 
     clickOnPostByTitle(title) {
+        cy.wait(2000)
         cy.get('li')
             .find('span.highlight')
             .contains(title)

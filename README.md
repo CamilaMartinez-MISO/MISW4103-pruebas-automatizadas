@@ -81,7 +81,8 @@ Esto descargará e instalará las dependencias necesarias para ambas herramienta
     "@faker-js/faker": "^8.4.1",
     "android-platform-tools": "^3.0.2",
     "appium": "^2.5.4",
-    "chai": "^5.1.0",
+    "assert": "^2.1.0",
+    "chai": "4.4.1",
     "kraken-node": "^1.0.24"
   }
 ```
@@ -163,7 +164,7 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 ```
 La estructura del proyecto debe verse así:
 
-<img width="322" alt="Screenshot 2024-05-02 at 11 23 38 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/15943a0e-c3a7-4b29-8487-ad76885c94b3">
+<img width="303" alt="Screenshot 2024-05-05 at 11 37 22 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/64bb1f1d-3c6f-4753-8416-226590c81311">
 
 ### 4.2.1 Instalar Cypress v13.7.3
 Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando.
@@ -204,17 +205,16 @@ Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome
 Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
 ```
 🗂️ cypress/e2e
-    🗂️ FUXX1
-      📄 esc001.cy.js
-      📄 esc002.cy.js
-      📄 esc003.cy.js
-    🗂️ FUXX2
-      📄 esc001.cy.js
+    🗂️ ALL_TESTS
+      📄 allTests.cy.js
+    🗂️ FU001
+      📄 FU001.cy.js
+    🗂️ FU002
       📄 esc002.cy.js
 ```
-<img width="1727" alt="Screenshot 2024-05-04 at 11 59 17 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/8c4de6ca-71e3-4213-9015-149f255e543c">
+<img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
 
-Damos click al archivo del escenario en específico que se quiere correr. El programa empezará a realizar el escenario de prueba y se mostrará el paso a paso en el log de la página web.
+El archivo `allTests.cy.js` contiene todo los 20 escenarios juntos para que se ejecuten uno tras del otro. Sin embargo si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
 
 <img width="1728" alt="Screenshot 2024-05-04 at 12 00 55 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/0fe6cd1a-c5ee-4289-b162-60c7f6362bf2">
 
