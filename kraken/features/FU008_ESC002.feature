@@ -1,4 +1,4 @@
-Feature: Login into Ghost, schedule a Post and edit its title later
+Feature: Schedule a post
 
   @user1 @web
   Scenario: As an admin user I want to schedule a Post and change its content later

@@ -1,5 +1,6 @@
 {
     "baseURL": "https://ghost-fcj4.onrender.com/ghost",
+    "baseURLHome" : "https://ghost-fcj4.onrender.com/",
     "email": "h.franco@uniandes.edu.co",
     "password": "miso20244103"
 }
