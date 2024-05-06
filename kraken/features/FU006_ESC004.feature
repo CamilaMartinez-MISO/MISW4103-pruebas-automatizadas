@@ -1,7 +1,7 @@
 Feature: Search a post
 
   @user2 @web
-  Scenario: As an user I want to add a Post and search it outside the admin and before removed it and validate search
+  Scenario: FU006_ESC004: As an user I want to add a Post and search it outside the admin and before removed it and validate search
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

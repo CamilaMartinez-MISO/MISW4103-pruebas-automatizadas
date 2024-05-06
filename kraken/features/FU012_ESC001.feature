@@ -1,7 +1,7 @@
 Feature: Change description
 
   @user2 @web
-  Scenario: As an user I want to change description site
+  Scenario: FU012_ESC001: As an user I want to change description site
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

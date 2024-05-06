@@ -17,7 +17,7 @@ describe('Feature: Create post', function () {
         cy.visit(baseURL)
     });
 
-    it('Scenario: As an admin user, I want to create a post and publish it', function () {
+    it('Scenario: FU002_ESC001: As an admin user, I want to create a post and publish it', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 

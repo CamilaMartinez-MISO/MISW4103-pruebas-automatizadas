@@ -1,7 +1,7 @@
 Feature: Delete a post
 
   @user2 @web
-  Scenario: As an admin user I want to delete a post published
+  Scenario: FU004_ESC003: As an admin user I want to delete a post published
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

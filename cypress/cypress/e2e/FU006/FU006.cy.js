@@ -22,7 +22,7 @@ describe('Feature: Search post', function () {
     /**
      * Scenario: As an user I want to add a Post and search it outside the administrator view by title
      */
-    it('Scenario: As an user I want to add a Post and search it outside the administrator view by title', function () {
+    it('Scenario: FU006_ESC001: As an user I want to add a Post and search it outside the administrator view by title', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })
@@ -49,7 +49,7 @@ describe('Feature: Search post', function () {
     /**
      * Scenario: As an user I want to add a Post and search for it in published
      */
-    it('Scenario: As an user I want to add a Post and search for it in published', function () {
+    it('Scenario: FU006_ESC002: As an user I want to add a Post and search for it in published', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })
@@ -78,7 +78,7 @@ describe('Feature: Search post', function () {
     /**
      * Scenario: As an user I want to add a Post and search it outside the administrator view by body content
      */
-    it('Scenario: As an user I want to add a Post and search it outside the administrator view by body content', function () {
+    it('Scenario: FU006_ESC003: As an user I want to add a Post and search it outside the administrator view by body content', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
 
@@ -111,7 +111,7 @@ describe('Feature: Search post', function () {
     /**
      * Scenario: As an user I want to add a Post and search it outside the admin and before removed it and validate search
      */
-    it('Scenario: As an user I want to add a Post and search it outside the admin and before removed it and validate search', function () {
+    it('Scenario: FU006_ESC004: As an user I want to add a Post and search it outside the admin and before removed it and validate search', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })

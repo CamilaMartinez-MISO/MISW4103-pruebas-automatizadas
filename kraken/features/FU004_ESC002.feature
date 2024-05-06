@@ -1,7 +1,7 @@
 Feature: Create and search a post and delete it
 
   @user2 @web
-  Scenario: Create, Publish, Search, and Delete a Post as an Administrator
+  Scenario: FU004_ESC002: Create, Publish, Search, and Delete a Post as an Administrator
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds
@@ -41,4 +41,3 @@ Feature: Create and search a post and delete it
     Then I confirm post deletion
     Then I wait for 2 seconds
     Then I verify that the post was deleted
-   

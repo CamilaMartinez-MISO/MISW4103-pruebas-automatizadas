@@ -1,7 +1,7 @@
 Feature: Schedule a post
 
   @user1 @web
-  Scenario: As an admin user I want to schedule a Post and change its content later
+  Scenario: FU008_ESC002: As an admin user I want to schedule a Post and change its content later
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

@@ -1,7 +1,7 @@
 Feature: Create post
 
 @user1 @web
-Scenario: As an admin user, I want to create a post and publish it
+Scenario: FU002_ESC001: As an admin user, I want to create a post and publish it
   Given I navigate to page "<baseURL>"
   And I wait for 3 seconds
   When I sigin into Ghost "<email>" "<password>"

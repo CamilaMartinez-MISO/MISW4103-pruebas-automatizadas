@@ -1,7 +1,7 @@
 Feature: Add team member
 
 @user1 @web
-Scenario: As an admin user, I want to add a new member
+Scenario: FU016_ESC001: As an admin user, I want to add a new member
   Given I navigate to page "<baseURL>"
   And I wait for 3 seconds
   When I sigin into Ghost "<email>" "<password>"

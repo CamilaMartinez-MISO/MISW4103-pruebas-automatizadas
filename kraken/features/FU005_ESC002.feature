@@ -1,7 +1,7 @@
 Feature: Create a page
 
   @user2 @web
-  Scenario: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.
+  Scenario: FU005_ESC002: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

@@ -17,7 +17,7 @@ describe('Feature: Edit post', function () {
         cy.visit(baseURL)
     });
 
-    it('Scenario: As an admin user, I want to edit a published post', function () {
+    it('Scenario: FU003_ESC001: As an admin user, I want to edit a published post', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
         const titleEdit = faker.lorem.words()
@@ -46,7 +46,7 @@ describe('Feature: Edit post', function () {
         postPage.elements.editedPostTitle().should('have.text', titleEdit);
     })
 
-    it('Scenario: As an admin user, I want to edit a published post, unpublish it and reschedule its publication', function () {
+    it('Scenario: FU003_ESC002: As an admin user, I want to edit a published post, unpublish it and reschedule its publication', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
         const titleEdit = faker.lorem.words()

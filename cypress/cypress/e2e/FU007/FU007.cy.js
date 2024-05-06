@@ -19,7 +19,7 @@ describe('FEATURE: Drafts Posts', function () {
     /**
      * SCENARIO: As an admin user I want to save a Post as a draft
      */
-    it('SCENARIO: As an admin user I want to save a Post as a draft', function () {
+    it('SCENARIO: FU007_ESC001: As an admin user I want to save a Post as a draft', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
@@ -45,7 +45,7 @@ describe('FEATURE: Drafts Posts', function () {
     /**
      * SCENARIO: As an admin user I want to save a Post as a draft and change its content later
      */
-    it(`SCENARIO: As an admin user I want to save a Post as a draft and change its content later`, function () {
+    it(`SCENARIO: FU007_ESC002: As an admin user I want to save a Post as a draft and change its content later`, function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
@@ -75,7 +75,7 @@ describe('FEATURE: Drafts Posts', function () {
     /**
      * SCENARIO: As an admin user I want to save a Post as a draft and change its content later
      */
-    it(`SCENARIO: As an admin user I want to save a Post as a draft and delete it seconds after`, function () {
+    it(`SCENARIO: FU007_ESC003: As an admin user I want to save a Post as a draft and delete it seconds after`, function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })

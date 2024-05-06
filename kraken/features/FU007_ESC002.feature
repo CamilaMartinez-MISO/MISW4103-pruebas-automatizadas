@@ -1,7 +1,7 @@
 Feature: Save post as a draft
 
   @user2 @web
-  Scenario: As an admin user I want to save a Post as a draft and change its content later
+  Scenario: FU007_ESC002: As an admin user I want to save a Post as a draft and change its content later
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

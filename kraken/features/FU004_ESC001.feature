@@ -1,7 +1,7 @@
 Feature: Create a post and delete it
 
   @user2 @web
-  Scenario: As an admin user I want to create a Post, save it as a draft, and delete it shortly after
+  Scenario: FU004_ESC001: As an admin user I want to create a Post, save it as a draft, and delete it shortly after
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

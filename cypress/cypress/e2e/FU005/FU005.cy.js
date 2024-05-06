@@ -18,7 +18,7 @@ describe('Feature: Create page', function () {
         cy.visit(baseURL)
     });
 
-    it('Scenario: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.', function () {
+    it('Scenario: FU005_ESC001: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 
@@ -39,7 +39,7 @@ describe('Feature: Create page', function () {
         homePage.elements.publishedPages().contains(title).should('exist');
     })
 
-    it('Scenario: As an admin user, I want to create and publish a Page and delete it', function () {
+    it('Scenario: FU005_ESC002: As an admin user, I want to create and publish a Page and delete it', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 

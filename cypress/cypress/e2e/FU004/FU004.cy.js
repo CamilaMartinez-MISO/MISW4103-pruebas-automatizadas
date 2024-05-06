@@ -17,7 +17,7 @@ describe('Feature: Delete post', function () {
         cy.visit(baseURL)
     });
 
-    it('Scenario: As an admin user I want to create a Post, save it as a draft, and delete it shortly after', function () {
+    it('Scenario: FU004_ESC001: As an admin user I want to create a Post, save it as a draft, and delete it shortly after', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 
@@ -40,7 +40,7 @@ describe('Feature: Delete post', function () {
         homePage.elements.publishedPosts().contains(title).should('not.exist');
     })
 
-    it('Scenario: Create, Publish, Search, and Delete a Post as an Administrator', function () {
+    it('Scenario: FU004_ESC002: Create, Publish, Search, and Delete a Post as an Administrator', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 
@@ -67,7 +67,7 @@ describe('Feature: Delete post', function () {
         homePage.elements.publishedPosts().contains(title).should('not.exist');
     })
 
-    it('Scenario: As an admin user I want to delete a post published', function () {
+    it('Scenario: FU004_ESC003: As an admin user I want to delete a post published', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 

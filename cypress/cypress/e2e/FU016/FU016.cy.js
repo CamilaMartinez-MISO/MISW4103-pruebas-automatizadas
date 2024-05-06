@@ -17,7 +17,7 @@ describe('Feature: Create post', function () {
         cy.visit(baseURL)
     });
 
-    it('Scenario: As an admin user, I want to create a post and publish it', function () {
+    it('Scenario: FU016_ESC001: As an admin user, I want to create a post and publish it', function () {
         const name = faker.person.fullName()
         const randomEmail = faker.internet.email()
         const note = faker.lorem.paragraph()
@@ -37,7 +37,7 @@ describe('Feature: Create post', function () {
         memberPage.elements.membersList().contains(name).should('exist');
     })
 
-    it('Scenario: As an admin user, I want to validate that it is not possible to add a new member with data in an incorrect format', function () {
+    it('Scenario: FU016_ESC002: As an admin user, I want to validate that it is not possible to add a new member with data in an incorrect format', function () {
         const name = faker.person.fullName()
         const badEmail = faker.lorem.words()
         const note = faker.lorem.paragraphs({ min: 5, max: 10 })

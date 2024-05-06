@@ -1,7 +1,7 @@
 Feature: Search a post
 
   @user2 @web
-  Scenario: As an user I want to add a Post and search it outside the administrator view by title
+  Scenario: FU006_ESC001: As an user I want to add a Post and search it outside the administrator view by title
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds

@@ -1,7 +1,7 @@
 Feature: Edit post
 
 @user1 @web
-Scenario: As an admin user, I want to edit a published post
+Scenario: FU003_ESC001: As an admin user, I want to edit a published post
   Given I navigate to page "<baseURL>"
   And I wait for 3 seconds
   When I sigin into Ghost "<email>" "<password>"

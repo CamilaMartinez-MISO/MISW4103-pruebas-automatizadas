@@ -10,7 +10,7 @@ const { baseURL, email, password } = data
 /**
  * FEATURE: Login into Ghost and schedule a Post
  */
-describe('FEATURE: Schedule a Post', function () {
+describe('FEATURE: FU008_ESC001: Schedule a Post', function () {
 
     // Given Section
     beforeEach(() => {
@@ -51,7 +51,7 @@ describe('FEATURE: Schedule a Post', function () {
     /**
      * SCENARIO: As an admin user I want to schedule a Post and change its content later
      */
-    it('SCENARIO: As an admin user I want to schedule a Post and change its content later', function () {
+    it('SCENARIO: FU008_ESC002: As an admin user I want to schedule a Post and change its content later', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })

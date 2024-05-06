@@ -21,7 +21,7 @@ describe('Feature: Change the description of page', function () {
     /**
      * Scenario: As an admin user I want to change the description page
      */
-    it('Scenario: As an admin user I want to change the description page', function () {
+    it('Scenario: FU012_ESC001: As an admin user I want to change the description page', function () {
 
         const fakeDescription = faker.word.words({ count: { min: 3, max: 5 } })
 

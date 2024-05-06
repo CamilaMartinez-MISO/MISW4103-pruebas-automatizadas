@@ -1,7 +1,7 @@
 Feature: Add team member
 
 @user1 @web
-Scenario: As an admin user, I want to validate that it is not possible to add a new member with data in an incorrect format.
+Scenario: FU016_ESC002: As an admin user, I want to validate that it is not possible to add a new member with data in an incorrect format.
   Given I navigate to page "<baseURL>"
   And I wait for 3 seconds
   When I sigin into Ghost "<email>" "<password>"
