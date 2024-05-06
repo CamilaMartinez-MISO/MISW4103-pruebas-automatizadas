@@ -117,10 +117,10 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 
 La estructura del proyecto debe verse de la siguiente manera
 
-<img width="256" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e40dcf0b-4ea8-491e-a1ba-9b009f1a6c81">
+<img width="317" alt="Screenshot 2024-05-05 at 9 48 05 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/93833525-cc94-4ccd-9d4d-74fef82dbf17">
 
 
-*NOTA:* Cada *feature* y su respectivo archivo de *steps* están nombrados con la siguiente nomenclatura **FUXXX_Y**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
+*NOTA:* Cada *feature* está nombrado con la siguiente nomenclatura **FU00X_ESC00X**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
 
 ### 4.1.2 Nomenclatura de los escenarios
 
