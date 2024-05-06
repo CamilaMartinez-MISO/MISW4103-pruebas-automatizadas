@@ -3,9 +3,12 @@ class homePage {
         menuButton: () => cy.get('div.gh-user-avatar'),
         postsButton: () => cy.get('a[href="#/posts/"]'),
         draftsButton: () => cy.get('a[title="Drafts"]'),
+        pagesButton: () => cy.get('a[href="#/pages/"]'),
         newPostButton: () => cy.get('a[href="#/editor/post/"]').eq(1),
+        newPageButton: () => cy.get('a[href="#/editor/page/"]'),
         publishedButton: () => cy.get('a[title="Published"]'),
         publishedPosts: () => cy.get('h3.gh-content-entry-title'),
+        publishedPages: () => cy.get('h3.gh-content-entry-title'),
         scheduledButton: () => cy.get('a[title="Scheduled"]'),
         scheduledPosts: () => cy.get('h3.gh-content-entry-title'),
         draftPosts: () => cy.get('h3.gh-content-entry-title'),
@@ -25,8 +28,16 @@ class homePage {
         this.elements.postsButton().click({ force: true })
     }
 
+    clickOnPage(){
+        this.elements.pagesButton().click()
+    }
+
     clickOnNewPost() {
         this.elements.newPostButton().click({ force: true })
+    }
+
+    clickOnNewPage() {
+        this.elements.newPageButton().click({ force: true });
     }
 
     clickOnPublished() {

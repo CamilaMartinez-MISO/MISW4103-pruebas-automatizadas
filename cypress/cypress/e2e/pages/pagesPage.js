@@ -1,0 +1,112 @@
+const { vi } = require("@faker-js/faker")
+
+class pagesPage {
+    elements = {
+        title: () => cy.get('textarea[placeholder="Page title"]'),
+        body: () => cy.get('p[data-koenig-dnd-droppable=true]'),
+        publishButton: () => cy.get('.gh-publish-trigger'),
+        rightNowButton :() => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
+        continueButton: () => cy.get('.gh-publish-cta'),
+        publishPageButton: () => cy.get('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view'),
+        backToEditorButton: () => cy.get('button.gh-back-to-editor'),
+        pagesButton: () => cy.get('a.ember-view.gh-btn-editor.gh-editor-back-button'),
+        updateButton: () => cy.get('button.gh-btn.gh-btn-editor.gh-editor-save-trigger'),
+        settingsButton: () => cy.get('button[title="Settings"]'),
+        settingsSmallButton: () => cy.get('button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon'),
+        unpublishButton: () => cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-unpublish-trigger'),
+        confirmUnpublishButton: () => cy.get('button.gh-revert-to-draft'),
+        changePublicationTime: () => cy.get('.gh-publish-setting.last'),
+        scheduleForLaterButton: () => cy.get('.gh-radio').eq(1),
+        editorButton: () => cy.get('button.gh-btn-editor.gh-publish-back-button'),
+        deletePageButton: () => cy.get('button.settings-menu-delete-button'),
+        filterPagesMenu:() => cy.get('div.gh-contentfilter-menu-trigger'),
+        publishedPages: () => cy.get('li.ember-power-select-option').contains('Published pages'),
+        confirmDeleteButton: () => cy.get('div.modal-footer > button.gh-btn.gh-btn-red'),
+        searchButton: () => cy.get('button.gh-nav-btn-search'),
+        searchInput: () => cy.get('input.gh-input-with-select-input'),
+    }
+
+    clickOnRightNow() {
+        this.elements.rightNowButton().click()
+    }
+
+    setTitle(title) {
+        this.elements.title().clear().type(title)
+    }
+
+    clickOnTitle() {
+        this.elements.title().click()
+    }
+    
+    clearTitle() {
+        this.elements.title().clear()
+    }
+
+    clickOnBody() {
+        this.elements.body().click({force: true})
+    }
+
+    enterBody(body) {
+        this.elements.body().invoke('text', body)
+    }
+
+    clickOnPublish() {
+        this.elements.publishButton().click()
+    }
+
+    clickOnContinue() {
+        this.elements.continueButton().click()
+    }
+
+    clickOnPublishedPages() {
+        this.elements.publishedPages().click()
+    }
+
+    clickOnPublishPage() {
+        this.elements.publishPageButton().click()
+    }
+
+    clickOnBackToEditor() {
+        this.elements.backToEditorButton().click()
+    }
+
+    clickOnPages() {
+        this.elements.pagesButton().click()
+    }
+
+    clickOnUpdate() {
+        this.elements.updateButton().click()
+        cy.wait(1000)
+    }
+
+    clickOnSettings() {
+        this.elements.settingsButton().click()
+    }
+
+    clickOnSettingsSmall() {
+        this.elements.settingsSmallButton().click()
+    }
+
+    clickOnUnpublish() {
+        this.elements.unpublishButton().click()
+    }
+
+    confirmUnpublish() {
+        this.elements.confirmUnpublishButton().click()
+    }
+
+    clickOnEditor() {
+        cy.wait(2000)
+        this.elements.editorButton().click()
+    }
+
+    clickOnDeletePage() {
+        this.elements.deletePageButton().click()
+    }
+
+    clickOnConfirmDeletePage() {
+        this.elements.confirmDeleteButton().click()
+    }
+}
+
+module.exports = new pagesPage();
