@@ -53,7 +53,8 @@ When('I click on Published', async function () {
 
 Then('I see the post with title {kraken-string} in the list of published posts', async function(title){
     await this.driver.refresh();
-    await this.driver.pause(2000);
+    await this.driver.pause(2000)
+    await this.driver.$('h3.gh-content-entry-title').waitForExist();
     const element = await this.driver.$$('h3.gh-content-entry-title')[0].getText();
     assert.equal(element, title, 'Post was not published');
 })
