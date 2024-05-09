@@ -22,7 +22,7 @@ describe('Feature: Create post', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
 
-        screenshotPage.configureScreenshotFolder('FU002_ESC001'),
+        screenshotPage.configureScreenshotFolder('FU002_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -40,5 +40,6 @@ describe('Feature: Create post', function () {
 
         // Then Section
         homePage.elements.publishedPosts().contains(title).should('exist');
+        screenshotPage.takeScreenshot()
     })
 });

@@ -64,7 +64,7 @@ class homePage {
     }
 
     async clickOnMembers() {
-        this.elements.membersButton().wait(1000).click()
+        this.elements.membersButton().wait(1000).click({ force: true })
         await screenshotPage.takeScreenshot()
     }
 

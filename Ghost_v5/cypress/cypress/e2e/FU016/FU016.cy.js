@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import memberPage from '../pages/memberPage'
+import screenshotPage from '../pages/screenshotPage'
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -22,6 +23,8 @@ describe('Feature: Create post', function () {
         const randomEmail = faker.internet.email()
         const note = faker.lorem.paragraph()
 
+        screenshotPage.configureScreenshotFolder('FU016_ESC001')
+
         // When Section
         loginPage.signIn(email, password)
         homePage.clickOnMembers()
@@ -35,12 +38,15 @@ describe('Feature: Create post', function () {
 
         // Then Section
         memberPage.elements.membersList().contains(name).should('exist');
+        screenshotPage.takeScreenshot()
     })
 
     it('Scenario: FU016_ESC002: As an admin user, I want to validate that it is not possible to add a new member with data in an incorrect format', function () {
         const name = faker.person.fullName()
         const badEmail = faker.lorem.words()
         const note = faker.lorem.paragraphs({ min: 5, max: 10 })
+
+        screenshotPage.configureScreenshotFolder('FU016_ESC002')
 
         // When Section
         loginPage.signIn(email, password)

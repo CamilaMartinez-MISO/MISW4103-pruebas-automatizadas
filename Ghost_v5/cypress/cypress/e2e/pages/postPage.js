@@ -31,7 +31,6 @@ class postPage {
     async clickOnRightNow() {
         this.elements.rightNowButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async enterTitle(title) {
@@ -40,88 +39,66 @@ class postPage {
     }
 
     async clickOnTitle() {
-
         this.elements.title().wait(1000).click()
         await screenshotPage.takeScreenshot()
     }
 
     async clearTitle() {
-
         this.elements.title().wait(1000).clear()
         await screenshotPage.takeScreenshot()
     }
 
     async clickOnBody() {
-
         this.elements.body().wait(1000).click({ force: true })
         await screenshotPage.takeScreenshot()
-
     }
 
     async enterBody(body) {
-
         this.elements.body().wait(1000).invoke('text', body)
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnPublish() {
-
         this.elements.publishButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnContinue() {
-
         this.elements.continueButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnPublishPost() {
-
         this.elements.publishPostButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnBackToEditor() {
-
         this.elements.backToEditorButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnPosts() {
-
         this.elements.postsButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnUpdate() {
-
         this.elements.updateButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnSettings() {
-
         this.elements.settingsButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
     async clickOnSettingsSmall() {
-
         this.elements.settingsSmallButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
-
     }
 
-    clickOnViewPost() {
+    async clickOnViewPost() {
         this.elements.viewPostButton().then($button => {
             // Modificar el atributo target para que se abra en la misma ventana (_self)
             const href = $button.attr('href');
@@ -130,24 +107,29 @@ class postPage {
             // Hacer clic en el botón de vista modificado
             cy.visit(href); // Abrir la URL del enlace en la misma ventana
         });
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnUnpublish() {
-        this.elements.unpublishButton().click()
+    async clickOnUnpublish() {
+        this.elements.unpublishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    confirmUnpublish() {
-        this.elements.confirmUnpublishButton().click()
+    async confirmUnpublish() {
+        this.elements.confirmUnpublishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    changePublicationTime() {
+    async changePublicationTime() {
         this.elements.changePublicationTime().click()
-        this.elements.scheduleForLaterButton().click()
+        this.elements.scheduleForLaterButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnEditor() {
+    async clickOnEditor() {
         cy.wait(2000)
-        this.elements.editorButton().click()
+        this.elements.editorButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
     clickOnSearchButton() {

@@ -1,3 +1,5 @@
+const screenshotPage = require("./screenshotPage")
+
 class memberPage {
     elements = {
         newMemberButton: () => cy.get('a[href="#/members/new/"]'),
@@ -11,33 +13,39 @@ class memberPage {
         messages: () => cy.get('p.response')
     }
 
-    clickOnNewMember() {
-        this.elements.newMemberButton().click()
+    async clickOnNewMember() {
+        this.elements.newMemberButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    enterName(name) {
-        this.elements.name().type(name, {force: true})
+    async enterName(name) {
+        this.elements.name().wait(1000).type(name, {force: true})
+        await screenshotPage.takeScreenshot()
     }
 
-    enterEmail(email) {
-        this.elements.email().type(email, {force: true})
+    async enterEmail(email) {
+        this.elements.email().wait(1000).type(email, {force: true})
+        await screenshotPage.takeScreenshot()
     }
 
-    enterNote(note) {
-        this.elements.note().type(note, {force: true})
+    async enterNote(note) {
+        this.elements.note().wait(1000).type(note, {force: true})
+        await screenshotPage.takeScreenshot()
     }
 
-    disableNewsletter() {
-        this.elements.newsletter().click()
+    async disableNewsletter() {
+        this.elements.newsletter().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnSave() {
-        this.elements.saveButton().click()
+    async clickOnSave() {
+        this.elements.saveButton().wait(1000).click()
         cy.wait(1000)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnMembers() {
-        this.elements.membersButton().click()
+    async clickOnMembers() {
+        this.elements.membersButton().wait(1000).click()
         cy.wait(1000)
         cy.reload()
     }

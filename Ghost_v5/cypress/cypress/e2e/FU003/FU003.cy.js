@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import postPage from '../pages/postPage'
+import screenshotPage from '../pages/screenshotPage'
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -21,6 +22,8 @@ describe('Feature: Edit post', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
         const titleEdit = faker.lorem.words()
+
+        screenshotPage.configureScreenshotFolder('FU003_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -51,6 +54,8 @@ describe('Feature: Edit post', function () {
         const body = faker.lorem.paragraph()
         const titleEdit = faker.lorem.words()
 
+        screenshotPage.configureScreenshotFolder('FU003_ESC002')
+
         // When Section
         loginPage.signIn(email, password)
         homePage.clickOnPosts()
@@ -80,5 +85,6 @@ describe('Feature: Edit post', function () {
 
         // Then Section
         homePage.elements.scheduledPosts().contains(titleEdit).should('exist');
+        screenshotPage.takeScreenshot()
     })
 });
