@@ -37,13 +37,14 @@ Feature: Schedule a post
     And I go to Scheduled
     And I wait for 3 seconds
     And I proof that there is one Scheduled post with the fakeTitle I used
+    And I choose the latest Scheduled post
+    And I wait for 3 seconds
+    And I change its title to a newer one Scheduled
+    And I wait for 2 seconds
+    And I click on "Update"
+    And I wait for 2 seconds
+    And I click on "Back button"
+    And I wait for 3 seconds
+    
     # Then Section
-    Then I choose the latest Scheduled post
-    Then I wait for 3 seconds
-    Then I change its title to a newer one Scheduled
-    Then I wait for 2 seconds
-    Then I click on "Update"
-    Then I wait for 2 seconds
-    Then I click on "Back button"
-    Then I wait for 3 seconds
     Then I proof that there is one Scheduled with the newer title

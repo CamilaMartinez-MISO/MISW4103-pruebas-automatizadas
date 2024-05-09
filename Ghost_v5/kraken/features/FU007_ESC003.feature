@@ -28,13 +28,14 @@ Feature: Save post as a draft
     And I wait for 3 seconds
     And I proof that there is one Draft with the fakeTitle I used
     And I wait for 3 seconds
+    And I choose the latest draft post
+    And I wait for 3 seconds
+    And I click on "Settings" button
+    And I wait for 2 seconds
+    And I click on "Delete" button
+    And I wait for 2 seconds
+    And I confirm I want to delete de drafted post
+    And I wait for 2 seconds
+    
     # Then Section
-    Then I choose the latest draft post
-    Then I wait for 3 seconds
-    Then I click on "Settings" button
-    Then I wait for 2 seconds
-    Then I click on "Delete" button
-    Then I wait for 2 seconds
-    Then I confirm I want to delete de drafted post
-    Then I wait for 2 seconds
     Then I see that my drafted post was deleted

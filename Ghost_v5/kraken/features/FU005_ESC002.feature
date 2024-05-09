@@ -32,7 +32,7 @@ Feature: Create a page
     And I wait for 2 seconds  
     And I click on Unpublish page
     And I wait for 2 seconds 
-    And I confirm the unpublishing page 
+    Then I confirm the unpublishing page 
     And I wait for 2 seconds 
 
 

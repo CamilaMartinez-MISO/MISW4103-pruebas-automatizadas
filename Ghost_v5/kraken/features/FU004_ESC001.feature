@@ -2,9 +2,11 @@ Feature: Create a post and delete it
 
   @user2 @web
   Scenario: FU004_ESC001: As an admin user I want to create a Post, save it as a draft, and delete it shortly after
+    
     # Given Section
     Given I navigate to page "<baseURL>"
     And I wait for 3 seconds
+
     # When Section
     When I sigin into Ghost "<email>" "<password>"
     And I wait for 5 seconds
@@ -24,12 +26,12 @@ Feature: Create a post and delete it
     And I wait for 3 seconds
     And I revert to the editor view
     And I wait for 1 seconds
+    And I access the post settings
+    And I wait for 1 seconds
+    And I initiate post removal
+    And I wait for 1 seconds
+    And I confirm post deletion
+    And I wait for 1 seconds
 
     # Then Section
-    Then I access the post settings
-    Then I wait for 1 seconds
-    Then I initiate post removal
-    Then I wait for 1 seconds
-    Then I confirm post deletion
-    Then I wait for 1 seconds
     Then I verify that the post was deleted

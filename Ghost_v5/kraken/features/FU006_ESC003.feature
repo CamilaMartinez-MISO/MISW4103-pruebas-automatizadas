@@ -21,8 +21,6 @@ Feature: Search a post
     And I wait for 2 seconds
     And I click on "Publish post, right now"
     And I wait for 2 seconds
-
-    # Then Section
     And I navigate to page "<baseURLHome>"
     And I wait for 1 seconds
     And I go to search
@@ -31,4 +29,6 @@ Feature: Search a post
     And I wait for 1 seconds
     And I go to created post
     And I wait for 1 seconds
+
+    # Then Section
     Then Validate the description of post

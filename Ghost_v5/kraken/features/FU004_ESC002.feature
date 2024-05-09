@@ -32,12 +32,12 @@ Feature: Create and search a post and delete it
     And I wait for 2 seconds
     And I go to edit searched post
     And I wait for 2 seconds
-
+    And I access the post settings
+    And I wait for 2 seconds
+    And I initiate post removal
+    And I wait for 2 seconds
+    And I confirm post deletion
+    And I wait for 2 seconds
+    
     # Then Section
-    Then I access the post settings
-    Then I wait for 2 seconds
-    Then I initiate post removal
-    Then I wait for 2 seconds
-    Then I confirm post deletion
-    Then I wait for 2 seconds
     Then I verify that the post was deleted

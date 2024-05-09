@@ -28,12 +28,12 @@ Feature: Save post as a draft
     And I wait for 3 seconds
     And I proof that there is one Draft with the fakeTitle I used
     And I wait for 3 seconds
-
+    And I choose the latest draft post
+    And I wait for 3 seconds
+    And I change its title to a newer one
+    And I wait for 3 seconds
+    And I click on "Back button"
+    And I wait for 3 seconds
+    
     # Then Section
-    Then I choose the latest draft post
-    Then I wait for 3 seconds
-    Then I change its title to a newer one
-    Then I wait for 3 seconds
-    Then I click on "Back button"
-    Then I wait for 3 seconds
     Then I proof that there is one Draft with the newer title

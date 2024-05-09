@@ -25,12 +25,12 @@ Feature: Search a post
     And I wait for 2 seconds
     And I go back to main menu
     And I wait for 1 seconds
-
-    # Then Section
     And I go to search while i am logged in
     And I wait for 1 seconds
     And I type the title post in search input while i am logged in
     And I wait for 2 seconds
     And I go to edit published post
     And I wait for 1 seconds
+
+    # Then Section
     Then Validate the name title in edit view
