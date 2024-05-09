@@ -1,3 +1,5 @@
+const screenshotPage = require("./screenshotPage")
+
 class loginPage {
     elements = {
         identification: () => cy.get('input[name="identification"]'),
@@ -6,14 +8,16 @@ class loginPage {
         signOutButton: () => cy.get('a.user-menu-signout')
     }
 
-    signIn(email, password) {
+    async signIn(email, password) {
         this.elements.identification().type(email)
         this.elements.password().type(password)
-        this.elements.loginButton().click()
+        this.elements.loginButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    singOut() {
-       this.elements.signOutButton().click({ force: true })
+    async singOut() {
+        this.elements.signOutButton().wait(1000).click({ force: true })
+        await screenshotPage.takeScreenshot()
     }
 }
 

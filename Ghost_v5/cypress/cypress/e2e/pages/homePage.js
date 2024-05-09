@@ -1,3 +1,5 @@
+const screenshotPage = require("./screenshotPage")
+
 class homePage {
     elements = {
         menuButton: () => cy.get('div.gh-user-avatar'),
@@ -16,48 +18,59 @@ class homePage {
         settingsButton: () => cy.get('a[href="#/settings/"]'),
     }
 
-    clicOnkMenuButton() {
-        this.elements.menuButton().click({ force: true })
+    async clicOnkMenuButton() {
+        this.elements.menuButton().wait(1000).click({ force: true })
+        await await screenshotPage.takeScreenshot()
     }
 
-    clickOnDrafts() {
-        this.elements.draftsButton().click({ force: true })
+    async clickOnDrafts() {
+        this.elements.draftsButton().wait(1000).click({ force: true })
+        await await screenshotPage.takeScreenshot()
     }
 
-    clickOnPosts() {
-        this.elements.postsButton().click({ force: true })
+    async clickOnPosts() {
+        this.elements.postsButton().wait(1000).click({ force: true })
+        await await screenshotPage.takeScreenshot()
     }
 
-    clickOnPage(){
-        this.elements.pagesButton().click()
+    async clickOnPage() {
+        this.elements.pagesButton().wait(1000).click()
+        await await screenshotPage.takeScreenshot()
     }
 
-    clickOnNewPost() {
-        this.elements.newPostButton().click({ force: true })
+    async clickOnNewPost() {
+        this.elements.newPostButton().wait(1000).click({ force: true })
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnNewPage() {
-        this.elements.newPageButton().click({ force: true });
+    async clickOnNewPage() {
+        this.elements.newPageButton().wait(1000).click({ force: true });
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPublished() {
-        this.elements.publishedButton().click()
+    async clickOnPublished() {
+        this.elements.publishedButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPostWithTitle(title) {
-        this.elements.publishedPosts().contains(title).click()
+    async clickOnPostWithTitle(title) {
+        this.elements.publishedPosts().wait(1000).contains(title).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnScheduled() {
-        this.elements.scheduledButton().click()
+    async clickOnScheduled() {
+        this.elements.scheduledButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnMembers() {
-        this.elements.membersButton().click()
+    async clickOnMembers() {
+        this.elements.membersButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnSettings() {
-        this.elements.settingsButton().click()
+    async clickOnSettings() {
+        this.elements.settingsButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 }
 

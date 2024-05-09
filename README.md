@@ -1,4 +1,4 @@
-# Pruebas E2E | Ghost
+# Pruebas de Regresión Visual | Ghost v5 y Ghost v3
 
 Nombre | Email Uniandes
 -- | --
@@ -7,8 +7,8 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
-# 1. Descripción del set de pruebas E2E
-Las pruebas end-to-end se hacen para realizar pruebas sobre todos los caminos de los flujos de ejecución como usuario final, de principio a fin, imitando las condiciones de los usuarios. Verifican la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema como lo pueden ser bases de datos, APIs externas, almacenamiento, etc.
+# 1. Descripción del set de pruebas VRT
+Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas par 
 
 # 2. Instalación tecnologías globales
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**

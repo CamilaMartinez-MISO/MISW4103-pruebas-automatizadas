@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import postPage from '../pages/postPage'
+import screenshotPage from '../pages/screenshotPage'
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -20,6 +21,8 @@ describe('Feature: Create post', function () {
     it('Scenario: FU002_ESC001: As an admin user, I want to create a post and publish it', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU002_ESC001'),
 
         // When Section
         loginPage.signIn(email, password)

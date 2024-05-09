@@ -1,11 +1,12 @@
 const { vi } = require("@faker-js/faker")
+const screenshotPage = require("./screenshotPage")
 
 class postPage {
     elements = {
         title: () => cy.get('textarea[placeholder="Post title"]'),
         body: () => cy.get('p[data-koenig-dnd-droppable=true]'),
         publishButton: () => cy.get('.gh-publish-trigger'),
-        rightNowButton :() => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
+        rightNowButton: () => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
         continueButton: () => cy.get('.gh-publish-cta'),
         publishPostButton: () => cy.get('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view'),
         backToEditorButton: () => cy.get('button.gh-back-to-editor'),
@@ -27,61 +28,97 @@ class postPage {
         searchInput: () => cy.get('input.gh-input-with-select-input'),
     }
 
-    clickOnRightNow() {
-        this.elements.rightNowButton().click()
+    async clickOnRightNow() {
+        this.elements.rightNowButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    enterTitle(title) {
-        this.elements.title().clear().type(title)
+    async enterTitle(title) {
+        this.elements.title().wait(1000).clear().type(title)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnTitle() {
-        this.elements.title().click()
-    }
-    
-    clearTitle() {
-        this.elements.title().clear()
+    async clickOnTitle() {
+
+        this.elements.title().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnBody() {
-        this.elements.body().click({force: true})
+    async clearTitle() {
+
+        this.elements.title().wait(1000).clear()
+        await screenshotPage.takeScreenshot()
     }
 
-    enterBody(body) {
-        this.elements.body().invoke('text', body)
+    async clickOnBody() {
+
+        this.elements.body().wait(1000).click({ force: true })
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnPublish() {
-        this.elements.publishButton().click()
+    async enterBody(body) {
+
+        this.elements.body().wait(1000).invoke('text', body)
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnContinue() {
-        this.elements.continueButton().click()
+    async clickOnPublish() {
+
+        this.elements.publishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnPublishPost() {
-        this.elements.publishPostButton().click()
+    async clickOnContinue() {
+
+        this.elements.continueButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnBackToEditor() {
-        this.elements.backToEditorButton().click()
+    async clickOnPublishPost() {
+
+        this.elements.publishPostButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnPosts() {
-        this.elements.postsButton().click()
+    async clickOnBackToEditor() {
+
+        this.elements.backToEditorButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnUpdate() {
-        this.elements.updateButton().click()
-        cy.wait(1000)
+    async clickOnPosts() {
+
+        this.elements.postsButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnSettings() {
-        this.elements.settingsButton().click()
+    async clickOnUpdate() {
+
+        this.elements.updateButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
-    clickOnSettingsSmall() {
-        this.elements.settingsSmallButton().click()
+    async clickOnSettings() {
+
+        this.elements.settingsButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
+    }
+
+    async clickOnSettingsSmall() {
+
+        this.elements.settingsSmallButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+
     }
 
     clickOnViewPost() {
@@ -89,10 +126,10 @@ class postPage {
             // Modificar el atributo target para que se abra en la misma ventana (_self)
             const href = $button.attr('href');
             $button.attr('target', '_self');
-          
+
             // Hacer clic en el botón de vista modificado
             cy.visit(href); // Abrir la URL del enlace en la misma ventana
-          });
+        });
     }
 
     clickOnUnpublish() {
@@ -118,9 +155,9 @@ class postPage {
     }
 
     typeOnSearchInput(search) {
-        this.elements.searchInput().type(search, {force: true})
-        this.elements.searchInput().type(search, {force: true})
-        this.elements.searchInput().clear().type(search, {force: true})
+        this.elements.searchInput().type(search, { force: true })
+        this.elements.searchInput().type(search, { force: true })
+        this.elements.searchInput().clear().type(search, { force: true })
         cy.wait(3000)
     }
 
