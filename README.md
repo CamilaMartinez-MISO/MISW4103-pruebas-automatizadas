@@ -8,9 +8,16 @@ Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
 # 1. Descripción del set de pruebas VRT
-Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas par 
+Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se intrudujeron bugs o fallos en el proceso de propagación de cambios.
 
-# 2. Instalación tecnologías globales
+En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
+
+Versión | URL Despliegue | ¿Es línea base?
+-- | -- | --
+5.14.1 | https://ghost-fcj4.onrender.com/   | Sí
+3.42.0 | https://ghost-3-42-0.onrender.com/ | No
+
+# 2. Setup de las 
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
