@@ -37,6 +37,7 @@ Feature: Schedule a post
     And I go to Scheduled
     And I wait for 3 seconds
     And I proof that there is one Scheduled post with the fakeTitle I used
+    And I wait for 1 seconds
     And I choose the latest Scheduled post
     And I wait for 3 seconds
     And I change its title to a newer one Scheduled
