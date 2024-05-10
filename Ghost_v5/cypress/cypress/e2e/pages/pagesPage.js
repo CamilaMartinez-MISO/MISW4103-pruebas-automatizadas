@@ -1,4 +1,6 @@
 const { vi } = require("@faker-js/faker")
+import screenshotPage from "./screenshotPage";
+
 
 class pagesPage {
     elements = {
@@ -26,86 +28,106 @@ class pagesPage {
         searchInput: () => cy.get('input.gh-input-with-select-input'),
     }
 
-    clickOnRightNow() {
-        this.elements.rightNowButton().click()
+    async clickOnRightNow() {
+        this.elements.rightNowButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    setTitle(title) {
-        this.elements.title().clear().type(title)
+    async setTitle(title) {
+        this.elements.title().wait(1000).clear().type(title)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnTitle() {
-        this.elements.title().click()
+    async clickOnTitle() {
+        this.elements.title().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
     
-    clearTitle() {
-        this.elements.title().clear()
+    async clearTitle() {
+        this.elements.title().wait(1000).clear()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnBody() {
-        this.elements.body().click({force: true})
+    async clickOnBody() {
+        this.elements.body().wait(1000).click({force: true})
+        await screenshotPage.takeScreenshot()
     }
 
-    enterBody(body) {
-        this.elements.body().invoke('text', body)
+    async enterBody(body) {
+        this.elements.body().wait(1000).invoke('text', body)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPublish() {
-        this.elements.publishButton().click()
+    async clickOnPublish() {
+        this.elements.publishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnContinue() {
-        this.elements.continueButton().click()
+    async clickOnContinue() {
+        this.elements.continueButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPublishedPages() {
-        this.elements.publishedPages().click()
+    async clickOnPublishedPages() {
+        this.elements.publishedPages().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPublishPage() {
-        this.elements.publishPageButton().click()
+    async clickOnPublishPage() {
+        this.elements.publishPageButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnBackToEditor() {
-        this.elements.backToEditorButton().click()
+    async clickOnBackToEditor() {
+        this.elements.backToEditorButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPages() {
-        this.elements.pagesButton().click()
+    async clickOnPages() {
+        this.elements.pagesButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnUpdate() {
-        this.elements.updateButton().click()
+    async clickOnUpdate() {
+        this.elements.updateButton().wait(1000).click()
         cy.wait(1000)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnSettings() {
-        this.elements.settingsButton().click()
+    async clickOnSettings() {
+        this.elements.settingsButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnSettingsSmall() {
-        this.elements.settingsSmallButton().click()
+    async clickOnSettingsSmall() {
+        this.elements.settingsSmallButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnUnpublish() {
-        this.elements.unpublishButton().click()
+    async clickOnUnpublish() {
+        this.elements.unpublishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    confirmUnpublish() {
-        this.elements.confirmUnpublishButton().click()
+    async confirmUnpublish() {
+        this.elements.confirmUnpublishButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnEditor() {
+    async clickOnEditor() {
         cy.wait(2000)
-        this.elements.editorButton().click()
+        this.elements.editorButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnDeletePage() {
-        this.elements.deletePageButton().click()
+    async clickOnDeletePage() {
+        this.elements.deletePageButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnConfirmDeletePage() {
-        this.elements.confirmDeleteButton().click()
+    async clickOnConfirmDeletePage() {
+        this.elements.confirmDeleteButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 }
 

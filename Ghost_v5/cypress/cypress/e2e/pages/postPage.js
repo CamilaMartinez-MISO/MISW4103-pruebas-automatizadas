@@ -139,9 +139,9 @@ class postPage {
     }
 
     async typeOnSearchInput(search) {
-        this.elements.searchInput().type(search, { force: true })
-        this.elements.searchInput().type(search, { force: true })
-        this.elements.searchInput().clear().type(search, { force: true })
+        this.elements.searchInput().wait(1000).type(search, { force: true })
+        this.elements.searchInput().wait(1000).type(search, { force: true })
+        this.elements.searchInput().wait(1000).clear().type(search, { force: true })
         cy.wait(2000)
         await screenshotPage.takeScreenshot()
     }
@@ -156,17 +156,18 @@ class postPage {
         await screenshotPage.takeScreenshot()
     }
 
-    clickOnFirstPost() {
-        this.elements.firstPost().click();
+    async clickOnFirstPost() {
+        this.elements.firstPost().wait(1000).click();
+        await screenshotPage.takeScreenshot()
     }
 
     async clickOnDeletePost() {
-        this.elements.deletePostButton().click()
+        this.elements.deletePostButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
     }
 
     async clickOnConfirmDeletePost() {
-        this.elements.confirmDeleteButton().click()
+        this.elements.confirmDeleteButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
     }
 }

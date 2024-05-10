@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage';
 import homePage from '../pages/homePage';
 import postPage from '../pages/postPage';
+import screenshotPage from '../pages/screenshotPage';
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -23,6 +24,8 @@ describe('FEATURE: Drafts Posts', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
+
+        screenshotPage.configureScreenshotFolder('FU007_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -50,6 +53,8 @@ describe('FEATURE: Drafts Posts', function () {
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
+
+        screenshotPage.configureScreenshotFolder('FU007_ESC002')
 
         // When Section
         loginPage.signIn(email, password)
@@ -79,6 +84,8 @@ describe('FEATURE: Drafts Posts', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
+
+        screenshotPage.configureScreenshotFolder('FU007_ESC003')
 
         // When Section
         loginPage.signIn(email, password)

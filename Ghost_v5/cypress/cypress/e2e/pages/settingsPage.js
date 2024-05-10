@@ -12,25 +12,25 @@ class settingsPage {
     }
 
     async clickOnGeneralSettings() {
-        this.elements.generalSettingOption().click()
+        this.elements.generalSettingOption().wait(1000).click()
         cy.wait(1000)
         await screenshotPage.takeScreenshot()
     }
 
     async clickOnSaveSettings() {
-        this.elements.saveSettings().click()
+        this.elements.saveSettings().wait(1000).click()
         await screenshotPage.takeScreenshot()
     }
 
     async clickOnExpandTitleAndDescriptionOptions() {
-        this.elements.expandTitleAndDescriptionButton().click()
+        this.elements.expandTitleAndDescriptionButton().wait(1000).click()
         cy.wait(1000)
         await screenshotPage.takeScreenshot()
     }
 
     async cleanAndTypeDescription(description) {
-        this.elements.descriptionPageInput().clear()
-        this.elements.descriptionPageInput().type(description, {force: true})
+        this.elements.descriptionPageInput().wait(1000).clear()
+        this.elements.descriptionPageInput().wait(1000).type(description, {force: true})
         await screenshotPage.takeScreenshot()
     }
 }

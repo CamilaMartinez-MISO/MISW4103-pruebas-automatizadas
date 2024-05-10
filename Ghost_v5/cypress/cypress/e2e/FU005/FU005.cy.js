@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import pagesPage from '../pages/pagesPage'
+import screenshotPage from '../pages/screenshotPage'
 
 
 // Destructurar la data de properties.json
@@ -21,6 +22,8 @@ describe('Feature: Create page', function () {
     it('Scenario: FU005_ESC001: As an admin user, I want to create and publish a Page to ensure that it is available and visible on the website.', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU005_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -42,6 +45,8 @@ describe('Feature: Create page', function () {
     it('Scenario: FU005_ESC002: As an admin user, I want to create and publish a Page and delete it', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU005_ESC002')
 
         // When Section
         loginPage.signIn(email, password)

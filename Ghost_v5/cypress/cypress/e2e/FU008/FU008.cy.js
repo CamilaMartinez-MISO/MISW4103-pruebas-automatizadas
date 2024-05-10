@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage';
 import homePage from '../pages/homePage';
 import postPage from '../pages/postPage';
+import screenshotPage from '../pages/screenshotPage';
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -10,7 +11,7 @@ const { baseURL, email, password } = data
 /**
  * FEATURE: Login into Ghost and schedule a Post
  */
-describe('FEATURE: FU008_ESC001: Schedule a Post', function () {
+describe('FEATURE: Schedule a Post', function () {
 
     // Given Section
     beforeEach(() => {
@@ -20,10 +21,12 @@ describe('FEATURE: FU008_ESC001: Schedule a Post', function () {
     /**
      * SCENARIO: As an admin user I want to schedule a Post
      */
-    it('SCENARIO: As an admin user I want to schedule a Post', function () {
+    it('SCENARIO: FU008_ESC001: As an admin user I want to schedule a Post', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
+
+        screenshotPage.configureScreenshotFolder('FU008_ESC001')
 
         // When Section
 
@@ -56,6 +59,8 @@ describe('FEATURE: FU008_ESC001: Schedule a Post', function () {
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const newFakeTitle = faker.word.words({ count: { min: 1, max: 3 } })
         const fakeBody = faker.lorem.paragraphs({ min: 1, max: 2 })
+
+        screenshotPage.configureScreenshotFolder('FU008_ESC002')
 
         loginPage.signIn(email, password)
         homePage.clickOnScheduled()

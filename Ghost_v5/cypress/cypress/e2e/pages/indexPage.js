@@ -19,7 +19,7 @@ class indexPage {
     }
 
     async clickOnSearchButton() {
-        this.elements.searchButton().click()
+        this.elements.searchButton().wait(1500).click()
         cy.wait(500)
         await screenshotPage.takeScreenshot()
     }

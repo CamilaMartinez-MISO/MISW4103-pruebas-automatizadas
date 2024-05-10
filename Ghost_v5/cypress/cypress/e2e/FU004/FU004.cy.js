@@ -3,6 +3,7 @@ import data from '../properties.json'
 import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import postPage from '../pages/postPage'
+import screenshotPage from '../pages/screenshotPage'
 
 // Destructurar la data de properties.json
 const { baseURL, email, password } = data
@@ -20,6 +21,8 @@ describe('Feature: Delete post', function () {
     it('Scenario: FU004_ESC001: As an admin user I want to create a Post, save it as a draft, and delete it shortly after', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU004_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -43,6 +46,8 @@ describe('Feature: Delete post', function () {
     it('Scenario: FU004_ESC002: Create, Publish, Search, and Delete a Post as an Administrator', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU004_ESC002')
 
         // When Section
         loginPage.signIn(email, password)
@@ -70,6 +75,8 @@ describe('Feature: Delete post', function () {
     it('Scenario: FU004_ESC003: As an admin user I want to delete a post published', function () {
         const title = faker.lorem.words()
         const body = faker.lorem.paragraph()
+
+        screenshotPage.configureScreenshotFolder('FU004_ESC003')
 
         // When Section
         loginPage.signIn(email, password)
