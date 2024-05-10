@@ -7,9 +7,7 @@ Before(async function(parameters) {
   this.deviceClient = new WebClient('chrome', {}, this.userId);
   this.driver = await this.deviceClient.startKrakenForUserId(this.userId);
 
-  const fragment = parameters.gherkinDocument.uri.split("\\");
-  this.featureAndScenario = fragment[fragment.length - 1].split(".")[0];
-
+  this.featureAndScenario = parameters.gherkinDocument.uri.match(/(?:\/|\\)([^\/\\]+)\.feature$/)[1];
   createFolderIfNotExists('./screenshots', this.featureAndScenario);
   this.screenshotCount = 1;
   this.indexStep = 1;
