@@ -14,6 +14,12 @@ class ScreenShotPage {
     configureScreenshotFolder(folderPath) {
         this.elements.folderPath = folderPath;
         this.screenshotCount = 0;
+
+        Cypress.Screenshot.defaults({
+            overwrite: true,
+            capture: 'viewport',
+            disableTimersAndAnimations: false
+        })
     }
 
     async takeScreenshot() {
