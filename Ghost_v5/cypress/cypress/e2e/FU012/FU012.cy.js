@@ -4,6 +4,7 @@ import loginPage from '../pages/loginPage'
 import homePage from '../pages/homePage'
 import settingsPage from '../pages/settingsPage'
 import indexPage from '../pages/indexPage'
+import screenshotPage from "../pages/screenshotPage";
 
 // Destructurar la data de properties.json
 const { baseURL, baseURLHome, email, password } = data
@@ -25,6 +26,8 @@ describe('Feature: Change the description of page', function () {
 
         const fakeDescription = faker.word.words({ count: { min: 3, max: 5 } })
 
+        screenshotPage.configureScreenshotFolder('FU012_ESC001')
+
         // When Section
         loginPage.signIn(email, password)
         homePage.clickOnSettings()
@@ -37,6 +40,7 @@ describe('Feature: Change the description of page', function () {
         cy.visit(baseURLHome)
         cy.reload()
         indexPage.elements.siteDescription().contains(fakeDescription).should('exist')
+        screenshotPage.takeScreenshot()
     })
 })
 

@@ -30,6 +30,7 @@ class homePage {
 
     async clickOnPosts() {
         this.elements.postsButton().wait(1000).click({ force: true })
+        cy.wait(1000)
         await await screenshotPage.takeScreenshot()
     }
 

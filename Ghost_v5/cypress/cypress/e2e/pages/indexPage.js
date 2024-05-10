@@ -1,3 +1,5 @@
+import screenshotPage from "./screenshotPage";
+
 class indexPage {
 
     selectorsIframe = {
@@ -16,25 +18,30 @@ class indexPage {
 
     }
 
-    clickOnSearchButton() {
+    async clickOnSearchButton() {
         this.elements.searchButton().click()
+        cy.wait(500)
+        await screenshotPage.takeScreenshot()
     }
 
-    typeOnSearchInput(search) {
+    async typeOnSearchInput(search) {
         this.elements.iframeSearch().then($iframe => {
             const iframe = $iframe.prop('contentDocument');
             cy.wrap(iframe).find(this.selectorsIframe.searchInput).type(search);
         });
-        cy.wait(2000)
+        cy.wait(500)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnFirstPostFound() {
+    async clickOnFirstPostFound() {
         this.elements.iframeSearch().then($iframe => {
             const iframe = $iframe.prop('contentDocument');
-            cy.wrap(iframe).find('h1').contains('Posts').then($h1 => {
+            cy.wrap(iframe).find('h1').contains('Posts').then(async $h1 => {
                 $h1.next().click();
             });
         });
+        cy.wait(500)
+        await screenshotPage.takeScreenshot()
     }
 
     getInfoMessage() {

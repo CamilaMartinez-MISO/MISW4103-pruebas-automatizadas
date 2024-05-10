@@ -132,36 +132,42 @@ class postPage {
         await screenshotPage.takeScreenshot()
     }
 
-    clickOnSearchButton() {
+    async clickOnSearchButton() {
         this.elements.searchButton().click()
+        cy.wait(500)
+        await screenshotPage.takeScreenshot()
     }
 
-    typeOnSearchInput(search) {
+    async typeOnSearchInput(search) {
         this.elements.searchInput().type(search, { force: true })
         this.elements.searchInput().type(search, { force: true })
         this.elements.searchInput().clear().type(search, { force: true })
-        cy.wait(3000)
+        cy.wait(2000)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnPostByTitle(title) {
-        cy.wait(2000)
+    async clickOnPostByTitle(title) {
         cy.get('li')
             .find('span.highlight')
             .contains(title)
             .parent('li')
             .click();
+        cy.wait(1000)
+        await screenshotPage.takeScreenshot()
     }
 
     clickOnFirstPost() {
         this.elements.firstPost().click();
     }
 
-    clickOnDeletePost() {
+    async clickOnDeletePost() {
         this.elements.deletePostButton().click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnConfirmDeletePost() {
+    async clickOnConfirmDeletePost() {
         this.elements.confirmDeleteButton().click()
+        await screenshotPage.takeScreenshot()
     }
 }
 

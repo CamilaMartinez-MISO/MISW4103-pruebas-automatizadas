@@ -5,6 +5,7 @@ import homePage from '../pages/homePage'
 import indexPage from '../pages/indexPage'
 import postPage from "../pages/postPage";
 import extPostPage from "../pages/extPostPage";
+import screenshotPage from "../pages/screenshotPage";
 
 // Destructurar la data de properties.json
 const { baseURL, baseURLHome, email, password } = data
@@ -24,8 +25,10 @@ describe('Feature: Search post', function () {
      */
     it('Scenario: FU006_ESC001: As an user I want to add a Post and search it outside the administrator view by title', function () {
 
-        const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
-        const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })
+        const fakeTitle = faker.word.words({count: {min: 3, max: 5}})
+        const fakeBody = faker.word.words({count: {min: 10, max: 30}})
+
+        screenshotPage.configureScreenshotFolder('FU006_ESC001')
 
         // When Section
         loginPage.signIn(email, password)
@@ -54,6 +57,8 @@ describe('Feature: Search post', function () {
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })
 
+        screenshotPage.configureScreenshotFolder('FU006_ESC002')
+
         // When Section
         loginPage.signIn(email, password)
         homePage.clickOnPosts()
@@ -72,7 +77,6 @@ describe('Feature: Search post', function () {
         postPage.typeOnSearchInput(fakeTitle)
         postPage.clickOnPostByTitle(fakeTitle)
         postPage.elements.title().should('have.value', fakeTitle)
-
     })
 
     /**
@@ -87,6 +91,8 @@ describe('Feature: Search post', function () {
         const fakeFrag2 = faker.word.words({ count: { min: 10, max: 20 } })
 
         const fakeBody = fakeFrag1 + ' ' + randomIdentification + ' ' + fakeFrag2
+
+        screenshotPage.configureScreenshotFolder('FU006_ESC003')
 
         // When Section
         loginPage.signIn(email, password)
@@ -115,6 +121,8 @@ describe('Feature: Search post', function () {
 
         const fakeTitle = faker.word.words({ count: { min: 3, max: 5 } })
         const fakeBody = faker.word.words({ count: { min: 10, max: 30 } })
+
+        screenshotPage.configureScreenshotFolder('FU006_ESC004')
 
         // When Section
         // Publish a post

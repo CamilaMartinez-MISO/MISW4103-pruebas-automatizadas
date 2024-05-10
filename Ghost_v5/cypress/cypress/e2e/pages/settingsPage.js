@@ -1,3 +1,5 @@
+const screenshotPage = require("./screenshotPage")
+
 class settingsPage {
     elements = {
         generalSettingOption: () => cy.get('a[href="#/settings/general/"]'),
@@ -9,21 +11,27 @@ class settingsPage {
         descriptionPageInput: () => cy.get('div.description-container > input'),
     }
 
-    clickOnGeneralSettings() {
+    async clickOnGeneralSettings() {
         this.elements.generalSettingOption().click()
+        cy.wait(1000)
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnSaveSettings() {
+    async clickOnSaveSettings() {
         this.elements.saveSettings().click()
+        await screenshotPage.takeScreenshot()
     }
 
-    clickOnExpandTitleAndDescriptionOptions() {
+    async clickOnExpandTitleAndDescriptionOptions() {
         this.elements.expandTitleAndDescriptionButton().click()
+        cy.wait(1000)
+        await screenshotPage.takeScreenshot()
     }
 
-    cleanAndTypeDescription(description) {
+    async cleanAndTypeDescription(description) {
         this.elements.descriptionPageInput().clear()
         this.elements.descriptionPageInput().type(description, {force: true})
+        await screenshotPage.takeScreenshot()
     }
 }
 
