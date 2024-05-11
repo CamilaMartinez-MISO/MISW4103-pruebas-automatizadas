@@ -20,23 +20,23 @@ class homePage {
 
     async clicOnkMenuButton() {
         this.elements.menuButton().wait(1000).click({ force: true })
-        await await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot()
     }
 
     async clickOnDrafts() {
         this.elements.draftsButton().wait(1000).click({ force: true })
-        await await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot()
     }
 
     async clickOnPosts() {
         this.elements.postsButton().wait(1000).click({ force: true })
         cy.wait(1000)
-        await await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot()
     }
 
     async clickOnPage() {
         this.elements.pagesButton().wait(1000).click()
-        await await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot()
     }
 
     async clickOnNewPost() {
