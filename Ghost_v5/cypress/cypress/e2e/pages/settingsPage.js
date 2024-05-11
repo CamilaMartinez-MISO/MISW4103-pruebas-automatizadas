@@ -19,19 +19,19 @@ class settingsPage {
 
     async clickOnSaveSettings() {
         this.elements.saveSettings().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('save_settings')
     }
 
     async clickOnExpandTitleAndDescriptionOptions() {
         this.elements.expandTitleAndDescriptionButton().wait(1000).click()
         cy.wait(1000)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('expand_title_and_description')
     }
 
     async cleanAndTypeDescription(description) {
         this.elements.descriptionPageInput().wait(1000).clear()
         this.elements.descriptionPageInput().wait(1000).type(description, {force: true})
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('type_description_setting')
     }
 }
 

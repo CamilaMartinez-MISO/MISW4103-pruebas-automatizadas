@@ -20,58 +20,58 @@ class homePage {
 
     async clicOnkMenuButton() {
         this.elements.menuButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('menu_button')
     }
 
     async clickOnDrafts() {
         this.elements.draftsButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('drafts_button')
     }
 
     async clickOnPosts() {
         this.elements.postsButton().wait(1000).click({ force: true })
         cy.wait(1000)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('posts_button')
     }
 
     async clickOnPage() {
         this.elements.pagesButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('page_button')
     }
 
     async clickOnNewPost() {
         this.elements.newPostButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('new_post_button')
     }
 
     async clickOnNewPage() {
         this.elements.newPageButton().wait(1000).click({ force: true });
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('new_page_button')
     }
 
     async clickOnPublished() {
         this.elements.publishedButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('published_button')
     }
 
     async clickOnPostWithTitle(title) {
         this.elements.publishedPosts().wait(1000).contains(title).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('published_posts')
     }
 
     async clickOnScheduled() {
         this.elements.scheduledButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('schedule_button')
     }
 
     async clickOnMembers() {
         this.elements.membersButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('members_button')
     }
 
     async clickOnSettings() {
         this.elements.settingsButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('settings_button')
     }
 
     async clickOnGeneralSettings() {
