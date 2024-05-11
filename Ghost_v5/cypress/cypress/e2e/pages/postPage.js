@@ -4,13 +4,14 @@ const screenshotPage = require("./screenshotPage")
 class postPage {
     elements = {
         title: () => cy.get('textarea[placeholder="Post title"]'),
-        body: () => cy.get('p[data-koenig-dnd-droppable=true]'),
+        body: () => cy.get('div[data-kg="editor"]'),
         publishButton: () => cy.get('.gh-publish-trigger'),
         rightNowButton: () => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
         continueButton: () => cy.get('.gh-publish-cta'),
         publishPostButton: () => cy.get('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view'),
         backToEditorButton: () => cy.get('button.gh-back-to-editor'),
         postsButton: () => cy.get('a.ember-view.gh-btn-editor.gh-editor-back-button'),
+        postsInDraftButton: () => cy.get('a[href="#/posts/?type=draft"]').eq(1),
         updateButton: () => cy.get('button.gh-btn.gh-btn-editor.gh-editor-save-trigger'),
         settingsButton: () => cy.get('button[title="Settings"]'),
         settingsSmallButton: () => cy.get('button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon'),
@@ -54,7 +55,7 @@ class postPage {
     }
 
     async enterBody(body) {
-        this.elements.body().type(body, { force: true })
+        this.elements.body().wait(1000).type(body, { force: true })
         await screenshotPage.takeScreenshot('enterBody')
     }
 

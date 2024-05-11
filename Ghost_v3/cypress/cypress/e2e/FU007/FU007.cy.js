@@ -35,10 +35,6 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
         postPage.clickOnPostsWhenIsDraft()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
 
         // Then Section
         homePage.elements.draftPosts().contains(fakeTitle).should('exist');
@@ -64,10 +60,6 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
         postPage.clickOnPostsWhenIsDraft()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
         homePage.elements.draftPosts().contains(fakeTitle).should('exist').click()
         postPage.enterTitle(newFakeTitle)
         postPage.clickOnPostsWhenIsDraft()
@@ -95,10 +87,6 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
         postPage.clickOnPostsWhenIsDraft()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
         homePage.elements.draftPosts().contains(fakeTitle).should('exist').click()
         postPage.clickOnSettingsSmall()
         postPage.clickOnDeletePost()
