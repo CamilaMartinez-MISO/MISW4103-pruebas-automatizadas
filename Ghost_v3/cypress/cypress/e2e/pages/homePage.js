@@ -15,7 +15,7 @@ class homePage {
         scheduledPosts: () => cy.get('h3.gh-content-entry-title'),
         draftPosts: () => cy.get('h3.gh-content-entry-title'),
         membersButton: () => cy.get('a[href="#/members/"]'),
-        settingsButton: () => cy.get('a[href="#/settings/"]'),
+        generalSettingOption: () => cy.get('a[href="#/settings/general/"]'),
     }
 
     async clicOnkMenuButton() {
@@ -72,6 +72,12 @@ class homePage {
     async clickOnSettings() {
         this.elements.settingsButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
+    }
+
+    async clickOnGeneralSettings() {
+        this.elements.generalSettingOption().wait(1000).click()
+        cy.wait(500)
+        await screenshotPage.takeScreenshot('general_settings')
     }
 }
 

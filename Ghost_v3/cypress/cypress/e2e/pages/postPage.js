@@ -4,13 +4,14 @@ const screenshotPage = require("./screenshotPage")
 class postPage {
     elements = {
         title: () => cy.get('textarea[placeholder="Post Title"]'),
-        body: () => cy.get('p[data-koenig-dnd-droppable=true]'),
-        publishButton: () => cy.get('.gh-publish-trigger'),
+        body: () => cy.get('div[data-kg="editor"]'),
+        publishButton: () => cy.get('.gh-publishmenu-trigger'),
         rightNowButton: () => cy.get('div.gh-publish-setting.last > button.gh-publish-setting-title > div.gh-publish-setting-trigger'),
         continueButton: () => cy.get('.gh-publish-cta'),
-        publishPostButton: () => cy.get('.gh-btn.gh-btn-large.gh-btn-pulse.ember-view'),
+        publishPostButton: () => cy.get('button.gh-publishmenu-button'),
         backToEditorButton: () => cy.get('button.gh-back-to-editor'),
-        postsButton: () => cy.get('a[href="#/posts/?type=draft"]').eq(1),
+        postsButton: () => cy.get('a[href="#/posts/"]').eq(1),
+        postsInDraftButton: () => cy.get('a[href="#/posts/?type=draft"]').eq(1),
         updateButton: () => cy.get('button.gh-btn.gh-btn-editor.gh-editor-save-trigger'),
         settingsButton: () => cy.get('button[title="Settings"]'),
         settingsSmallButton: () => cy.get('button[class="post-settings"]'),
@@ -25,7 +26,7 @@ class postPage {
         confirmDeleteButton: () => cy.get('div.modal-footer > button.gh-btn.gh-btn-red'),
         firstPost: () => cy.get('.gh-list-row.gh-posts-list-item').first(),
         searchButton: () => cy.get('button.gh-nav-btn-search'),
-        searchInput: () => cy.get('input.gh-input-with-select-input'),
+        searchInput: () => cy.get('input[type="search"]'),
     }
 
     async clickOnRightNow() {
@@ -54,12 +55,13 @@ class postPage {
     }
 
     async enterBody(body) {
-        this.elements.body().wait(1000).invoke('text', body)
+        this.elements.body().type(body, { force: true })
         await screenshotPage.takeScreenshot()
     }
 
     async clickOnPublish() {
         this.elements.publishButton().wait(1000).click()
+        cy.wait(500)
         await screenshotPage.takeScreenshot()
     }
 
@@ -75,6 +77,11 @@ class postPage {
 
     async clickOnBackToEditor() {
         this.elements.backToEditorButton().wait(1000).click()
+        await screenshotPage.takeScreenshot()
+    }
+
+    async clickOnPostsWhenIsDraft() {
+        this.elements.postsInDraftButton().wait(1000).click({ force: true })
         await screenshotPage.takeScreenshot()
     }
 
@@ -139,8 +146,6 @@ class postPage {
     }
 
     async typeOnSearchInput(search) {
-        this.elements.searchInput().wait(1000).type(search, { force: true })
-        this.elements.searchInput().wait(1000).type(search, { force: true })
         this.elements.searchInput().wait(1000).clear().type(search, { force: true })
         cy.wait(2000)
         await screenshotPage.takeScreenshot()
