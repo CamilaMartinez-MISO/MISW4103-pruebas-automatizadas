@@ -13,6 +13,8 @@ const LABEL_DEFAULT = "default";
 // Methods for backstop
 // =============================================
 
+createFolderIfNotExists("./backstop_data", "bitmaps_reference")
+
 function createScenarios() {
     let scenarios = [];
 
@@ -138,6 +140,13 @@ function createConfigWithScenarios( scenarios ) {
         "debug": false,
         "debugWindow": false
     };
+}
+
+function createFolderIfNotExists(path, folder) {
+    const folderPath = `${path}/${folder}`;
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath);
+    }
 }
 
 // Create dynamic config
