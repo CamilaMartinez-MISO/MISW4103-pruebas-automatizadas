@@ -281,9 +281,9 @@ Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya exis
 Código | Funcionalidad | # Escenarios
 -- | -- | --
 FU021 | Crear etiquetas (tags) | 4
-FU022 | Borrar todo el contenido | 3
+FU022 | Borrar todo el contenido | 2
 
-*NOTA: En total se tendrían 22 funcionalidades y 27 escenarios en total para esta entrega en Ghost v5, pero unicamente se escogieron 5 funcionalidades y 13 escenarios para ser replicados en Ghost v3*
+*NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero unicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
 
 
 # 6. Ejecución de las pruebas VRT
