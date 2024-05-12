@@ -93,8 +93,8 @@ Esto descargará e instalará las dependencias necesarias para ambas herramienta
     "assert": "^2.1.0",
     "chai": "4.4.1",
     "kraken-node": "^1.0.24",
-    "resemble": "^1.0.24",
-    "backstop": "^1.0.24"
+    "resemblejs": "^5.0.0",
+    "backstopjs": "^6.3.23"
   }
 ```
 Si desea consultar más sobre esto, puede ver el archivo `package.json`
