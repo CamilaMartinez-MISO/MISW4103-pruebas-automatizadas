@@ -108,6 +108,16 @@ function createReport(info) {
         </head>
     
         <body>
+
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTyXzMPQZIASNEQ8D-CQgOpnksqiv7GBh5GXiRC8Nxuw&s" width="30" height="24" class="d-inline-block align-text-top">
+                    Reporte ResembleJS - Grupo 03
+                </a>
+                </div>
+            </nav>
+
             <div class="container">
                 <div class="d-flex flex-column w-75 m-auto">
                     <div class="d-flex flex-column">
@@ -122,6 +132,24 @@ function createReport(info) {
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                     crossorigin="anonymous"></script>
+
+            </div>
+            <footer class="text-center bg-body-tertiary">
+                <!-- Grid container -->
+                <div class="container pt-4">
+                  <!-- Section: Social media -->
+                  <section class="mb-4">
+                  Grupo 3 - MISW4103 - Pruebas Automatizadas de Software
+                  </section>
+                  <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                  Universidad de los Andes - 2024
+                </div>
+                <!-- Copyright -->
+            </footer>
         </body>
     
     </html>`
