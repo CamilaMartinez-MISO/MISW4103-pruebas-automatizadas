@@ -3,6 +3,8 @@ const screenshotPage = require("./screenshotPage")
 class homePage {
     elements = {
         menuButton: () => cy.get('div.gh-user-avatar'),
+        tagsButton: () => cy.get('a[href="#/tags/"]'),
+        newTagButton: () => cy.get('a.ember-view.gh-btn.gh-btn-primary'),
         postsButton: () => cy.get('a[href="#/posts/"]'),
         draftsButton: () => cy.get('a[title="Drafts"]'),
         pagesButton: () => cy.get('a[href="#/pages/"]'),
@@ -14,6 +16,8 @@ class homePage {
         scheduledButton: () => cy.get('a[title="Scheduled"]'),
         scheduledPosts: () => cy.get('h3.gh-content-entry-title'),
         draftPosts: () => cy.get('h3.gh-content-entry-title'),
+        tagsAvailable: () => cy.get('h3.gh-tag-list-name'),
+        tagsDescriptionAvailable: () => cy.get('p.ma0.pa0.f8.midgrey.gh-tag-list-description'),
         membersButton: () => cy.get('a[href="#/members/"]'),
         settingsButton: () => cy.get('a[href="#/settings/"]'),
     }
@@ -21,6 +25,11 @@ class homePage {
     async clicOnkMenuButton() {
         this.elements.menuButton().wait(1000).click({ force: true })
         await screenshotPage.takeScreenshot('clicOnkMenuButton')
+    }
+
+    async clickOnTagsButton() {
+        this.elements.tagsButton().wait(1000).click({ force: true })
+        await screenshotPage.takeScreenshot('clickOnTagsButton')
     }
 
     async clickOnDrafts() {
@@ -37,6 +46,16 @@ class homePage {
     async clickOnPage() {
         this.elements.pagesButton().wait(1000).click()
         await screenshotPage.takeScreenshot('clickOnPage')
+    }
+
+    async clickOnNewTagButton() {
+        this.elements.newTagButton().wait(1000).then(($buttons) => {
+            const button = $buttons.get(0)
+            if (!Cypress.dom.isHidden(button))
+                cy.wrap(button).click({ force: true })
+        })
+
+        await screenshotPage.takeScreenshot('clickOnNewTagButton')
     }
 
     async clickOnNewPost() {
