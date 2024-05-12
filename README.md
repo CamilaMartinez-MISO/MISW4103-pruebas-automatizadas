@@ -7,6 +7,30 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
+# Indice
+1. [Descripción del set de pruebas VRT](#1-descripción-del-set-de-pruebas-vrt)
+2. [Setup de las pruebas VRT](#2-setup-de-las-pruebas-vrt)
+   - [Especificaciones técnicas del ambiente de pruebas usado](#21-especificaciones-técnicas-del-ambiente-de-pruebas-usado)
+   - [Instalación Node JS o NVM](#22-instalación-node-js-o-nvm)
+   - [Instalación navegador Google Chrome](#23-instalación-navegador-google-chrome)
+   - [Instalación IDE](#24-instalación-ide)
+   - [Instalar GIT](#25-instalar-git)
+3. [Setup proyecto](#3-setup-proyecto)
+   - [Descomprimir el proyecto](#31-descomprimir-el-proyecto)
+   - [Estructura general del proyecto](#32-estructura-general-del-proyecto)
+   - [Instalar las librerías locales del proyecto](#33-instalar-las-librerías-locales-del-proyecto)
+   - [Servicio de Ghost](#34-servicio-de-ghost)
+4. [Ejecución de las pruebas E2E](#4-ejecución-de-las-pruebas-e2e)
+   - [Herramienta Kraken](#41-herramienta-kraken)
+   - [Herramienta Cypress](#42-herramienta-cypress)
+   - [Ejecución pruebas E2E en Ghost 3.42.0](#43-ejecución-pruebas-e2e-en-ghost-3420)
+5. [Funcionalidades y escenarios extra](#5-funcionalidades-y-escenarios-extra)
+6. [Ejecución de las pruebas VRT](#6-ejecución-de-las-pruebas-vrt)
+   - [Herramienta BackstopJS](#61-herramienta-backstopjs)
+   - [Herramienta ResembleJS](#62-herramienta-resemblejs)
+7. [Documentación extra](#7-documentación-extra)
+
+
 # 1. Descripción del set de pruebas VRT
 Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se intrudujeron bugs o fallos en el proceso de propagación de cambios.
 
