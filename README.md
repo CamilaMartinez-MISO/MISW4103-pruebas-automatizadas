@@ -295,11 +295,53 @@ Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghos
 <img src="https://www.drupal.org/files/project-images/backstop-lemur.png" alt="Backstop logo"  height="193">
 <p align="center">BackstopJS</p>
 
+### 6.1.1 Estructura de carpetas Backstopjs
+
+La estructura de Backstopjs se ve de la siguiente manera
+```
+🗂️ BackStopJs
+    📄 configBackstop.js
+    🗂️ backstop_data
+    🗂️ scripts
+      📄 file.js
+```
+
+### 6.1.2 Ejecución Backstopjs
+
+Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raiz del proyecto
+
+```bash
+> cd BackStopJs
+```
+
+Si no tenemos instalada la herramienta Backstopjs, es necesario ejecutar el siguiente comando
+
+```bash
+> npm install -g backstopjs
+```
+
+Ya con la herramienta instalada solo tendremos que ejecutar el siguiente comando
+
+```bash
+> backstop test --config="configBackstop.js"
+```
+
+Luego de lanzar el comando apareceran los logs de la ejecución, similar a la siguiente imagen
+
+![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/d946117c-b18b-4341-a49f-3ea72289f16f)
+
+Al finalizar la ejecución se abrira el reporte sobre el navegador teniendo una salida similar a la siguiente
+
+![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/482c3c7b-3ad7-45d2-bc19-cd2feff366e6)
+
+
+### 6.1.3 Funcionamiento de Backstopjs
+
+La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinamicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
+El script revisa los screenshots almacenados por cada escenario revisando que exista el mismo en la versión 3 y 5 de Ghost, luego de esto ignora aquellas que ya se han construido previamente eliminando pantallas repetidas para comparar. 
 
 
 ## 6.2 Herramienta ResembleJS
-
-
 
 <p align="center">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
