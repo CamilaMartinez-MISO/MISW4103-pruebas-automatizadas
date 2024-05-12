@@ -7,28 +7,9 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
-# Indice
-1. [Descripción del set de pruebas VRT](#1-descripción-del-set-de-pruebas-vrt)
-2. [Setup de las pruebas VRT](#2-setup-de-las-pruebas-vrt)
-   - [Especificaciones técnicas del ambiente de pruebas usado](#21-especificaciones-técnicas-del-ambiente-de-pruebas-usado)
-   - [Instalación Node JS o NVM](#22-instalación-node-js-o-nvm)
-   - [Instalación navegador Google Chrome](#23-instalación-navegador-google-chrome)
-   - [Instalación IDE](#24-instalación-ide)
-   - [Instalar GIT](#25-instalar-git)
-3. [Setup proyecto](#3-setup-proyecto)
-   - [Descomprimir el proyecto](#31-descomprimir-el-proyecto)
-   - [Estructura general del proyecto](#32-estructura-general-del-proyecto)
-   - [Instalar las librerías locales del proyecto](#33-instalar-las-librerías-locales-del-proyecto)
-   - [Servicio de Ghost](#34-servicio-de-ghost)
-4. [Ejecución de las pruebas E2E](#4-ejecución-de-las-pruebas-e2e)
-   - [Herramienta Kraken](#41-herramienta-kraken)
-   - [Herramienta Cypress](#42-herramienta-cypress)
-   - [Ejecución pruebas E2E en Ghost 3.42.0](#43-ejecución-pruebas-e2e-en-ghost-3420)
-5. [Funcionalidades y escenarios extra](#5-funcionalidades-y-escenarios-extra)
-6. [Ejecución de las pruebas VRT](#6-ejecución-de-las-pruebas-vrt)
-   - [Herramienta BackstopJS](#61-herramienta-backstopjs)
-   - [Herramienta ResembleJS](#62-herramienta-resemblejs)
-7. [Documentación extra](#7-documentación-extra)
+# Índice
+
+// TODO: Generar el índice ahorita
 
 
 # 1. Descripción del set de pruebas VRT
@@ -42,17 +23,43 @@ Versión | URL Despliegue | ¿Es línea base?
 3.42.0 | https://ghost-3-42-0.onrender.com/ | No
 
 
-# 2. Setup de las pruebas VRT
+# 2. IMPORTANTE: Consideraciones iniciales
+
+Este repositorio ya contiene los `screenshots` de ambas versiones guardados y el `reporte html` de las herramientas ResembleJS y BackstopJS. Te invitamos primero a revisar ambos insumos antes de seguir con este documento.
+
+Para los reportes HTML de de las dos herramientas se hizo el despliegue de ambos en Github Pages y puede ser consultado en los siguientes enlaces:
+
+
+Herramienta | Enlace Github Pages
+-- | --
+ResembleJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/ResembleJS/results/report.html
+BackstopJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/BackStopJS/backstop_data/html_report/
+
+
+Para ver los screenshots por favor busca las carpetas `screenshots` dentro de las siguientes rutas: 
+
+Versión Ghost | Herramienta | Ruta
+-- | -- | --
+5.14.1 | Kraken | Ghost_v5/kraken/screenshots
+5.14.1 | Cypress | Ghost_5/cypress/cypress/screenshots
+3.42.0 | Cypress | Ghost_3/cypress/cypress/screenshots
+
+Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriorme la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT.
+
+Siguelo para volver a generar los Screenshots y los reportes HTML de las dos herramientas en cuestión.
+
+
+# 3. Setup de las pruebas VRT
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de regresión visual VTT, **Kraken**, **Cypress**, **Resemble.js** y **Backstop**
 
-## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
+## 3.1 Especificaciones técnicas del ambiente de pruebas usado:
 * SO: Windows 11+ y MacOS Sonoma 14.1.1
 * Node Versión: v20.12.0
 * NPM Versión: v10.5.0
 * GIT: Versión más reciente o predefinida en sistemas UNIX
 * Visual Studio Code
 
-## 2.2 Instalación Node JS o NVM
+## 3.2 Instalación Node JS o NVM
 Para poder replicar bien este set de pruebas es requerido instalar en su máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aún, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
 
 Una vez instalado, se puede comprobar con el siguiente comando en la terminal o línea de comando de windows: 
@@ -67,13 +74,13 @@ npm:
 10.5.0
 ```
 
-## 2.3 Instalación navegador Google Chrome
+## 3.3 Instalación navegador Google Chrome
 Para la correcta ejecución de las dos herramientas es requerido instalar [Google Chrome](https://www.google.com/intl/es-419/chrome/). Por favor asegurarse que su versión de Chrome es la 124 o posterior tanto para UNIX como Windows
 
-## 2.4 Instalación IDE 
+## 3.4 Instalación IDE 
 Aunque usted no vaya a tocar una línea de código del proyecto, le recomendamos qué por favor instale el IDE [Visual Studio Code](https://code.visualstudio.com/) el cual le permitirá ver el proyecto como un todo y explorar las distintas carpetas que este posee en orden de entender mejor ambas herramientas.
 
-## 2.5 Instalar GIT
+## 3.5 Instalar GIT
 Para clonar los repositorios en donde se encuentran las herramientas, es necesario usar la herramienta GIT, la cual puede ser instalada siguiendo los pasos de su [página oficial](https://git-scm.com/downloads) en la sección downloads.
 
 Una vez instaladas las herramientas, se puede comprobar su correcto funcionamiento con el siguiente comando. El resultado debe ser algo parecido a esto.
@@ -83,23 +90,24 @@ Una vez instaladas las herramientas, se puede comprobar su correcto funcionamien
 git version 2.39.3 (Apple Git-145)
 ```
 
-# 3. Setup proyecto
+# 4. Setup proyecto
 Una vez se tiene el entorno inicial de pruebas preparado, procedemos a instalar las librerías propias del proyecto para que se ejecute de forma satisfactoria.
 
-## 3.1 Descomprimir el proyecto
+## 4.1 Descomprimir el proyecto
 Si bien puede descargar el proyecto desde el apartado **release** de Github, también puede clonarlo, y descargarlo en su máquina local haciendo uso del siguiente comando:
 
 ```bash
 > git clone https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas.git
 ```
 
-## 3.2 Estructura general del proyecto
+## 4.2 Estructura general del proyecto
 
-A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 subgrupos, **Kraken** y **Cypress**
+A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 subgrupos, **Kraken** y **Cypress** para Ghost v5 y **Cypress** para Ghost 3.
 
-<img width="272" alt="Screenshot 2024-05-11 at 10 14 14 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a0f9e708-c61a-4302-9a5b-9a46a35d3c79">
 
-## 3.3 Instalar las librerías locales del proyecto
+<img width="356" alt="Screenshot 2024-05-12 at 4 58 21 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/8bb79bbb-d662-41fd-afe3-496a4f74bbea">
+
+## 4.3 Instalar las librerías locales del proyecto
 Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas. Para ello solo es necesario hacer dos pasos:
 
 1. Abrir una terminal o consola de comandos (CMD) sobre la carpeta raíz del proyecto
@@ -115,16 +123,16 @@ Esto descargará e instalará las dependencias necesarias para ambas herramienta
     "android-platform-tools": "^3.0.2",
     "appium": "^2.5.4",
     "assert": "^2.1.0",
+    "backstopjs": "^6.3.23",
     "chai": "4.4.1",
     "kraken-node": "^1.0.24",
-    "resemblejs": "^5.0.0",
-    "backstopjs": "^6.3.23"
+    "resemblejs": "^5.0.0"
   }
 ```
 Si desea consultar más sobre esto, puede ver el archivo `package.json`
 
 
-## 3.4 Servicio de Ghost
+## 4.4 Servicio de Ghost
 
 <p align="center">
 <img width="300" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://ptimofeev.com/images/render.png">
@@ -142,11 +150,11 @@ Las instancias de Ghost sobre las que se ejecutarán las pruebas VRT se encuentr
    * Contraseña: `AdminR00t123!`
 
 
-# 4. Ejecución de las pruebas E2E
+# 5. Ejecución de las pruebas E2E
 
 Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega anterior. Las modificaciones hechas permiten la captura de screenshots o pantallazos durante la ejecución de las pruebas por cada escenario y funcionalidad probada.
 
-## 4.1 Herramienta Kraken
+## 5.1 Herramienta Kraken
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
@@ -161,7 +169,7 @@ Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatiza
 ```
 Por favor asegurarse de que está escribiendo Ghost con la G en mayúsculas para que el sistema de ficheros pueda dirigirse exitosamente a esa carpeta.
 
-### 4.1.1 Estructura del proyecto:
+### 5.1.1 Estructura del proyecto:
 
 La estructura del proyecto debe verse de la siguiente manera
 
@@ -170,7 +178,7 @@ La estructura del proyecto debe verse de la siguiente manera
 
 *NOTA:* Cada *feature* está nombrado con la siguiente nomenclatura **FU00X_ESC00X**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
 
-### 4.1.2 Nomenclatura de los escenarios
+### 5.1.2 Nomenclatura de los escenarios
 
 Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de los otros y correr en instancias separadas.
 ```
@@ -185,7 +193,29 @@ Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de lo
     📄 FU002_ESC002.cy.js
 ```
 
-### 4.1.3 Ejecución de las pruebas
+
+### 5.1.3 Modificación de los escenarios para captura de Screenshots
+
+Para poder hacer la captura de screeshots en esta herramienta se realizó una modificación en el archivo `hooks.js` para poder colocar en un AfterStep el bloque de código necesario para la captura de screenshots.
+
+Este bloque de código se ejecutará siempre después de cada paso y no hay necesidad que modificar los archivos *features* o *steps.js* de los escenarios ya creados. El siguiente bloque de código muesta la funcionalidad añadida
+
+```javascript
+AfterStep(async function() {
+  this.indexStep++;
+
+  if( this.indexStep > 2 && this.indexStep % 2 === 0 ) {
+    const screenshotName = `screenshot-${this.screenshotCount}.png`;
+    const screenshotPath = `./screenshots/${this.featureAndScenario}/${screenshotName}`;
+    this.screenshotCount++;
+    await this.driver.saveScreenshot(screenshotPath);
+  }
+})
+```
+Còmo se puede apreciar, en la parte del if se hace un salto de paso para que no tome captura de pantalla de los pasos que son de esperar una x cantidad de tiempo sino de los que sirven para ejecutar un proceso como tal.
+
+
+### 5.1.4 Ejecución de las pruebas
 Una vez adentro de esa carpeta puede ejecutar el siguiente comando que iniciará la ejecución de los escenarios de prueba disponibles.
 ```bash
 > npx kraken-node run
@@ -199,7 +229,7 @@ De igual manera los screenshots tomados durante la ejecución de las pruebas pue
 Como se puede apreciar, dentro de la ruta `Ghost_5/Kraken/screenshots` se encuentran las carpetas que contienen los screenshots por cada escenario.
 
 
-### 4.1.4 Posibles situaciones que se pueden presentar
+### 5.1.5 Posibles situaciones que se pueden presentar
 Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
 
 Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
@@ -209,7 +239,7 @@ Para remediar esto por favor en la carpeta de features sólo dejar un escenario 
 Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hacer la toma de screenshots por cada paso ejecutado del escenario es posible que el computador se suspenda durante la prueba, lo que puede ocasionar que, las pruebas fallen automáticamente. Para no tener este inconveniente por favor asegurarse de que el computador tiene carga suficiente y en su configuración no se tiene la suspensión automática después de unos minutos de inactividad.
 
 
-## 4.2 Herramienta Cypress
+## 5.2 Herramienta Cypress
 
 <p align="center">
 <img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
@@ -227,14 +257,100 @@ La estructura del proyecto debe verse así:
 
 <img width="303" alt="Screenshot 2024-05-05 at 11 37 22 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/64bb1f1d-3c6f-4753-8416-226590c81311">
 
-### 4.2.1 Instalar Cypress v13.7.3
+### 5.2.1 Instalar Cypress v13.7.3
 Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando.
 ```bash
 > npm -g install cypress@13.7.3
 ```
 Esto instalará Cypress de forma global en el PC para ser usado desde cualquier punto.
 
-### 4.2.2 Correr instancia de Cypress
+
+### 5.2.2 Modificación de los escenarios para captura de Screenshots
+
+Para que Cypress pudiera capturar los screenshots después de cada paso ejecutado se hizo un archivo JavaScript adicional con el patrón Page Object que será invocado en cada paso luego de su ejecución. La clase `screenshotPage.js` puede ser encontrada en la ruta `cypress/e2e/pages`
+
+Esta clase tiene dos métodos importantes, `configureScreenshotFolder(folderPath)` y `takeScreenshot(nameScreenshot)` los cuales se muestra su còdigo fuente a continuación
+
+```javascript
+    /**
+     * Setup the Screenshot Folder 
+     * @param {String} folderPath 
+     */
+    configureScreenshotFolder(folderPath) {
+        this.elements.folderPath = folderPath;
+        this.screenshotCount = 0;
+
+        Cypress.Screenshot.defaults({
+            overwrite: true,
+            capture: 'viewport',
+            disableTimersAndAnimations: false
+        })
+    }
+```
+El método configureScreenshotFolder tiene como funcionalidad definir la carpeta que será usada para albergar cada screenshot tomado durante la ejecución de los escenarios. Este método es llamado al incio de cada escenario de Cypress antes de iniciar con la ejecución de cada paso.
+
+```javascript
+    /**
+     * Take the Screenshot of the view where is located
+     * @param {String} nameScreenshot
+     */
+    async takeScreenshot(nameScreenshot = null) {
+        // Incrementar el contador de capturas de pantalla
+        this.screenshotCount++;
+        // Definir el nombre del archivo con formato autoincrementado
+        const filename = nameScreenshot === null ? `screenshot-${this.screenshotCount}` : nameScreenshot;
+        // Tomar un screenshot y guardar en la carpeta personalizada
+        await cy.screenshot(`${this.elements.folderPath}/${filename}`);
+    }
+```
+
+El método asincronico takeScreenshot es llamado luego de cada paso y es invocado dentro de cada método del Page Object de donde se está ejecutando.
+
+A continuación se muestran los ejemplos de la invoacación de los dos métodos.
+
+* configureScreenshotFolder()
+
+```javascript
+    it('Scenario: FU002_ESC001: As an admin user, I want to create a post and publish it', function () {
+        const title = faker.lorem.words()
+        const body = faker.lorem.paragraph()
+
+        // LLAMADO A configureScreenshotFolder()
+        screenshotPage.configureScreenshotFolder('FU002_ESC001')
+
+        // When Section
+        loginPage.signIn(email, password)
+        homePage.clickOnPosts()
+        .
+        .
+        .
+```
+
+Se muestra la invocación de este método dentro de la definción de los escenarios de Cypress, se pasa por argumento el nombre de la carpeta que tendrá los Screenshots a tomar, en este caso la **FU002_ESC001**
+
+* takeScreenshot()
+
+```javascript
+    async signIn(email, password) {
+        this.elements.identification().type(email)
+        this.elements.password().type(password)
+        this.elements.loginButton().wait(1000).click()
+
+        // LLAMADO A takeScreenshot()
+        await screenshotPage.takeScreenshot('signIn')
+    }
+
+    async singOut() {
+        this.elements.signOutButton().wait(1000).click({ force: true })
+
+        // LLAMADO A takeScreenshot()
+        await screenshotPage.takeScreenshot('singOut')
+    }
+```
+El método takeScreenshot() es tomado en cada método de los Page Object luego de que cada paso es ejecutado satisfactoriamente.
+
+
+### 5.2.3 Correr instancia de Cypress
 Después en una terminal o consola de comandos abierta corremos el siguiente comando:
 ```bash
 > cypress open
@@ -243,7 +359,7 @@ Una vez ejecutado el comando, debe abrirse una ventana similar a esta.
 
 <img width="1205" alt="Screenshot 2024-05-04 at 11 52 14 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7967dd94-6d31-4cb7-9739-8ded0aa04524">
 
-### 4.2.3 Seleccionar la carpeta del proyecto Cypress:
+### 5.2.4 Seleccionar la carpeta del proyecto Cypress:
 Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada `MISW4103-pruebas-automatizadas/Ghost_v5/cypress`.
 
 <img width="1205" alt="Screenshot 2024-05-04 at 11 53 19 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/847aceee-48d8-464a-875d-a1ad05ec6799">
@@ -252,17 +368,17 @@ Presionamos botón **Add project** de la vista principal de Cypress y selecciona
 
 *NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que se cargue completamente.*
 
-### 4.2.4 Seleccionar la prueba E2E
+### 5.2.5 Seleccionar la prueba E2E
 Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
 
 <img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
 
-### 4.2.5 Iniciar la prubeba E2E
+### 5.2.6 Iniciar la prubeba E2E
 Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
 
 <img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
 
-### 4.2.6 Ejecutar la prueba
+### 5.2.7 Ejecutar la prueba
 Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
 ```
 🗂️ cypress/e2e
@@ -288,7 +404,7 @@ Como se puede apreciar, dentro de la ruta `Ghost_5/cypress/cypress/screenshots` 
 
 Los screenshots de estas carpetas llevan los nombres de los pasos realizados en Cypress para ser comparados posteriormente contra los screenshots de la versión 3.42.0 de Ghost con las herramientas de ResembleJS y BackstopJS
 
-## 4.3 Ejecución pruebas E2E en Ghost 3.42.0
+## 5.3 Ejecución pruebas E2E en Ghost 3.42.0
 Ahora para ejecutar los nuevos escenarios construidos en Cypress para Ghost 3.42.0, se deben repetir los pasos descrito durante toda la sección 4, exceptuando la parte de la instalación global de Cypress de nuevo, ya que ya se tiene instalada por defecto. 
 
 La estructura de carpetas es completamente la misma, salvaguardando que se debe modificar los comandos de ruta de carpeta por Ghost_v3, ejemplo:
@@ -303,7 +419,7 @@ Ubicándonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizad
 Y repetimos los pasos ya mencionados anteriormente. 
 
 
-# 5. Funcionalidades y escenarios extra
+# 6. Funcionalidades y escenarios extra
 
 Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya existentes de entregas pasadas. Esto se hizo con el fin de poder cumplir el criterio de aceptación de la rúbrica de esta semana, de encontrar funcionalidades que estuvieran en ambas versiones de Ghost. Las funcionalidades extra se detallan a continuación.
 
@@ -315,16 +431,16 @@ FU022 | Borrar todo el contenido | 2
 *NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero únicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
 
 
-# 6. Ejecución de las pruebas VRT
+# 7. Ejecución de las pruebas VRT
 Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basándonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveídos de las secciones anteriores.
 
-## 6.1 Herramienta BackstopJS
+## 7.1 Herramienta BackstopJS
 
 <p align="center">
 <img src="https://www.drupal.org/files/project-images/backstop-lemur.png" alt="Backstop logo"  height="193">
 <p align="center">BackstopJS</p>
 
-### 6.1.1 Estructura de carpetas Backstopjs
+### 7.1.1 Estructura de carpetas Backstopjs
 
 La estructura de Backstopjs se ve de la siguiente manera
 ```
@@ -335,7 +451,7 @@ La estructura de Backstopjs se ve de la siguiente manera
       📄 file.js
 ```
 
-### 6.1.2 Ejecución Backstopjs
+### 7.1.2 Ejecución Backstopjs
 
 Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raiz del proyecto
 
@@ -364,20 +480,23 @@ Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una
 ![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/482c3c7b-3ad7-45d2-bc19-cd2feff366e6)
 
 
-### 6.1.3 Funcionamiento de Backstopjs
+### 7.1.3 Funcionamiento de Backstopjs
 
 La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinamicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
 El script revisa los screenshots almacenados por cada escenario revisando que exista el mismo en la versión 3 y 5 de Ghost, luego de esto ignora aquellas que ya se han construido previamente eliminando pantallas repetidas para comparar. 
 
 
-## 6.2 Herramienta ResembleJS
+## 7.2 Herramienta ResembleJS
 
 <p align="center">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
 <p align="center">ResembleJS</p>
 
 
+# 8 Reporte de Issues 
 
-# 7. Documentación extra
+El reporte de los issues puede ser consultado en este mismo repositorio en el módulo de ISSUES. 
+
+# 9. Documentación extra
 Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herramientas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
 
