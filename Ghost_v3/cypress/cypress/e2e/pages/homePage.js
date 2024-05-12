@@ -16,6 +16,8 @@ class homePage {
         draftPosts: () => cy.get('h3.gh-content-entry-title'),
         membersButton: () => cy.get('a[href="#/members/"]'),
         generalSettingOption: () => cy.get('a[href="#/settings/general/"]'),
+        labsOption: () => cy.get('a[href="#/settings/labs/"]'),
+        noPosts: () => cy.get('li.no-posts-box'),
     }
 
     async clicOnkMenuButton() {
@@ -34,6 +36,18 @@ class homePage {
         await screenshotPage.takeScreenshot()
     }
 
+    async clickOnPostsBtn() {
+        this.elements.postsButton().first().wait(1000).click()
+        cy.wait(1000)
+        await screenshotPage.takeScreenshot()
+    }
+
+    async clickOnPagesBtn() {
+        this.elements.pagesButton().wait(1000)
+        cy.wait(1000)
+        await screenshotPage.takeScreenshot()
+    }
+
     async clickOnPage() {
         this.elements.pagesButton().wait(1000).click()
         await screenshotPage.takeScreenshot()
@@ -45,7 +59,7 @@ class homePage {
     }
 
     async clickOnNewPage() {
-        this.elements.newPageButton().wait(1000).click({ force: true });
+        this.elements.newPageButton().first().wait(1000).click()
         await screenshotPage.takeScreenshot()
     }
 
@@ -78,6 +92,11 @@ class homePage {
         this.elements.generalSettingOption().wait(1000).click()
         cy.wait(500)
         await screenshotPage.takeScreenshot('general_settings')
+    }
+
+    async clickOnLabs() {
+        this.elements.labsOption().wait(1000).click()
+        await screenshotPage.takeScreenshot()
     }
 }
 
