@@ -7,6 +7,8 @@ class settingsPage {
             .contains('Title & description').parent().parent().find('button'),
 
         descriptionPageInput: () => cy.get('div.description-container > input'),
+        deleteAllContentButton: () => cy.get('button.gh-btn.gh-btn-hover-red.js-delete'),
+        confirmDeleteButton: () => cy.get('button.gh-btn.gh-btn-red.gh-btn-icon.ember-view'),
     }
 
     async clickOnSaveSettings() {
@@ -24,6 +26,16 @@ class settingsPage {
         this.elements.descriptionPageInput().wait(1000).clear()
         this.elements.descriptionPageInput().wait(1000).type(description, {force: true})
         await screenshotPage.takeScreenshot('cleanAndTypeDescription')
+    }
+
+    async clickOnDeleteAllContent() {
+        this.elements.deleteAllContentButton().wait(1000).click()
+        await screenshotPage.takeScreenshot('delete_all_content')
+    }
+
+    async clickOnConfirmDelete() {
+        this.elements.confirmDeleteButton().wait(1000).click()
+        await screenshotPage.takeScreenshot('confirm_delete')
     }
 }
 
