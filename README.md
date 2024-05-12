@@ -7,34 +7,27 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
-# Índice
+# 1. Consideraciones iniciales
 
-// TODO: Generar el índice ahorita
+Este repositorio ya contiene los `screenshots` de ambas versiones de Ghost guardados y el `reporte html` de las herramientas ResembleJS y BackstopJS. Te invitamos primero a revisar ambos insumos antes de seguir con este documento.
 
-
-# 1. Descripción del set de pruebas VRT
-Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
-
-En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
-
-Versión | URL Despliegue | ¿Es línea base?
--- | -- | --
-5.14.1 | https://ghost-fcj4.onrender.com/   | Sí
-3.42.0 | https://ghost-3-42-0.onrender.com/ | No
-
-
-# 2. IMPORTANTE: Consideraciones iniciales
-
-Este repositorio ya contiene los `screenshots` de ambas versiones guardados y el `reporte html` de las herramientas ResembleJS y BackstopJS. Te invitamos primero a revisar ambos insumos antes de seguir con este documento.
-
+## 1.1 Reportes de HTML
 Para los reportes HTML de de las dos herramientas se hizo el despliegue de ambos en Github Pages y puede ser consultado en los siguientes enlaces:
-
 
 Herramienta | Enlace Github Pages
 -- | --
 ResembleJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/ResembleJS/results/report.html
 BackstopJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/BackStopJS/backstop_data/html_report/
 
+De igual manera se indica la ruta de cada uno de ellos dentro del repositorio a continuación:
+
+Herramienta | Ruta
+-- | --
+ResembleJS | ResembleJS/results/report.html
+BackstopJS | BackStopJS/backstop_data/html_report/index.html
+
+
+## 1.2 Carpeta de Screenshots
 
 Para ver los screenshots por favor busca las carpetas `screenshots` dentro de las siguientes rutas: 
 
@@ -44,10 +37,22 @@ Versión Ghost | Herramienta | Ruta
 5.14.1 | Cypress | Ghost_5/cypress/cypress/screenshots
 3.42.0 | Cypress | Ghost_3/cypress/cypress/screenshots
 
-Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriorme la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT.
 
-Siguelo para volver a generar los Screenshots y los reportes HTML de las dos herramientas en cuestión.
+## 1.3 Continuación del proceso
 
+Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriormente la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT `siguelo para volver a generar los Screenshots y los reportes HTML de las dos herramientas en cuestión.`
+
+Si por el contrario deseas realizar la ejecución de los Scripts de ResembleJS y BackstopJS unicamente ve a la sección [7. Ejecución de las pruebas VRT](#7-ejecución-de-las-pruebas-vrt) no sin antes ejecutar el comando `npm install` en ruta raìz del proyecto.
+
+# 2. Descripción del set de pruebas VRT
+Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
+
+En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
+
+Versión | URL Despliegue | ¿Es línea base?
+-- | -- | --
+5.14.1 | https://ghost-fcj4.onrender.com/   | Sí
+3.42.0 | https://ghost-3-42-0.onrender.com/ | No
 
 # 3. Setup de las pruebas VRT
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de regresión visual VTT, **Kraken**, **Cypress**, **Resemble.js** y **Backstop**
@@ -425,7 +430,7 @@ Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya exis
 
 Código | Funcionalidad | # Escenarios
 -- | -- | --
-FU021 | Crear etiquetas (tags) | 4
+FU021 | Crear etiquetas (tags)   | 4
 FU022 | Borrar todo el contenido | 2
 
 *NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero únicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
@@ -492,11 +497,68 @@ El script revisa los screenshots almacenados por cada escenario revisando que ex
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
 <p align="center">ResembleJS</p>
 
+### 7.2.1 Estructura de carpetas Backstopjs
+
+La estructura de ResembleJS se ve de la siguiente manera:
+
+```
+🗂️ ResembleJS
+    🗂️ results
+      🗂️ FU006_ESC001
+      🗂️ FU006_ESC002
+      🗂️ .
+      🗂️ .
+      🗂️ .
+      📄 report.html
+    📄 resemble-report.js  
+```
+
+### 7.2.2 Ejecución ResembleJS
+
+Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la raiz del proyecto
+
+```bash
+> cd ResembleJS
+```
+
+Una vez parados sobre esa ruta ejecutamos el siguiente comando de node
+
+```bash
+> node resemble-report.js
+```
+
+Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
+
+<img width="576" alt="Screenshot 2024-05-12 at 5 57 27 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a212eb14-c733-42ea-837a-6c5eddc7b566">
+
+Para poder visualizar el reporte por favor dirigirse a la siguiente ruta: 
+
+```bash
+ResembleJS/results/report.html
+```
+Recomendamos tener instalada la extensión de Visual Studio Code, Live Server para poder desplegar el html generado de una forma más sencilla
+
+<img width="703" alt="Screenshot 2024-05-12 at 5 59 28 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7cb20453-82f6-421a-92a1-8a11b17b7910">
+
+Haciendo click derecho sobre el archivo report.html y oprimiendo el botón `Open with Live Server`
+
+<img width="418" alt="Screenshot 2024-05-12 at 6 00 53 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/adc37e0a-9445-46b8-a00f-367bb84c6ea6">
+
+Esto desplegará el reporte generado por ResembleJS y debería lucir de la siguiente forma
+
+<img width="1713" alt="Screenshot 2024-05-12 at 6 03 37 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/1a6cb51e-ee75-4f9f-b281-3be712720cc9">
+
+Ahí dentro podrá interactuar con cada uno de los escenarios testeados, que son 12 en total.
+
+
 
 # 8 Reporte de Issues 
 
-El reporte de los issues puede ser consultado en este mismo repositorio en el módulo de ISSUES. 
+El reporte de los issues puede ser consultado en este mismo repositorio en el módulo de ISSUES que se encuentra en el siguiente enlace: [Herramienta de gestión de Issues de Github](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/issues)
+
+Los issues para Pruebas de Regresión Visual tienen la siguiente nomenclatura: `VRT-00X - Nombre del issue encontrado`
+
 
 # 9. Documentación extra
-Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herramientas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
+Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herramientas, una comparativa final de las dos y el video del proceso de la ejecución de pruebas VRT en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
 
