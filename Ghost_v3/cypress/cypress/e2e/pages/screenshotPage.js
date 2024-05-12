@@ -22,6 +22,10 @@ class ScreenShotPage {
         })
     }
 
+    /**
+     * Take the Screenshot of the view where is located
+     * @param {String} nameScreenshot 
+     */
     async takeScreenshot(nameScreenshot = null) {
         // Incrementar el contador de capturas de pantalla
         this.screenshotCount++;

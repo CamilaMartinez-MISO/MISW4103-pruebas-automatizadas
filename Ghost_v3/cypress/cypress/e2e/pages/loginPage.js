@@ -12,12 +12,12 @@ class loginPage {
         this.elements.identification().type(email)
         this.elements.password().type(password)
         this.elements.loginButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('signIn')
     }
 
     async singOut() {
         this.elements.signOutButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('singOut')
     }
 }
 

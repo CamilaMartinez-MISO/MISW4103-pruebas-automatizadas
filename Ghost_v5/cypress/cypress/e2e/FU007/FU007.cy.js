@@ -34,11 +34,7 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.enterTitle(fakeTitle)
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
-        postPage.clickOnPosts()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
+        postPage.clickOnPostsWhenIsDraft()
 
         // Then Section
         homePage.elements.draftPosts().contains(fakeTitle).should('exist');
@@ -63,14 +59,11 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.enterTitle(fakeTitle)
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
-        postPage.clickOnPosts()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
+        postPage.clickOnPostsWhenIsDraft()
+
         homePage.elements.draftPosts().contains(fakeTitle).should('exist').click()
         postPage.enterTitle(newFakeTitle)
-        postPage.clickOnPosts()
+        postPage.clickOnPostsWhenIsDraft()
 
         // Then Section
         homePage.elements.draftPosts().contains(newFakeTitle).should('exist');
@@ -94,11 +87,8 @@ describe('FEATURE: Drafts Posts', function () {
         postPage.enterTitle(fakeTitle)
         postPage.clickOnBody()
         postPage.enterBody(fakeBody)
-        postPage.clickOnPosts()
-        homePage.clicOnkMenuButton()
-        loginPage.singOut()
-        loginPage.signIn(email, password)
-        homePage.clickOnDrafts()
+        postPage.clickOnPostsWhenIsDraft()
+
         homePage.elements.draftPosts().contains(fakeTitle).should('exist').click()
         postPage.clickOnSettingsSmall()
         postPage.clickOnDeletePost()

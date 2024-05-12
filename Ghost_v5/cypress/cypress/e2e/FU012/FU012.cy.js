@@ -40,7 +40,7 @@ describe('Feature: Change the description of page', function () {
         cy.visit(baseURLHome)
         cy.reload()
         indexPage.elements.siteDescription().contains(fakeDescription).should('exist')
-        screenshotPage.takeScreenshot()
+        screenshotPage.takeScreenshot('validate_description_site')
     })
 })
 
