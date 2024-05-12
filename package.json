@@ -16,6 +16,7 @@
     "assert": "^2.1.0",
     "backstopjs": "^6.3.23",
     "chai": "4.4.1",
-    "kraken-node": "^1.0.24"
+    "kraken-node": "^1.0.24",
+    "resemblejs": "^5.0.0"
   }
 }
