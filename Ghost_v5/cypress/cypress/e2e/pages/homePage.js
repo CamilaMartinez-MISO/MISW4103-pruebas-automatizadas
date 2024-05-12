@@ -20,6 +20,8 @@ class homePage {
         tagsDescriptionAvailable: () => cy.get('p.ma0.pa0.f8.midgrey.gh-tag-list-description'),
         membersButton: () => cy.get('a[href="#/members/"]'),
         settingsButton: () => cy.get('a[href="#/settings/"]'),
+        labsOption: () => cy.get('a[href="#/settings/labs/"]'),
+        noPosts: () => cy.get('li.no-posts-box'),
     }
 
     async clicOnkMenuButton() {
@@ -38,7 +40,7 @@ class homePage {
     }
 
     async clickOnPosts() {
-        this.elements.postsButton().wait(1000).click({ force: true })
+        this.elements.postsButton().first().wait(1000).click({ force: true })
         cy.wait(1000)
         await screenshotPage.takeScreenshot('clickOnPosts')
     }
@@ -64,7 +66,7 @@ class homePage {
     }
 
     async clickOnNewPage() {
-        this.elements.newPageButton().wait(1000).click({ force: true });
+        this.elements.newPageButton().first().wait(1000).click({ force: true });
         await screenshotPage.takeScreenshot('clickOnNewPage')
     }
 
@@ -97,6 +99,11 @@ class homePage {
         this.elements.generalSettingOption().wait(1000).click()
         cy.wait(500)
         await screenshotPage.takeScreenshot('clickOnGeneralSettings')
+    }
+
+    async clickOnLabs() {
+        this.elements.labsOption().wait(1000).click()
+        await screenshotPage.takeScreenshot('clickOnLabs')
     }
 }
 
