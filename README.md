@@ -7,8 +7,32 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
+# Indice
+1. [Descripción del set de pruebas VRT](#1-descripción-del-set-de-pruebas-vrt)
+2. [Setup de las pruebas VRT](#2-setup-de-las-pruebas-vrt)
+   - [Especificaciones técnicas del ambiente de pruebas usado](#21-especificaciones-técnicas-del-ambiente-de-pruebas-usado)
+   - [Instalación Node JS o NVM](#22-instalación-node-js-o-nvm)
+   - [Instalación navegador Google Chrome](#23-instalación-navegador-google-chrome)
+   - [Instalación IDE](#24-instalación-ide)
+   - [Instalar GIT](#25-instalar-git)
+3. [Setup proyecto](#3-setup-proyecto)
+   - [Descomprimir el proyecto](#31-descomprimir-el-proyecto)
+   - [Estructura general del proyecto](#32-estructura-general-del-proyecto)
+   - [Instalar las librerías locales del proyecto](#33-instalar-las-librerías-locales-del-proyecto)
+   - [Servicio de Ghost](#34-servicio-de-ghost)
+4. [Ejecución de las pruebas E2E](#4-ejecución-de-las-pruebas-e2e)
+   - [Herramienta Kraken](#41-herramienta-kraken)
+   - [Herramienta Cypress](#42-herramienta-cypress)
+   - [Ejecución pruebas E2E en Ghost 3.42.0](#43-ejecución-pruebas-e2e-en-ghost-3420)
+5. [Funcionalidades y escenarios extra](#5-funcionalidades-y-escenarios-extra)
+6. [Ejecución de las pruebas VRT](#6-ejecución-de-las-pruebas-vrt)
+   - [Herramienta BackstopJS](#61-herramienta-backstopjs)
+   - [Herramienta ResembleJS](#62-herramienta-resemblejs)
+7. [Documentación extra](#7-documentación-extra)
+
+
 # 1. Descripción del set de pruebas VRT
-Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se intrudujeron bugs o fallos en el proceso de propagación de cambios.
+Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
 
 En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
 
@@ -71,7 +95,7 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 
 ## 3.2 Estructura general del proyecto
 
-A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 sub grupos, **Kraken** y **Cypress**
+A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 subgrupos, **Kraken** y **Cypress**
 
 <img width="272" alt="Screenshot 2024-05-11 at 10 14 14 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a0f9e708-c61a-4302-9a5b-9a46a35d3c79">
 
@@ -93,8 +117,8 @@ Esto descargará e instalará las dependencias necesarias para ambas herramienta
     "assert": "^2.1.0",
     "chai": "4.4.1",
     "kraken-node": "^1.0.24",
-    "resemble": "^1.0.24",
-    "backstop": "^1.0.24"
+    "resemblejs": "^5.0.0",
+    "backstopjs": "^6.3.23"
   }
 ```
 Si desea consultar más sobre esto, puede ver el archivo `package.json`
@@ -130,7 +154,7 @@ Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega a
     
 Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost. Se debe realizar un paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
 
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comando
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos
 ```bash
 > cd Ghost_v5
 > cd kraken
@@ -162,7 +186,7 @@ Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de lo
 ```
 
 ### 4.1.3 Ejecución de las pruebas
-Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará inicio a la ejecución de los escenarios de prueba disponibles.
+Una vez adentro de esa carpeta puede ejecutar el siguiente comando que iniciará la ejecución de los escenarios de prueba disponibles.
 ```bash
 > npx kraken-node run
 ```
@@ -182,7 +206,7 @@ Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían cor
 
 Para remediar esto por favor en la carpeta de features sólo dejar un escenario y ejecutar así cada uno de ellos.
 
-Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hacer la toma de screenshots por cada paso ejecutado del escenario es posible que el computador se suspenda durante la prueba, lo que puede ocasionar que, las pruebas fallen automaticamente. Para no tener este inconveniente por favor asegurarse de que el computador tiene carga suficiente y en su configuraciòn no se tiene la suspensiòn automática después de unos minutos de inactividad.
+Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hacer la toma de screenshots por cada paso ejecutado del escenario es posible que el computador se suspenda durante la prueba, lo que puede ocasionar que, las pruebas fallen automáticamente. Para no tener este inconveniente por favor asegurarse de que el computador tiene carga suficiente y en su configuración no se tiene la suspensión automática después de unos minutos de inactividad.
 
 
 ## 4.2 Herramienta Cypress
@@ -269,7 +293,7 @@ Ahora para ejecutar los nuevos escenarios construidos en Cypress para Ghost 3.42
 
 La estructura de carpetas es completamente la misma, salvaguardando que se debe modificar los comandos de ruta de carpeta por Ghost_v3, ejemplo:
 
-Ubicandonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizadas**, realizamos los siguientes comandos
+Ubicándonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizadas**, realizamos los siguientes comandos
 
 ```bash
 > cd Ghost_v3
@@ -281,18 +305,18 @@ Y repetimos los pasos ya mencionados anteriormente.
 
 # 5. Funcionalidades y escenarios extra
 
-Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya existentes de entregas pasadas. Esto se hizo con el fin de poder cumplir el criterio de acpetación de la rúbrica de esta semana, de encontrar funcionalidades que estuvieran en ambas versiones de Ghost. Las funcionalidades extra se detallan a continuación.
+Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya existentes de entregas pasadas. Esto se hizo con el fin de poder cumplir el criterio de aceptación de la rúbrica de esta semana, de encontrar funcionalidades que estuvieran en ambas versiones de Ghost. Las funcionalidades extra se detallan a continuación.
 
 Código | Funcionalidad | # Escenarios
 -- | -- | --
 FU021 | Crear etiquetas (tags) | 4
 FU022 | Borrar todo el contenido | 2
 
-*NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero unicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
+*NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero únicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
 
 
 # 6. Ejecución de las pruebas VRT
-Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basandonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveidos de las secciones anteriores.
+Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basándonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveídos de las secciones anteriores.
 
 ## 6.1 Herramienta BackstopJS
 
@@ -331,11 +355,11 @@ Ya con la herramienta instalada solo tendremos que ejecutar el siguiente comando
 > backstop test --config="configBackstop.js"
 ```
 
-Luego de lanzar el comando apareceran los logs de la ejecución, similar a la siguiente imagen
+Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
 
 ![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/d946117c-b18b-4341-a49f-3ea72289f16f)
 
-Al finalizar la ejecución se abrira el reporte sobre el navegador teniendo una salida similar a la siguiente
+Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una salida similar a la siguiente
 
 ![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/482c3c7b-3ad7-45d2-bc19-cd2feff366e6)
 
@@ -354,7 +378,6 @@ El script revisa los screenshots almacenados por cada escenario revisando que ex
 
 
 
-
 # 7. Documentación extra
-Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herrameintas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
+Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herramientas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
 
