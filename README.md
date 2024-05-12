@@ -123,7 +123,7 @@ Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega a
 <img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
 <p align="center">Kraken</p>
     
-Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost. Se debe realiza run paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
+Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost. Se debe realizar un paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
 
 Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comando
 ```bash
@@ -181,15 +181,19 @@ Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hac
 
 
 ## 4.2 Herramienta Cypress
+
 <p align="center">
 <img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
 <p align="center">Cypress</p>
 
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas**, dirigirse a la carpeta kraken con la ayuda de la línea de comandos del computador o la terminal integrada en VS Code. El comando para ir a la carpeta kraken es el siguiente
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos
 
 ```bash
+> cd Ghost_v5
 > cd cypress
 ```
+Por favor asegurarse de que está escribiendo Ghost con la G en mayúsculas para que el sistema de ficheros pueda dirigirse exitosamente a esa carpeta.
+
 La estructura del proyecto debe verse así:
 
 <img width="303" alt="Screenshot 2024-05-05 at 11 37 22 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/64bb1f1d-3c6f-4753-8416-226590c81311">
@@ -211,7 +215,7 @@ Una vez ejecutado el comando, debe abrirse una ventana similar a esta.
 <img width="1205" alt="Screenshot 2024-05-04 at 11 52 14 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7967dd94-6d31-4cb7-9739-8ded0aa04524">
 
 ### 4.2.3 Seleccionar la carpeta del proyecto Cypress:
-Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada **MISW4103-pruebas-automatizadas/cypress**.
+Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada `MISW4103-pruebas-automatizadas/Ghost_v5/cypress`.
 
 <img width="1205" alt="Screenshot 2024-05-04 at 11 53 19 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/847aceee-48d8-464a-875d-a1ad05ec6799">
 
@@ -242,10 +246,66 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
 ```
 <img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
 
-El archivo `allTests.cy.js` contiene todos los 20 escenarios juntos para que se ejecuten uno tras del otro. Sin embargo si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
+El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se ejecuten uno tras del otro. Sin embargo si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
 
 <img width="1728" alt="Screenshot 2024-05-05 at 12 28 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/3c4807c3-1590-47c5-9549-976f9f0c3af0">
 
-## 5. Documentación extra
+
+Los screenshots tomados durante la ejecución de las pruebas pueden ser encontrados en carpeta **screenshots**. La estructura de esta carpeta por dentro debe lucir de la siguiente manera.
+
+<img width="236" alt="Screenshot 2024-05-11 at 9 17 12 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/19bbb9f0-31b0-4723-878d-9c4ac36574f7">
+
+Como se puede apreciar, dentro de la ruta `Ghost_5/cypress/cypress/screenshots` se encuentran las carpetas que contienen los screenshots por cada escenario.
+
+Los screenshots de estas carpetas llevan los nombres de los pasos realizados en Cypress para ser comparados posteriormente contra los screenshots de la versión 3.42.0 de Ghost con las herramientas de ResembleJS y BackstopJS
+
+## Ejecución pruebas E2E en Ghost 3.42.0
+Ahora para ejecutar los nuevos escenarios construidos en Cypress para Ghost 3.42.0, se deben repetir los pasos descrito durante toda la sección 4, exceptuando la parte de la instalación global de Cypress de nuevo, ya que ya se tiene instalada por defecto. 
+
+La estructura de carpetas es completamente la misma, salvaguardando que se debe modificar los comandos de ruta de carpeta por Ghost_v3, ejemplo:
+
+Ubicandonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizadas**, realizamos los siguientes comandos
+
+```bash
+> cd Ghost_v3
+> cd cypress
+```
+
+Y repetimos los pasos ya mencionados anteriormente. 
+
+
+# 5. Funcionalidades y escenarios extra
+
+Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya existentes de entregas pasadas. Esto se hizo con el fin de poder cumplir el criterio de acpetación de la rúbrica de esta semana, de encontrar funcionalidades que estuvieran en ambas versiones de Ghost. Las funcionalidades extra se detallan a continuación.
+
+Código | Funcionalidad | # Escenarios
+-- | -- | --
+FU021 | Crear etiquetas (tags) | 4
+FU022 | Borrar todo el contenido | 3
+
+*NOTA: En total se tendrían 22 funcionalidades y 27 escenarios en total para esta entrega en Ghost v5, pero unicamente se escogieron 5 funcionalidades y 13 escenarios para ser replicados en Ghost v3*
+
+
+# 6. Ejecución de las pruebas VRT
+Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basandonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveidos de las secciones anteriores.
+
+## 6.1 Herramienta BackstopJS
+
+<p align="center">
+<img src="https://www.drupal.org/files/project-images/backstop-lemur.png" alt="Backstop logo"  height="193">
+<p align="center">BackstopJS</p>
+
+
+
+## 6.2 Herramienta ResembleJS
+
+<p align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
+<p align="center">ResembleJS</p>
+
+
+
+
+# 7. Documentación extra
 Puede ver las funcionalidades escogidas, la comparativa de pros y contras de ambas herrameintas y una comparativa final de las dos en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto 
 
