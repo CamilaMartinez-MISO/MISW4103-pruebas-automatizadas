@@ -21,7 +21,7 @@ class indexPage {
     async clickOnSearchButton() {
         this.elements.searchButton().wait(1500).click()
         cy.wait(500)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnSearchButton')
     }
 
     async typeOnSearchInput(search) {
@@ -30,7 +30,7 @@ class indexPage {
             cy.wrap(iframe).find(this.selectorsIframe.searchInput).type(search);
         });
         cy.wait(500)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('typeOnSearchInput')
     }
 
     async clickOnFirstPostFound() {
@@ -41,7 +41,7 @@ class indexPage {
             });
         });
         cy.wait(500)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnFirstPostFound')
     }
 
     getInfoMessage() {

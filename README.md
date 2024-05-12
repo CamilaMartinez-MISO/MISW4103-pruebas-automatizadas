@@ -17,7 +17,8 @@ Versión | URL Despliegue | ¿Es línea base?
 5.14.1 | https://ghost-fcj4.onrender.com/   | Sí
 3.42.0 | https://ghost-3-42-0.onrender.com/ | No
 
-# 2. Setup de las 
+
+# 2. Setup de las pruebas VRT
 Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:

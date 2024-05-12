@@ -9,6 +9,7 @@ class indexPage {
 
     async clickOnPostByTitle(title) {
         this.elements.postByTitle(title).click()
+        await screenshotPage.takeScreenshot('clickOnPostByTitle')
     }
 
 }
