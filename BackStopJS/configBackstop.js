@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 // Constants
-const PATH_GHOST_V5 = "../Ghost_v5/cypress/cypress/screenshots";
-const PATH_GHOST_V3 = "../Ghost_v3/cypress/cypress/screenshots";
+const PATH_GHOST_V5 = "./Ghost_v5/cypress/cypress/screenshots";
+const PATH_GHOST_V3 = "./Ghost_v3/cypress/cypress/screenshots";
 
 // =============================================
 // Methods for backstop
@@ -74,10 +74,10 @@ function createConfigWithScenarios( scenarios ) {
         "scenarios": scenarios,
         "paths": {
             "bitmaps_reference": PATH_GHOST_V5,
-            "bitmaps_test": "backstop_data/bitmaps_test",
-            "engine_scripts": "backstop_data/engine_scripts",
-            "html_report": "backstop_data/html_report",
-            "ci_report": "backstop_data/ci_report"
+            "bitmaps_test":   "BackStopJS/backstop_data/bitmaps_test",
+            "engine_scripts": "BackStopJS/backstop_data/engine_scripts",
+            "html_report":    "BackStopJS/backstop_data/html_report",
+            "ci_report":      "BackStopJS/backstop_data/ci_report"
         },
         "report": ["browser"],
         "engine": "puppeteer",
