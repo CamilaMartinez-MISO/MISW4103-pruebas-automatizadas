@@ -82,6 +82,7 @@ async function compareImagesInFolders(v3FolderPath, v5FolderPath) {
             }
         }
         fs.writeFileSync(`./results/report.html`, createReport(resultInfo));
+        console.log('Comparación finalizada. Revisa el archivo ResembleJS/results/report.html');
     } catch (error) {
         console.error('Error al comparar imágenes:', error);
     }
@@ -91,6 +92,7 @@ async function compareImagesInFolders(v3FolderPath, v5FolderPath) {
 const v3FolderPath = '../Ghost_v3/cypress/cypress/screenshots';
 const v5FolderPath = '../Ghost_v5/cypress/cypress/screenshots';
 
+console.log('Inciando comparación de Ghost v3 y Ghost v5...');
 compareImagesInFolders(v3FolderPath, v5FolderPath);
 
 function createReport(info) {
