@@ -1,5 +1,4 @@
-const fs = require('fs');
-const path = require('path');
+const { getFoldersArray, getFilesInPath, createFolderIfNotExists, copyAndPasteFile } = require('./scripts/file')
 
 // Constants
 const PATH_GHOST_V5 = "../Ghost_v5/cypress/cypress/screenshots";
@@ -13,8 +12,11 @@ const LABEL_DEFAULT = "default";
 // Methods for backstop
 // =============================================
 
+createFolderIfNotExists("./backstop_data", "bitmaps_reference")
+
 function createScenarios() {
     let scenarios = [];
+    let usedImages = [];
 
     let scenarioFoldersV5 = getFoldersArray(PATH_GHOST_V5)
     let scenarioFoldersV3 = getFoldersArray(PATH_GHOST_V3)
@@ -29,65 +31,23 @@ function createScenarios() {
         let imagesV3 = getFilesInPath(PATH_GHOST_V3 + '/' + scenarioId);
 
         let availableImages = imagesV5.filter(element => imagesV3.includes(element));
-        console.log('availableImages',availableImages);
 
         for (let j = 0; j < availableImages.length; j++) {
             let originalNameFile = availableImages[j];
-            let nameFile = `${ID_CONFIG}_${scenarioId}_${j+1}_0_document_0_${LABEL_DEFAULT}.png`;
-            console.log(nameFile);
-            copyAndPasteFile(`${PATH_GHOST_V5}/${scenarioId}/${originalNameFile}`, `${PATH_BIT_MAPS_REFERENCE}`, nameFile);
-            scenarios.push( createScenario(scenarioId, originalNameFile, j+1) );
+
+            if( !usedImages.includes( originalNameFile ) ) {
+                let nameFile = `${ID_CONFIG}_${scenarioId}_${j+1}_0_document_0_${LABEL_DEFAULT}.png`;
+                copyAndPasteFile(`${PATH_GHOST_V5}/${scenarioId}/${originalNameFile}`, `${PATH_BIT_MAPS_REFERENCE}`, nameFile);
+                scenarios.push( createScenario(scenarioId, originalNameFile, j+1) );
+                usedImages.push(originalNameFile);
+            }
         }
     }
 
     return scenarios;
 }
 
-function getFoldersArray(path) {
-    try {
-        const folderContent = fs.readdirSync(path, { withFileTypes: true });
-        const folders = folderContent.filter(item => item.isDirectory()).map(item => item.name);
-        return folders;
-    } catch (error) {
-        console.error('Error in get folders:', error);
-        return [];
-    }
-}
-
-function getFilesInPath(path) {
-    try {
-        const folderContent = fs.readdirSync(path, { withFileTypes: true });
-        const files = folderContent.filter(item => item.isFile()).map(item => item.name);
-        return files;
-    } catch (error) {
-        console.error('Error in get files:', error);
-        return [];
-    }
-}
-
-function copyAndPasteFile(origin, destination, newNameFile) {
-    try {
-        // Lee el contenido del archivo de origen
-        const fileContent = fs.readFileSync(origin);
-
-        // Crea la ruta completa para el destino con el nuevo nombre
-        const pathDestination = path.join(destination, newNameFile).toString();
-
-        // Escribe el contenido en el nuevo archivo
-        fs.writeFileSync(pathDestination, fileContent);
-
-        console.log(`Archivo copiado exitosamente a ${pathDestination}`);
-    } catch (error) {
-        console.error('Error al copiar el archivo:', error);
-    }
-}
-
-
 function createScenario(scenarioId, imageName, index) {
-
-    console.log('url',PATH_GHOST_V3 + "/" + scenarioId +"/" + imageName,)
-    console.log("referenceUrl", scenarioId + "/" + imageName);
-
     return {
         "label": scenarioId + '_' + index,
         "url": PATH_GHOST_V3 + "/" + scenarioId +"/" + imageName,
@@ -114,7 +74,7 @@ function createConfigWithScenarios( scenarios ) {
         "viewports": [
             {
                 "label": LABEL_DEFAULT,
-                "width": 800,
+                "width": 900,
                 "height": 600
             }
         ],
