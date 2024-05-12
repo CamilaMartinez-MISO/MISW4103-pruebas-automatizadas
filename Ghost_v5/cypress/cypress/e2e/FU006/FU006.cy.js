@@ -43,10 +43,12 @@ describe('Feature: Search post', function () {
 
         // Then Section
         cy.visit(baseURLHome)
+        screenshotPage.takeScreenshot('visitHomePageGhost')
         indexPage.clickOnSearchButton()
         indexPage.typeOnSearchInput(fakeTitle)
         indexPage.clickOnFirstPostFound()
         extPostPage.elements.title().contains(fakeTitle).should('exist')
+        screenshotPage.takeScreenshot('elementsOnHomePageShouldExist')
     });
 
     /**
