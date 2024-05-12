@@ -22,11 +22,11 @@ class ScreenShotPage {
         })
     }
 
-    async takeScreenshot() {
+    async takeScreenshot(nameScreenshot = null) {
         // Incrementar el contador de capturas de pantalla
         this.screenshotCount++;
         // Definir el nombre del archivo con formato autoincrementado
-        const filename = `screenshot-${this.screenshotCount}`;
+        const filename = nameScreenshot === null ? `screenshot-${this.screenshotCount}` : nameScreenshot;
         // Tomar un screenshot y guardar en la carpeta personalizada
         await cy.screenshot(`${this.elements.folderPath}/${filename}`);
     }

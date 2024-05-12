@@ -71,7 +71,7 @@ class homePage {
 
     async clickOnSettings() {
         this.elements.settingsButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('settings_page')
     }
 }
 
