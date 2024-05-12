@@ -38,12 +38,12 @@ class settingsPage {
 
     async clickOnDeleteAllContent() {
         this.elements.deleteAllContentButton().wait(1000).click()
-        await screenshotPage.takeScreenshot('delete_all_content')
+        await screenshotPage.takeScreenshot('clickOnDeleteAllContent')
     }
 
     async clickOnConfirmDelete() {
         this.elements.confirmDeleteButton().wait(1000).click()
-        await screenshotPage.takeScreenshot('confirm_delete')
+        await screenshotPage.takeScreenshot('clickOnConfirmDelete')
     }
 }
 
