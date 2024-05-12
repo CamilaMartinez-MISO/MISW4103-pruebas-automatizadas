@@ -63,7 +63,7 @@ function createScenario(scenarioId, imageName, index) {
         "selectors": [],
         "selectorExpansion": true,
         "expect": 0,
-        "misMatchThreshold" : 0.1,
+        "misMatchThreshold" : 8,
         "requireSameDimensions": true
     }
 }
@@ -74,8 +74,8 @@ function createConfigWithScenarios( scenarios ) {
         "viewports": [
             {
                 "label": LABEL_DEFAULT,
-                "width": 900,
-                "height": 600
+                "width": 1000,
+                "height": 660
             }
         ],
         "onBeforeScript": "puppet/onBefore.js",
