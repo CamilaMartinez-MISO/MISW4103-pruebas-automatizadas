@@ -32,22 +32,22 @@ class postPage {
 
     async clickOnRightNow() {
         this.elements.rightNowButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnRightNow')
     }
 
     async enterTitle(title) {
         this.elements.title().wait(1000).clear().type(title)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('enterTitle')
     }
 
     async clickOnTitle() {
         this.elements.title().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnTitle')
     }
 
     async clearTitle() {
         this.elements.title().wait(1000).clear()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clearTitle')
     }
 
     async clickOnBody() {
@@ -57,58 +57,58 @@ class postPage {
 
     async enterBody(body) {
         this.elements.body().type(body, { force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('enterBody')
     }
 
     async clickOnPublish() {
         this.elements.publishButton().wait(1000).click()
         cy.wait(500)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPublish')
     }
 
     async clickOnContinue() {
         this.elements.continueButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnContinue')
     }
 
     async clickOnPublishPost() {
         this.elements.publishPostButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPublishPost')
     }
 
     async clickOnBackToEditor() {
         this.elements.backToEditorButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnBackToEditor')
     }
 
     async clickOnPostsWhenIsDraft() {
         this.elements.postsInDraftButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPostsWhenIsDraft')
     }
 
     async clickOnPosts() {
         this.elements.postsButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPosts')
     }
 
     async clickOnPages() {
         this.elements.pagesButton().wait(1000).click({ force: true })
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPages')
     }
 
     async clickOnUpdate() {
         this.elements.updateButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnUpdate')
     }
 
     async clickOnSettings() {
         this.elements.settingsButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnSettings')
     }
 
     async clickOnSettingsSmall() {
         this.elements.settingsSmallButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnSettingsSmall')
     }
 
     async clickOnViewPost() {
@@ -125,36 +125,36 @@ class postPage {
 
     async clickOnUnpublish() {
         this.elements.unpublishButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnUnpublish')
     }
 
     async confirmUnpublish() {
         this.elements.confirmUnpublishButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('confirmUnpublish')
     }
 
     async changePublicationTime() {
         this.elements.changePublicationTime().click()
         this.elements.scheduleForLaterButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('changePublicationTime')
     }
 
     async clickOnEditor() {
         cy.wait(2000)
         this.elements.editorButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnEditor')
     }
 
     async clickOnSearchButton() {
         this.elements.searchButton().click()
         cy.wait(500)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnSearchButton')
     }
 
     async typeOnSearchInput(search) {
         this.elements.searchInput().wait(1000).clear().type(search, { force: true })
         cy.wait(2000)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('typeOnSearchInput')
     }
 
     async clickOnPostByTitle(title) {
@@ -164,22 +164,22 @@ class postPage {
             .parent('li')
             .click();
         cy.wait(1000)
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnPostByTitle')
     }
 
     async clickOnFirstPost() {
         this.elements.firstPost().wait(1000).click();
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnFirstPost')
     }
 
     async clickOnDeletePost() {
         this.elements.deletePostButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnDeletePost')
     }
 
     async clickOnConfirmDeletePost() {
         this.elements.confirmDeleteButton().wait(1000).click()
-        await screenshotPage.takeScreenshot()
+        await screenshotPage.takeScreenshot('clickOnConfirmDeletePost')
     }
 }
 
