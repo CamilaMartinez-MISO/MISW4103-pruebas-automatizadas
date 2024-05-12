@@ -71,9 +71,9 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 
 ## 3.2 Estructura general del proyecto
 
-A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, tal como se muestra a continuación
+A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 sub grupos, **Kraken** y **Cypress**
 
-<img width="372" alt="Screenshot 2024-05-02 at 11 10 57 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d688af51-e2eb-41b4-806a-a0007fa671f9">
+<img width="272" alt="Screenshot 2024-05-11 at 10 14 14 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a0f9e708-c61a-4302-9a5b-9a46a35d3c79">
 
 ## 3.3 Instalar las librerías locales del proyecto
 Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas. Para ello solo es necesario hacer dos pasos:

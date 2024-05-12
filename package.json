@@ -4,6 +4,7 @@
   "description": "Nombre | Email Uniandes -- | -- Héctor O. Franco | h.franco@uniandes.edu.co Manuel F. Bejarano | mf.bejaranob1@uniandes.edu.co Juan S. Vargas | js.vargasq1@uniandes.edu.co María C. Martínez | mc.martinezm12@uniandes.edu.co",
   "main": "index.js",
   "scripts": {
+    "resemble": "node ResembleJS/resemble-report.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
