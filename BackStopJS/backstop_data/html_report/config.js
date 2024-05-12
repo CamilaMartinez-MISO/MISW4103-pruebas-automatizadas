@@ -3,8 +3,8 @@ report({
   "tests": [
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_1_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_1_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_1_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_1_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_1_0_document_0_default.png",
         "label": "FU006_ESC001_1",
@@ -15,23 +15,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.46318181818181814,
-          "misMatchPercentage": "0.46",
-          "analysisTime": 309
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_1_0_document_0_default.png"
+          "rawMisMatchPercentage": 3.793787878787879,
+          "misMatchPercentage": "3.79",
+          "analysisTime": 232
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_2_0_document_0_default.png",
         "label": "FU006_ESC001_2",
@@ -42,23 +41,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.32518939393939394,
-          "misMatchPercentage": "0.33",
-          "analysisTime": 377
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_2_0_document_0_default.png"
+          "rawMisMatchPercentage": 1.7036363636363638,
+          "misMatchPercentage": "1.70",
+          "analysisTime": 120
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_3_0_document_0_default.png",
         "label": "FU006_ESC001_3",
@@ -69,23 +67,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.764848484848485,
-          "misMatchPercentage": "2.76",
-          "analysisTime": 424
+          "rawMisMatchPercentage": 8.73560606060606,
+          "misMatchPercentage": "8.74",
+          "analysisTime": 261
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_3_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_3_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_4_0_document_0_default.png",
         "label": "FU006_ESC001_4",
@@ -96,23 +94,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.320606060606061,
-          "misMatchPercentage": "3.32",
-          "analysisTime": 291
+          "rawMisMatchPercentage": 8.567272727272728,
+          "misMatchPercentage": "8.57",
+          "analysisTime": 222
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_4_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_4_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_5_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_5_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_5_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_5_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_5_0_document_0_default.png",
         "label": "FU006_ESC001_5",
@@ -123,23 +121,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 4.032613636363636,
-          "misMatchPercentage": "4.03",
-          "analysisTime": 373
+          "rawMisMatchPercentage": 8.100151515151516,
+          "misMatchPercentage": "8.10",
+          "analysisTime": 215
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_5_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_5_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_6_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_6_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_6_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_6_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_6_0_document_0_default.png",
         "label": "FU006_ESC001_6",
@@ -150,23 +148,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.5242424242424242,
-          "misMatchPercentage": "0.52",
-          "analysisTime": 207
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_6_0_document_0_default.png"
+          "rawMisMatchPercentage": 3.457121212121212,
+          "misMatchPercentage": "3.46",
+          "analysisTime": 198
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_7_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_7_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_7_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_7_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_7_0_document_0_default.png",
         "label": "FU006_ESC001_7",
@@ -184,16 +181,16 @@ report({
           },
           "rawMisMatchPercentage": 24.81700757575758,
           "misMatchPercentage": "24.82",
-          "analysisTime": 417
+          "analysisTime": 342
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_7_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_7_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_8_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_8_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_8_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_8_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_8_0_document_0_default.png",
         "label": "FU006_ESC001_8",
@@ -204,23 +201,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.7539772727272728,
-          "misMatchPercentage": "0.75",
-          "analysisTime": 489
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_8_0_document_0_default.png"
+          "rawMisMatchPercentage": 6.186060606060606,
+          "misMatchPercentage": "6.19",
+          "analysisTime": 216
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_9_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_9_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_9_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_9_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_9_0_document_0_default.png",
         "label": "FU006_ESC001_9",
@@ -231,23 +227,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": -1000,
-            "height": -660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.2953409090909087,
-          "misMatchPercentage": "3.30",
-          "analysisTime": 730
+          "rawMisMatchPercentage": 12.154848484848484,
+          "misMatchPercentage": "12.15",
+          "analysisTime": 209
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_9_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_9_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC001_10_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC001_10_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC001_10_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC001_10_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC001_10_0_document_0_default.png",
         "label": "FU006_ESC001_10",
@@ -263,18 +259,18 @@ report({
             "width": -1000,
             "height": -660
           },
-          "rawMisMatchPercentage": 24.9042803030303,
+          "rawMisMatchPercentage": 24.904356060606062,
           "misMatchPercentage": "24.90",
-          "analysisTime": 656
+          "analysisTime": 680
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC001_10_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC001_10_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC002_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC002_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC002_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC002_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC002_3_0_document_0_default.png",
         "label": "FU006_ESC002_3",
@@ -285,23 +281,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.9669318181818182,
-          "misMatchPercentage": "0.97",
-          "analysisTime": 189
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC002_3_0_document_0_default.png"
+          "rawMisMatchPercentage": 5.203181818181818,
+          "misMatchPercentage": "5.20",
+          "analysisTime": 230
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC002_8_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC002_8_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC002_8_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC002_8_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC002_8_0_document_0_default.png",
         "label": "FU006_ESC002_8",
@@ -312,23 +307,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 24.64681818181818,
-          "misMatchPercentage": "24.65",
-          "analysisTime": 517
+          "rawMisMatchPercentage": 95.205,
+          "misMatchPercentage": "95.20",
+          "analysisTime": 369
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC002_8_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC002_8_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU006_ESC002_11_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU006_ESC002_11_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU006_ESC002_11_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU006_ESC002_11_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU006_ESC002_11_0_document_0_default.png",
         "label": "FU006_ESC002_11",
@@ -339,23 +334,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 24.382045454545455,
-          "misMatchPercentage": "24.38",
-          "analysisTime": 543
+          "rawMisMatchPercentage": 90.61818181818182,
+          "misMatchPercentage": "90.62",
+          "analysisTime": 212
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU006_ESC002_11_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU006_ESC002_11_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU007_ESC001_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU007_ESC001_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU007_ESC001_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU007_ESC001_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU007_ESC001_2_0_document_0_default.png",
         "label": "FU007_ESC001_2",
@@ -366,23 +361,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.759962121212121,
-          "misMatchPercentage": "2.76",
-          "analysisTime": 615
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU007_ESC001_2_0_document_0_default.png"
+          "rawMisMatchPercentage": 4.683333333333333,
+          "misMatchPercentage": "4.68",
+          "analysisTime": 357
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU007_ESC001_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU007_ESC001_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU007_ESC001_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU007_ESC001_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU007_ESC001_4_0_document_0_default.png",
         "label": "FU007_ESC001_4",
@@ -393,23 +387,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.066780303030303,
-          "misMatchPercentage": "2.07",
-          "analysisTime": 636
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU007_ESC001_4_0_document_0_default.png"
+          "rawMisMatchPercentage": 8.002727272727272,
+          "misMatchPercentage": "8.00",
+          "analysisTime": 218
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU007_ESC003_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU007_ESC003_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU007_ESC003_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU007_ESC003_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU007_ESC003_2_0_document_0_default.png",
         "label": "FU007_ESC003_2",
@@ -420,23 +413,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.7636742424242424,
-          "misMatchPercentage": "2.76",
-          "analysisTime": 574
+          "rawMisMatchPercentage": 87.07666666666667,
+          "misMatchPercentage": "87.08",
+          "analysisTime": 347
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU007_ESC003_2_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU007_ESC003_2_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU007_ESC003_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU007_ESC003_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU007_ESC003_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU007_ESC003_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU007_ESC003_3_0_document_0_default.png",
         "label": "FU007_ESC003_3",
@@ -447,23 +440,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 23.421780303030303,
-          "misMatchPercentage": "23.42",
-          "analysisTime": 495
+          "rawMisMatchPercentage": 98.69030303030303,
+          "misMatchPercentage": "98.69",
+          "analysisTime": 464
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU007_ESC003_3_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU007_ESC003_3_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU007_ESC003_8_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU007_ESC003_8_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU007_ESC003_8_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU007_ESC003_8_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU007_ESC003_8_0_document_0_default.png",
         "label": "FU007_ESC003_8",
@@ -474,23 +467,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 1.7929545454545455,
-          "misMatchPercentage": "1.79",
-          "analysisTime": 558
+          "rawMisMatchPercentage": 9.74409090909091,
+          "misMatchPercentage": "9.74",
+          "analysisTime": 318
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU007_ESC003_8_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU007_ESC003_8_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU012_ESC001_1_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU012_ESC001_1_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU012_ESC001_1_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU012_ESC001_1_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU012_ESC001_1_0_document_0_default.png",
         "label": "FU012_ESC001_1",
@@ -501,23 +494,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 4.469772727272727,
-          "misMatchPercentage": "4.47",
-          "analysisTime": 579
+          "rawMisMatchPercentage": 16.09560606060606,
+          "misMatchPercentage": "16.10",
+          "analysisTime": 327
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU012_ESC001_1_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU012_ESC001_1_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU012_ESC001_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU012_ESC001_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU012_ESC001_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU012_ESC001_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU012_ESC001_2_0_document_0_default.png",
         "label": "FU012_ESC001_2",
@@ -528,23 +521,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.6236742424242423,
-          "misMatchPercentage": "3.62",
-          "analysisTime": 278
+          "rawMisMatchPercentage": 14.090151515151513,
+          "misMatchPercentage": "14.09",
+          "analysisTime": 346
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU012_ESC001_2_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU012_ESC001_2_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU012_ESC001_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU012_ESC001_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU012_ESC001_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU012_ESC001_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU012_ESC001_3_0_document_0_default.png",
         "label": "FU012_ESC001_3",
@@ -555,23 +548,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 4.0719318181818185,
-          "misMatchPercentage": "4.07",
-          "analysisTime": 465
+          "rawMisMatchPercentage": 16.29909090909091,
+          "misMatchPercentage": "16.30",
+          "analysisTime": 305
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU012_ESC001_3_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU012_ESC001_3_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU012_ESC001_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU012_ESC001_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU012_ESC001_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU012_ESC001_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU012_ESC001_4_0_document_0_default.png",
         "label": "FU012_ESC001_4",
@@ -582,23 +575,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.9072727272727272,
-          "misMatchPercentage": "3.91",
-          "analysisTime": 425
+          "rawMisMatchPercentage": 17.064696969696968,
+          "misMatchPercentage": "17.06",
+          "analysisTime": 346
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU012_ESC001_4_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU012_ESC001_4_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU012_ESC001_6_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU012_ESC001_6_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU012_ESC001_6_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU012_ESC001_6_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU012_ESC001_6_0_document_0_default.png",
         "label": "FU012_ESC001_6",
@@ -609,23 +602,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": -1000,
-            "height": -660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 24.901666666666667,
-          "misMatchPercentage": "24.90",
-          "analysisTime": 649
+          "rawMisMatchPercentage": 85.44045454545454,
+          "misMatchPercentage": "85.44",
+          "analysisTime": 345
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU012_ESC001_6_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU012_ESC001_6_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC001_1_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC001_1_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC001_1_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC001_1_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC001_1_0_document_0_default.png",
         "label": "FU021_ESC001_1",
@@ -636,23 +629,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.3520454545454546,
-          "misMatchPercentage": "2.35",
-          "analysisTime": 568
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC001_1_0_document_0_default.png"
+          "rawMisMatchPercentage": 7.580757575757575,
+          "misMatchPercentage": "7.58",
+          "analysisTime": 363
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC001_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC001_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC001_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC001_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC001_2_0_document_0_default.png",
         "label": "FU021_ESC001_2",
@@ -663,23 +655,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.026818181818182,
-          "misMatchPercentage": "3.03",
-          "analysisTime": 264
+          "rawMisMatchPercentage": 8.18530303030303,
+          "misMatchPercentage": "8.19",
+          "analysisTime": 295
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC001_2_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU021_ESC001_2_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC001_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC001_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC001_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC001_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC001_3_0_document_0_default.png",
         "label": "FU021_ESC001_3",
@@ -690,23 +682,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.461590909090909,
-          "misMatchPercentage": "2.46",
-          "analysisTime": 717
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC001_3_0_document_0_default.png"
+          "rawMisMatchPercentage": 3.9701515151515157,
+          "misMatchPercentage": "3.97",
+          "analysisTime": 157
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC001_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC001_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC001_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC001_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC001_4_0_document_0_default.png",
         "label": "FU021_ESC001_4",
@@ -717,23 +708,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.232348484848485,
-          "misMatchPercentage": "2.23",
-          "analysisTime": 664
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC001_4_0_document_0_default.png"
+          "rawMisMatchPercentage": 6.569999999999999,
+          "misMatchPercentage": "6.57",
+          "analysisTime": 393
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC001_5_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC001_5_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC001_5_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC001_5_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC001_5_0_document_0_default.png",
         "label": "FU021_ESC001_5",
@@ -744,23 +734,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.4136363636363636,
-          "misMatchPercentage": "2.41",
-          "analysisTime": 544
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC001_5_0_document_0_default.png"
+          "rawMisMatchPercentage": 7.920151515151515,
+          "misMatchPercentage": "7.92",
+          "analysisTime": 201
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC002_1_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC002_1_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC002_1_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC002_1_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC002_1_0_document_0_default.png",
         "label": "FU021_ESC002_1",
@@ -771,23 +760,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.6860227272727273,
-          "misMatchPercentage": "2.69",
-          "analysisTime": 347
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC002_1_0_document_0_default.png"
+          "rawMisMatchPercentage": 7.641818181818182,
+          "misMatchPercentage": "7.64",
+          "analysisTime": 206
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC003_5_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC003_5_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC003_5_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC003_5_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC003_5_0_document_0_default.png",
         "label": "FU021_ESC003_5",
@@ -798,23 +786,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.0543181818181817,
-          "misMatchPercentage": "3.05",
-          "analysisTime": 319
+          "rawMisMatchPercentage": 8.830454545454545,
+          "misMatchPercentage": "8.83",
+          "analysisTime": 272
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC003_5_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU021_ESC003_5_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC003_6_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC003_6_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC003_6_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC003_6_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC003_6_0_document_0_default.png",
         "label": "FU021_ESC003_6",
@@ -825,23 +813,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.140492424242424,
-          "misMatchPercentage": "3.14",
-          "analysisTime": 589
+          "rawMisMatchPercentage": 9.190909090909091,
+          "misMatchPercentage": "9.19",
+          "analysisTime": 215
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC003_6_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU021_ESC003_6_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC004_1_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC004_1_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC004_1_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC004_1_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC004_1_0_document_0_default.png",
         "label": "FU021_ESC004_1",
@@ -852,23 +840,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 2.579621212121212,
-          "misMatchPercentage": "2.58",
-          "analysisTime": 551
+          "rawMisMatchPercentage": 86.52757575757576,
+          "misMatchPercentage": "86.53",
+          "analysisTime": 289
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC004_1_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU021_ESC004_1_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU021_ESC004_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU021_ESC004_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU021_ESC004_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU021_ESC004_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU021_ESC004_2_0_document_0_default.png",
         "label": "FU021_ESC004_2",
@@ -879,23 +867,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 23.45003787878788,
-          "misMatchPercentage": "23.45",
-          "analysisTime": 479
+          "rawMisMatchPercentage": 98.50424242424242,
+          "misMatchPercentage": "98.50",
+          "analysisTime": 308
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU021_ESC004_2_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU021_ESC004_2_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC001_2_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC001_2_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC001_2_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC001_2_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC001_2_0_document_0_default.png",
         "label": "FU022_ESC001_2",
@@ -906,23 +894,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 23.094166666666666,
-          "misMatchPercentage": "23.09",
-          "analysisTime": 480
+          "rawMisMatchPercentage": 84.555,
+          "misMatchPercentage": "84.56",
+          "analysisTime": 267
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC001_2_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU022_ESC001_2_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC001_3_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC001_3_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC001_3_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC001_3_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC001_3_0_document_0_default.png",
         "label": "FU022_ESC001_3",
@@ -933,23 +921,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 23.09401515151515,
-          "misMatchPercentage": "23.09",
-          "analysisTime": 479
+          "rawMisMatchPercentage": 98.20060606060606,
+          "misMatchPercentage": "98.20",
+          "analysisTime": 130
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC001_3_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU022_ESC001_3_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC001_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC001_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC001_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC001_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC001_4_0_document_0_default.png",
         "label": "FU022_ESC001_4",
@@ -960,23 +948,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.957878787878788,
-          "misMatchPercentage": "3.96",
-          "analysisTime": 581
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC001_4_0_document_0_default.png"
+          "rawMisMatchPercentage": 7.698787878787878,
+          "misMatchPercentage": "7.70",
+          "analysisTime": 274
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC001_10_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC001_10_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC001_10_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC001_10_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC001_10_0_document_0_default.png",
         "label": "FU022_ESC001_10",
@@ -987,23 +974,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 9.522045454545454,
-          "misMatchPercentage": "9.52",
-          "analysisTime": 547
+          "rawMisMatchPercentage": 15.82409090909091,
+          "misMatchPercentage": "15.82",
+          "analysisTime": 234
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC001_10_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU022_ESC001_10_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC002_4_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC002_4_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC002_4_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC002_4_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC002_4_0_document_0_default.png",
         "label": "FU022_ESC002_4",
@@ -1014,23 +1001,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 0.34412878787878787,
-          "misMatchPercentage": "0.34",
-          "analysisTime": 625
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC002_4_0_document_0_default.png"
+          "rawMisMatchPercentage": 1.8184848484848484,
+          "misMatchPercentage": "1.82",
+          "analysisTime": 109
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC002_5_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC002_5_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC002_5_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC002_5_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC002_5_0_document_0_default.png",
         "label": "FU022_ESC002_5",
@@ -1041,23 +1027,23 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 9.916098484848485,
-          "misMatchPercentage": "9.92",
-          "analysisTime": 618
+          "rawMisMatchPercentage": 13.379848484848486,
+          "misMatchPercentage": "13.38",
+          "analysisTime": 252
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC002_5_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU022_ESC002_5_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC002_6_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC002_6_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC002_6_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC002_6_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC002_6_0_document_0_default.png",
         "label": "FU022_ESC002_6",
@@ -1068,23 +1054,22 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 3.3348863636363637,
-          "misMatchPercentage": "3.33",
-          "analysisTime": 182
-        },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC002_6_0_document_0_default.png"
+          "rawMisMatchPercentage": 7.6,
+          "misMatchPercentage": "7.60",
+          "analysisTime": 266
+        }
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "pair": {
-        "reference": "../bitmaps_reference/1_FU022_ESC002_8_0_document_0_default.png",
-        "test": "../bitmaps_test/20240512-111441/1_FU022_ESC002_8_0_document_0_default.png",
+        "reference": "..\\bitmaps_reference\\1_FU022_ESC002_8_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20240512-135321\\1_FU022_ESC002_8_0_document_0_default.png",
         "selector": "document",
         "fileName": "1_FU022_ESC002_8_0_document_0_default.png",
         "label": "FU022_ESC002_8",
@@ -1095,16 +1080,16 @@ report({
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
-          "isSameDimensions": false,
+          "isSameDimensions": true,
           "dimensionDifference": {
-            "width": 1000,
-            "height": 660
+            "width": 0,
+            "height": 0
           },
-          "rawMisMatchPercentage": 9.916098484848485,
-          "misMatchPercentage": "9.92",
-          "analysisTime": 433
+          "rawMisMatchPercentage": 16.126515151515154,
+          "misMatchPercentage": "16.13",
+          "analysisTime": 193
         },
-        "diffImage": "../bitmaps_test/20240512-111441/failed_diff_1_FU022_ESC002_8_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20240512-135321\\failed_diff_1_FU022_ESC002_8_0_document_0_default.png"
       },
       "status": "fail"
     }
