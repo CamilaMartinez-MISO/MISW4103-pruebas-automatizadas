@@ -19,7 +19,7 @@ Versión | URL Despliegue | ¿Es línea base?
 
 
 # 2. Setup de las pruebas VRT
-Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de escenarios E2E, **Kraken** y **Cypress**
+Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de regresión visual VTT, **Kraken**, **Cypress**, **Resemble.js** y **Backstop**
 
 ## 2.1 Especificaciones técnicas del ambiente de pruebas usado:
 * SO: Windows 11+ y MacOS Sonoma 14.1.1
@@ -69,20 +69,21 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 > git clone https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas.git
 ```
 
-## 3.2 Estructura del proyecto
+## 3.2 Estructura general del proyecto
 
-A continuación se muestra la estructura global del proyecto, más adelanta se mostrará la estructura independiente de las dos herramientas por separado
+A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, tal como se muestra a continuación
 
 <img width="372" alt="Screenshot 2024-05-02 at 11 10 57 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d688af51-e2eb-41b4-806a-a0007fa671f9">
 
 ## 3.3 Instalar las librerías locales del proyecto
-Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas, Kraken y Cypress. Para ello solo es necesario hacer dos pasos:
+Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas. Para ello solo es necesario hacer dos pasos:
+
 1. Abrir una terminal o consola de comandos (CMD) sobre la carpeta raíz del proyecto
 2. Ejecutar el siguiente comando de Node:
 ```bash
 > npm install
 ```
-Esto descargará e instalará las dependencias necesarias para ambas herramientas, el listado de dependencias se muestra a continuación
+Esto descargará e instalará las dependencias necesarias para ambas herramientas, el listado de dependencias se muestra a continuación.
 
 ```json
   "dependencies": {
@@ -91,10 +92,12 @@ Esto descargará e instalará las dependencias necesarias para ambas herramienta
     "appium": "^2.5.4",
     "assert": "^2.1.0",
     "chai": "4.4.1",
-    "kraken-node": "^1.0.24"
+    "kraken-node": "^1.0.24",
+    "resemble": "^1.0.24",
+    "backstop": "^1.0.24"
   }
 ```
-Si desea consultar más sobre esto, puede ver el archivo *package.json*
+Si desea consultar más sobre esto, puede ver el archivo `package.json`
 
 
 ## 3.4 Servicio de Ghost
@@ -104,11 +107,15 @@ Si desea consultar más sobre esto, puede ver el archivo *package.json*
 <p align="center">render.com</p>
 
 
-La instancia de Ghost sobre la cual se ejecutarán las pruebas E2E se encuentra en la plataforma render.com y puede ser accedida desde el siguiente enlace. [Instancia de Ghost](https://ghost-fcj4.onrender.com/ghost)
+Las instancias de Ghost sobre las que se ejecutarán las pruebas VRT se encuentran en la plataforma render.com y pueden ser accedidas desde los siguientes enlaces. 
+
+ * [Ghost 5.14.1](https://ghost-fcj4.onrender.com/ghost)
+ * [Ghost 3.42.0](https://ghost-3-42-0.onrender.com/)
 
 
-# 4. Ejecución de las pruebas
-Es el momento de ejecutar los escenarios de pruebas disponibles en las dos herramientas. Se mostrará la forma de ejecutar Kraken y posteriormente Cypresss
+# 4. Ejecución de las pruebas E2E
+
+Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega anterior. Las modificaciones hechas permiten la captura de screenshots o pantallazos durante la ejecución de las pruebas por cada escenario y funcionalidad probada.
 
 ## 4.1 Herramienta Kraken
 
@@ -116,11 +123,15 @@ Es el momento de ejecutar los escenarios de pruebas disponibles en las dos herra
 <img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
 <p align="center">Kraken</p>
     
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas**, dirigirse a la carpeta kraken con la ayuda de la línea de comandos del computador o la terminal integrada en VS Code. El comando para ir a la carpeta kraken es el siguiente
+Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost. Se debe realiza run paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
 
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comando
 ```bash
+> cd Ghost_v5
 > cd kraken
 ```
+Por favor asegurarse de que está escribiendo Ghost con la G en mayúsculas para que el sistema de ficheros pueda dirigirse exitosamente a esa carpeta.
+
 ### 4.1.1 Estructura del proyecto:
 
 La estructura del proyecto debe verse de la siguiente manera
@@ -152,12 +163,21 @@ Una vez adentro de esa carpeta puede ejecutar el siguiente comando que dará ini
 ```
 Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
 
+De igual manera los screenshots tomados durante la ejecución de las pruebas pueden ser encontrados en carpeta **screenshots**. La estructura de esta carpeta por dentro debe lucir de la siguiente manera.
+
+<img width="351" alt="Screenshot 2024-05-11 at 8 51 12 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d5f7a422-020f-4390-ada1-87bdcf4cee9a">
+
+Como se puede apreciar, dentro de la ruta `Ghost_5/Kraken/screenshots` se encuentran las carpetas que contienen los screenshots por cada escenario.
+
+
 ### 4.1.4 Posibles situaciones que se pueden presentar
 Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
 
 Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
 
 Para remediar esto por favor en la carpeta de features sólo dejar un escenario y ejecutar así cada uno de ellos.
+
+Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hacer la toma de screenshots por cada paso ejecutado del escenario es posible que el computador se suspenda durante la prueba, lo que puede ocasionar que, las pruebas fallen automaticamente. Para no tener este inconveniente por favor asegurarse de que el computador tiene carga suficiente y en su configuraciòn no se tiene la suspensiòn automática después de unos minutos de inactividad.
 
 
 ## 4.2 Herramienta Cypress
