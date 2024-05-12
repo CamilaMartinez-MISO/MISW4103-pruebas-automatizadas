@@ -59,11 +59,11 @@ async function compareImagesInFolders(v3FolderPath, v5FolderPath) {
                             }
                             
                             // Crear la carpeta de resultados si no existe
-                            if (!fs.existsSync(`./results/${folderName}`)) {
-                                fs.mkdirSync(`./results/${folderName}`, { recursive: true });
+                            if (!fs.existsSync(`./ResembleJS/results/${folderName}`)) {
+                                fs.mkdirSync(`./ResembleJS/results/${folderName}`, { recursive: true });
                             }
                             // Guardar la imagen comparativa
-                            fs.writeFileSync(`./results/${folderName}/compare-${v3Image}`, data.getBuffer());
+                            fs.writeFileSync(`./ResembleJS/results/${folderName}/compare-${v3Image}`, data.getBuffer());
                             console.log(`Comparando ${v3Image} en ${folderName}: ${data.misMatchPercentage}% de diferencia`);
                         }
                     }

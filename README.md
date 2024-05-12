@@ -299,6 +299,8 @@ Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghos
 
 ## 6.2 Herramienta ResembleJS
 
+
+
 <p align="center">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
 <p align="center">ResembleJS</p>
