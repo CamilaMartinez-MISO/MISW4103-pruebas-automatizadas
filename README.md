@@ -110,7 +110,12 @@ Si desea consultar más sobre esto, puede ver el archivo `package.json`
 Las instancias de Ghost sobre las que se ejecutarán las pruebas VRT se encuentran en la plataforma render.com y pueden ser accedidas desde los siguientes enlaces. 
 
  * [Ghost 5.14.1](https://ghost-fcj4.onrender.com/ghost)
+   * Usuario: `h.franco@uniandes.edu.co`
+   * Contraseña: `miso20244103`
+
  * [Ghost 3.42.0](https://ghost-3-42-0.onrender.com/)
+   * Usuario: `jsvargasq@hotmail.com`
+   * Contraseña: `AdminR00t123!`
 
 
 # 4. Ejecución de las pruebas E2E
