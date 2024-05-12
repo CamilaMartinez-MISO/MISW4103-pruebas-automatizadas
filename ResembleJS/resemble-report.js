@@ -76,7 +76,7 @@ async function compareImagesInFolders(v3FolderPath, v5FolderPath) {
 }
 
 // Carpetas de los screenshots de Ghost v3 y Ghost v5
-const v3FolderPath = './Ghost_v3/cypress/cypress/screenshots';
-const v5FolderPath = './Ghost_v5/cypress/cypress/screenshots';
+const v3FolderPath = '../Ghost_v3/cypress/cypress/screenshots';
+const v5FolderPath = '../Ghost_v5/cypress/cypress/screenshots';
 
 compareImagesInFolders(v3FolderPath, v5FolderPath);
