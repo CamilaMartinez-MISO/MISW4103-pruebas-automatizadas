@@ -259,7 +259,7 @@ Como se puede apreciar, dentro de la ruta `Ghost_5/cypress/cypress/screenshots` 
 
 Los screenshots de estas carpetas llevan los nombres de los pasos realizados en Cypress para ser comparados posteriormente contra los screenshots de la versión 3.42.0 de Ghost con las herramientas de ResembleJS y BackstopJS
 
-## Ejecución pruebas E2E en Ghost 3.42.0
+## 4.3 Ejecución pruebas E2E en Ghost 3.42.0
 Ahora para ejecutar los nuevos escenarios construidos en Cypress para Ghost 3.42.0, se deben repetir los pasos descrito durante toda la sección 4, exceptuando la parte de la instalación global de Cypress de nuevo, ya que ya se tiene instalada por defecto. 
 
 La estructura de carpetas es completamente la misma, salvaguardando que se debe modificar los comandos de ruta de carpeta por Ghost_v3, ejemplo:
