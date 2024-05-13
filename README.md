@@ -203,7 +203,7 @@ Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de lo
 
 Para poder hacer la captura de screeshots en esta herramienta se realizó una modificación en el archivo `hooks.js` para poder colocar en un AfterStep el bloque de código necesario para la captura de screenshots.
 
-Este bloque de código se ejecutará siempre después de cada paso y no hay necesidad que modificar los archivos *features* o *steps.js* de los escenarios ya creados. El siguiente bloque de código muesta la funcionalidad añadida
+Este bloque de código se ejecutará siempre después de cada paso y no hay necesidad que modificar los archivos *features* o *steps.js* de los escenarios ya creados. El siguiente bloque de código muestra la funcionalidad añadida
 
 ```javascript
 AfterStep(async function() {
@@ -291,7 +291,7 @@ Esta clase tiene dos métodos importantes, `configureScreenshotFolder(folderPath
         })
     }
 ```
-El método configureScreenshotFolder tiene como funcionalidad definir la carpeta que será usada para albergar cada screenshot tomado durante la ejecución de los escenarios. Este método es llamado al incio de cada escenario de Cypress antes de iniciar con la ejecución de cada paso.
+El método configureScreenshotFolder tiene como funcionalidad definir la carpeta que será usada para albergar cada screenshot tomado durante la ejecución de los escenarios. Este método es llamado al inicio de cada escenario de Cypress antes de iniciar con la ejecución de cada paso.
 
 ```javascript
     /**
@@ -310,7 +310,7 @@ El método configureScreenshotFolder tiene como funcionalidad definir la carpeta
 
 El método asincronico takeScreenshot es llamado luego de cada paso y es invocado dentro de cada método del Page Object de donde se está ejecutando.
 
-A continuación se muestran los ejemplos de la invoacación de los dos métodos.
+A continuación se muestran los ejemplos de la invocación de los dos métodos.
 
 * configureScreenshotFolder()
 
@@ -377,7 +377,7 @@ Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo)
 
 <img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
 
-### 5.2.6 Iniciar la prubeba E2E
+### 5.2.6 Iniciar la prueba E2E
 Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
 
 <img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
@@ -457,7 +457,7 @@ La estructura de Backstopjs se ve de la siguiente manera
 
 ### 7.1.2 Ejecución Backstopjs
 
-Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raiz del proyecto
+Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raíz del proyecto
 
 ```bash
 > cd BackStopJs
@@ -486,7 +486,7 @@ Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una
 
 ### 7.1.3 Funcionamiento de Backstopjs
 
-La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinamicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
+La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
 El script revisa los screenshots almacenados por cada escenario revisando que exista el mismo en la versión 3 y 5 de Ghost, luego de esto ignora aquellas que ya se han construido previamente eliminando pantallas repetidas para comparar. 
 
 
@@ -514,7 +514,7 @@ La estructura de ResembleJS se ve de la siguiente manera:
 
 ### 7.2.2 Ejecución ResembleJS
 
-Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la raiz del proyecto
+Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la raíz del proyecto
 
 ```bash
 > cd ResembleJS
@@ -551,7 +551,7 @@ Ahí dentro podrá interactuar con cada uno de los escenarios testeados, que son
 
 ### 7.2.3 Funcionamiento de ResembleJS
 
-El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost V3 buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5, si existe, recorre todos los screenshots dento de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dento de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
+El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost V3 buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5, si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
 
 # 8 Reporte de Issues 
 
