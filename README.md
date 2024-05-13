@@ -9,17 +9,17 @@ María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
 # 1. Consideraciones iniciales
 
-Este repositorio ya contiene los `screenshots` de ambas versiones de Ghost guardados y el `reporte html` de las herramientas ResembleJS y BackstopJS. Te invitamos primero a revisar ambos insumos antes de seguir con este documento.
+Este repositorio ya contiene los `screenshots` de ambas versiones de Ghost guardados y el `reporte HTML` de las herramientas ResembleJS y BackstopJS. Se recomienda revisar ambos insumos antes de continuar con este documento.
 
 ## 1.1 Reportes de HTML
-Para los reportes HTML de de las dos herramientas se hizo el despliegue de ambos en Github Pages y puede ser consultado en los siguientes enlaces:
+Para los reportes HTML de las dos herramientas se hizo el despliegue de ambos en Github Pages y puede ser consultado en los siguientes enlaces:
 
 Herramienta | Enlace Github Pages
 -- | --
 ResembleJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/ResembleJS/results/report.html
 BackstopJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/BackStopJS/backstop_data/html_report/
 
-De igual manera se indica la ruta de cada uno de ellos dentro del repositorio a continuación:
+De igual manera, se indica la ruta de cada uno de ellos dentro del repositorio a continuación:
 
 Herramienta | Ruta
 -- | --
@@ -29,7 +29,7 @@ BackstopJS | BackStopJS/backstop_data/html_report/index.html
 
 ## 1.2 Carpeta de Screenshots
 
-Para ver los screenshots por favor busca las carpetas `screenshots` dentro de las siguientes rutas: 
+Para consultar los screenshots, acceder a las carpetas `screenshots` dentro de las siguientes rutas: 
 
 Versión Ghost | Herramienta | Ruta
 -- | -- | --
@@ -40,12 +40,12 @@ Versión Ghost | Herramienta | Ruta
 
 ## 1.3 Continuación del proceso
 
-Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriormente la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT `siguelo para volver a generar los Screenshots y los reportes HTML de las dos herramientas en cuestión.`
+Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriormente la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT `Seguir las instrucciones permitirá regenerar los Screenshots y los reportes HTML de ambas herramientas.`
 
-Si por el contrario deseas realizar la ejecución de los Scripts de ResembleJS y BackstopJS unicamente ve a la sección [7. Ejecución de las pruebas VRT](#7-ejecución-de-las-pruebas-vrt) no sin antes ejecutar el comando `npm install` en ruta raìz del proyecto.
+Si se desea realizar únicamente la ejecución de los scripts de ResembleJS y BackstopJS, dirigirse a la sección [7. Ejecución de las pruebas VRT](#7-ejecución-de-las-pruebas-vrt) no sin antes ejecutar el comando `npm install` en ruta raíz del proyecto.
 
 # 2. Descripción del set de pruebas VRT
-Las Pruebas de Regresión Visual o Visual Rregression Testing en Inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
+Las Pruebas de Regresión Visual o Visual Rregression Testing en inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
 
 En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
 
@@ -65,7 +65,7 @@ Primero es necesario instalar un conjunto de herramientas globales que servirán
 * Visual Studio Code
 
 ## 3.2 Instalación Node JS o NVM
-Para poder replicar bien este set de pruebas es requerido instalar en su máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aún, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
+Para poder replicar bien este set de pruebas es requerido instalar en la máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aún, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
 
 Una vez instalado, se puede comprobar con el siguiente comando en la terminal o línea de comando de windows: 
 Node: 
@@ -83,7 +83,7 @@ npm:
 Para la correcta ejecución de las dos herramientas es requerido instalar [Google Chrome](https://www.google.com/intl/es-419/chrome/). Por favor asegurarse que su versión de Chrome es la 124 o posterior tanto para UNIX como Windows
 
 ## 3.4 Instalación IDE 
-Aunque usted no vaya a tocar una línea de código del proyecto, le recomendamos qué por favor instale el IDE [Visual Studio Code](https://code.visualstudio.com/) el cual le permitirá ver el proyecto como un todo y explorar las distintas carpetas que este posee en orden de entender mejor ambas herramientas.
+Aunque no se vaya a modificar una línea de código del proyecto, se recomienda instalar el IDE [Visual Studio Code](https://code.visualstudio.com/) el cual le permitirá ver el proyecto como un todo y explorar las distintas carpetas que este posee en orden de entender mejor ambas herramientas.
 
 ## 3.5 Instalar GIT
 Para clonar los repositorios en donde se encuentran las herramientas, es necesario usar la herramienta GIT, la cual puede ser instalada siguiendo los pasos de su [página oficial](https://git-scm.com/downloads) en la sección downloads.
@@ -165,7 +165,7 @@ Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega a
 <img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
 <p align="center">Kraken</p>
     
-Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost. Se debe realizar un paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
+Ya que la estructura del proyecto ahora contempla las dos versiones de Ghost, se debe realizar un paso extra para poder ejecutar las pruebas E2E de Kraken en la versión 5.14.1 de Ghost.
 
 Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos
 ```bash
@@ -217,7 +217,7 @@ AfterStep(async function() {
   }
 })
 ```
-Còmo se puede apreciar, en la parte del if se hace un salto de paso para que no tome captura de pantalla de los pasos que son de esperar una x cantidad de tiempo sino de los que sirven para ejecutar un proceso como tal.
+Como se observa, dentro de la estructura del `if`, se realiza un salto en los pasos que simplemente implican esperar una cantidad determinada de tiempo. De esta manera, no se toma captura de pantalla de estos momentos, sino únicamente de los pasos que están directamente involucrados en la ejecución de un proceso específico.
 
 
 ### 5.1.4 Ejecución de las pruebas
@@ -237,12 +237,11 @@ Como se puede apreciar, dentro de la ruta `Ghost_5/Kraken/screenshots` se encuen
 ### 5.1.5 Posibles situaciones que se pueden presentar
 Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
 
-Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
+Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente. Si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
 
-Para remediar esto por favor en la carpeta de features sólo dejar un escenario y ejecutar así cada uno de ellos.
+Para solucionar esto, por favor asegúrese de que en la carpeta de features solo haya un escenario. Luego, ejecute cada uno de ellos individualmente.
 
-Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hacer la toma de screenshots por cada paso ejecutado del escenario es posible que el computador se suspenda durante la prueba, lo que puede ocasionar que, las pruebas fallen automáticamente. Para no tener este inconveniente por favor asegurarse de que el computador tiene carga suficiente y en su configuración no se tiene la suspensión automática después de unos minutos de inactividad.
-
+Dado que las pruebas requieren más tiempo debido a la captura de screenshots en cada paso del escenario, existe el riesgo de que el computador se suspenda durante el proceso, lo cual podría provocar que las pruebas fallen automáticamente. Para evitar este inconveniente, asegúrese de que el computador tenga suficiente carga y que en su configuración no esté activada la suspensión automática tras unos minutos de inactividad.
 
 ## 5.2 Herramienta Cypress
 
@@ -250,7 +249,7 @@ Por otro lado, ya que las pruebas toman un tiempo considerablemente mayor al hac
 <img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
 <p align="center">Cypress</p>
 
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos:
 
 ```bash
 > cd Ghost_v5
@@ -263,7 +262,7 @@ La estructura del proyecto debe verse así:
 <img width="303" alt="Screenshot 2024-05-05 at 11 37 22 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/64bb1f1d-3c6f-4753-8416-226590c81311">
 
 ### 5.2.1 Instalar Cypress v13.7.3
-Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando.
+Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando:
 ```bash
 > npm -g install cypress@13.7.3
 ```
@@ -274,7 +273,7 @@ Esto instalará Cypress de forma global en el PC para ser usado desde cualquier 
 
 Para que Cypress pudiera capturar los screenshots después de cada paso ejecutado se hizo un archivo JavaScript adicional con el patrón Page Object que será invocado en cada paso luego de su ejecución. La clase `screenshotPage.js` puede ser encontrada en la ruta `cypress/e2e/pages`
 
-Esta clase tiene dos métodos importantes, `configureScreenshotFolder(folderPath)` y `takeScreenshot(nameScreenshot)` los cuales se muestra su còdigo fuente a continuación
+Esta clase tiene dos métodos importantes, `configureScreenshotFolder(folderPath)` y `takeScreenshot(nameScreenshot)`. A continuación, se muestra el código fuente de ambos métodos:
 
 ```javascript
     /**
@@ -396,7 +395,7 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
 ```
 <img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
 
-El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se ejecuten uno tras del otro. Sin embargo si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
+El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se ejecuten uno tras del otro. Sin embargo, si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
 
 <img width="1728" alt="Screenshot 2024-05-05 at 12 28 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/3c4807c3-1590-47c5-9549-976f9f0c3af0">
 
