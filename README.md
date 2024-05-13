@@ -550,7 +550,9 @@ Esto desplegará el reporte generado por ResembleJS y debería lucir de la sigui
 
 Ahí dentro podrá interactuar con cada uno de los escenarios testeados, que son 12 en total.
 
+### 7.2.3 Funcionamiento de ResembleJS
 
+El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost V3 buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5, si existe, recorre todos los screenshots dento de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dento de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
 
 # 8 Reporte de Issues 
 
