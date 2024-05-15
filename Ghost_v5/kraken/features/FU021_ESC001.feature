@@ -6,18 +6,22 @@ Scenario: FU021_ESC001: As an admin user I want to add a new tag
   And I wait for 3 seconds
   When I sigin into Ghost "<email>" "<password>"
   And I wait for 5 seconds
-  And I click on Members
+  
+  And I go to Tags
   And I wait for 2 seconds
-  And I click on New member
+
+  And I click on New Tag button
   And I wait for 2 seconds
-  And I enter text "$name_1" as member name
+
+  And I enter the name of the tag
   And I wait for 2 seconds
-  And I enter text "$string_2" as member email
+
+  And I save the new tag
   And I wait for 2 seconds
-  And I enter a large text as member note
+
+  And I go back to tag section
   And I wait for 2 seconds
-  And I disable subscription to newsletter
-  And I wait for 2 seconds
-  And I click on Save
-  And I wait for 2 seconds
-  Then I see the invalid format messages
+
+  Then I check that my new tag was created
+
+
