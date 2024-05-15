@@ -21,7 +21,8 @@ Feature: HU009 - Iniciar sesión
     Given I navigate to page "<baseURL>"
     And I wait for 2 seconds
     When I sigin into Ghost <email_test> and <password_test>
+    Then I shoud see the main title <result>
 
     Examples:
-      | email_test               | password_test | message           |
-      | h.franco@uniandes.edu.co | miso20244103  | "Ingresa al Chat" |
+      | email_test               | password_test |   result    |
+      | h.franco@uniandes.edu.co | miso20244103  |   Dashboard |
