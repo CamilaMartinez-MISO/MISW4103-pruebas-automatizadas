@@ -19,8 +19,8 @@ Feature: HU009 - Iniciar sesión
       | h.franco@uniandes.edu.co                |                   1234 | "Your password is incorrect."          |
       | h.franco@uniandes.edu.co                | ; DROP TABLE users; -- | "Your password is incorrect."          |
       | h.franco@uniandes.edu.co                | miso2024👽4103          | "Your password is incorrect."          |
-      | 😚😋😛😝😜🤪                                  |                        | "Please fill out the form to sign in." |
-      | 😚😋😛😝😜🤪                                  | 😝😜🤪                    | "Please fill out the form to sign in." |
+      | 😚😋😛😝😜🤪                               |                        | "Please fill out the form to sign in." |
+      | 😚😋😛😝😜🤪                               | 😝😜🤪                    | "Please fill out the form to sign in." |
 
   @user2 @web
   Scenario Outline: Login success
