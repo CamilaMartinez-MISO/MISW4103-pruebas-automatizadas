@@ -11,6 +11,8 @@ Feature: HU009 - Iniciar sesión
     Examples:
       | email_test               | password_test | message                                |
       |                          |               | "Please fill out the form to sign in." |
+      | 😚😋😛😝😜🤪               |               | "Please fill out the form to sign in." |
+      | 😚😋😛😝😜🤪               | 😝😜🤪         | "Please fill out the form to sign in." |
       | miso                     |               | "Please fill out the form to sign in." |
       |                          |          1234 | "Please fill out the form to sign in." |
       | h.franco@uniandes.edu.co |               | "Please fill out the form to sign in." |
