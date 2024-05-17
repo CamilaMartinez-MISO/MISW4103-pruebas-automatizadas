@@ -3,7 +3,8 @@ class loginPage {
         identification: () => cy.get('input[name="identification"]'),
         password: () => cy.get('input[name="password"]'),
         loginButton: () => cy.get('button.login.gh-btn'),
-        signOutButton: () => cy.get('a.user-menu-signout')
+        signOutButton: () => cy.get('a.user-menu-signout'),
+        errorMessage: () => cy.get('p.main-error')
     }
 
     async signIn(email, password) {

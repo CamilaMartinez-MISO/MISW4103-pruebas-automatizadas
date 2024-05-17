@@ -9,18 +9,19 @@ Feature: HU009 - Iniciar sesión
     Then I expect to see in the login page this message: <message>
 
     Examples:
-      | email_test                              | password_test          | message                                |
-      |                                         |                        | "Please fill out the form to sign in." |
-      | miso                                    |                        | "Please fill out the form to sign in." |
-      |                                         |                   1234 | "Please fill out the form to sign in." |
-      | h.franco@uniandes.edu.co                |                        | "Please fill out the form to sign in." |
-      | SELECT * FROM information_schema.tables |                        | "Please fill out the form to sign in." |
-      | ; DROP TABLE users; --                  | miso20244103           | "Please fill out the form to sign in." |
-      | h.franco@uniandes.edu.co                |                   1234 | "Your password is incorrect."          |
-      | h.franco@uniandes.edu.co                | ; DROP TABLE users; -- | "Your password is incorrect."          |
-      | h.franco@uniandes.edu.co                | miso2024👽4103          | "Your password is incorrect."          |
-      | 😚😋😛😝😜🤪                               |                        | "Please fill out the form to sign in." |
-      | 😚😋😛😝😜🤪                               | 😝😜🤪                    | "Please fill out the form to sign in." |
+      | email_test                              | password_test          | message                                    |
+      |                                         |                        | "Please fill out the form to sign in."     |
+      | miso                                    |                        | "Please fill out the form to sign in."     |
+      |                                         |                   1234 | "Please fill out the form to sign in."     |
+      | h.franco@uniandes.edu.co                |                        | "Please fill out the form to sign in."     |
+      | SELECT * FROM information_schema.tables |                        | "Please fill out the form to sign in."     |
+      | ; DROP TABLE users; --                  | miso20244103           | "Please fill out the form to sign in."     |
+      | ana.maria142@uniandes.edu.co            | miso20244103           | "There is no user with that email address." |
+      | h.franco@uniandes.edu.co                |                   1234 | "Your password is incorrect."              |
+      | h.franco@uniandes.edu.co                | ; DROP TABLE users; -- | "Your password is incorrect."              |
+      | h.franco@uniandes.edu.co                | miso2024👽4103          | "Your password is incorrect."              |
+      | 😚😋😛😝😜🤪                               |                        | "Please fill out the form to sign in."     |
+      | 😚😋😛😝😜🤪                               | 😝😜🤪                  | "Please fill out the form to sign in."     |
 
   @user2 @web
   Scenario Outline: Login success

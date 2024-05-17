@@ -4,7 +4,7 @@ import homePage from "./pages/homePage";
 import settingsPage from "./pages/settingsPage";
 import indexPage from "./pages/indexPage";
 import dataPool from "./pages/dataPool";
-import {faker} from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
 
 // Destructurar la data de properties.json
