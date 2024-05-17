@@ -24,10 +24,10 @@ Scenario Outline: Validate that it is not possible to add a new member with data
   And I wait for 2 seconds
   And I click on Save
   And I wait for 2 seconds
-  Then I see the invalid format message <result>
+  Then I see the invalid format message <message>
 
   Examples:
-    | name | email_member | label | note | result |
+    | name | email_member | label | note | message |
     |Burr Cogman||in|Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.|Please enter an email.|
     |Madel Meininking|בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ|porta volutpat|Aliquam non mauris.|Invalid Email.|
     |Wilmer Gorman|zcasserley1@behance.net|consequat|sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi|Note is too long.|
