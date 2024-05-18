@@ -24,4 +24,7 @@ Scenario Outline: FU023_APR_01: Validate changes in navigation of application.
 
   Examples:
     | label | url | error_label | error_url |
+    |  |  | You must specify a label | You must specify a URL or relative path |
+    |  | https://ghost-fcj4.onrender.com/ | You must specify a label | |
+    | Contact us | | | You must specify a URL or relative path |
     | Contact us | https://ghost-fcj4.onrender.com/contact-us/ | | |
