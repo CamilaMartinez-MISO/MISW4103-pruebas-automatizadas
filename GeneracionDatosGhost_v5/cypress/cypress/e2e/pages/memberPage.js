@@ -3,6 +3,8 @@ class memberPage {
         newMemberButton: () => cy.get('a[href="#/members/new/"]'),
         name: () => cy.get('#member-name'),
         email: () => cy.get('#member-email'),
+        label: () => cy.get('input.ember-power-select-trigger-multiple-input'),
+        addLabel: () => cy.get('li.ember-power-select-option'),
         note: () => cy.get('#member-note'),
         newsletter: () => cy.get('.for-switch'),
         saveButton: () => cy.get('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view'),
@@ -16,15 +18,23 @@ class memberPage {
     }
 
     async enterName(name) {
-        this.elements.name().type(name, {force: true})
+        this.elements.name().type(name, { force: true })
     }
 
     async enterEmail(email) {
-        this.elements.email().type(email, {force: true})
+        this.elements.email().type(email, { force: true })
+    }
+
+    async enterLabel(label) {
+        this.elements.label().type(label, { force: true })
+    }
+
+    async clickOnAddLabel() {
+        this.elements.addLabel().click({ force: true })
     }
 
     async enterNote(note) {
-        this.elements.note().type(note, {force: true})
+        this.elements.note().type(note, { force: true })
     }
 
     async disableNewsletter() {

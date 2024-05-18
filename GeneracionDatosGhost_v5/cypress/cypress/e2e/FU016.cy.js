@@ -8,14 +8,22 @@ import memberPage from './pages/memberPage'
 const { baseURL, email, password } = data
 
 /**
- * Feature: Create post
+ * Feature: Add member
  */
-describe('Feature: Create post', function () {
+describe('Feature: Add member', function () {
+    let memberFormData = []
 
     // Given Section
     beforeEach(() => {
         cy.visit(baseURL)
+        cy.request('GET', 'https://api.mockaroo.com/api/ecad2bd0?count=10&key=6a3c7e00').then((response) => {
+            memberFormData = response.body
+        });
     });
+
+    //
+    // Random Scenarios
+    //
 
     it('Scenario Random: Add a new member', function () {
         const name = faker.person.fullName()
@@ -78,5 +86,90 @@ describe('Feature: Create post', function () {
 
         // Then Section
         memberPage.getNameMessage().contains('Name cannot be longer than 191 characters.').should('exist');
+    })
+
+    //
+    // Pseudorandom Scenarios
+    //
+
+    it('Scenario Pseudorandom: Add a new member', function () {
+        const scenarioData = memberFormData[Math.floor(Math.random() * memberFormData.length)]
+        const name = scenarioData.name
+
+        // When Section
+        loginPage.signIn(email, password)
+        homePage.clickOnMembers()
+        memberPage.clickOnNewMember()
+        memberPage.enterName(name)
+        memberPage.enterEmail(scenarioData.email)
+        memberPage.enterNote(scenarioData.note)
+        memberPage.disableNewsletter()
+        memberPage.clickOnSave()
+        memberPage.clickOnMembers()
+
+        // Then Section
+        memberPage.elements.membersList().contains(name).should('exist');
+    })
+
+    it('Scenario Pseudorandom: Add a new member using a naughty string as name', function () {
+        const scenarioData = memberFormData[Math.floor(Math.random() * memberFormData.length)]
+        const bad_name = scenarioData.bad_name
+
+        // When Section
+        loginPage.signIn(email, password)
+        homePage.clickOnMembers()
+        memberPage.clickOnNewMember()
+        memberPage.enterName(bad_name)
+        memberPage.enterEmail(scenarioData.email)
+        memberPage.enterNote(scenarioData.note)
+        memberPage.disableNewsletter()
+        memberPage.clickOnSave()
+        memberPage.clickOnMembers()
+
+        // Then Section
+        memberPage.elements.membersList().contains(bad_name).should('exist');
+        console.log('bad_name: ', bad_name)
+    })
+
+    it('Scenario Pseudorandom: Add a new member using a naughty string as note', function () {
+        const scenarioData = memberFormData[Math.floor(Math.random() * memberFormData.length)]
+        const name = scenarioData.name
+
+        // When Section
+        loginPage.signIn(email, password)
+        homePage.clickOnMembers()
+        memberPage.clickOnNewMember()
+        memberPage.enterName(name)
+        memberPage.enterEmail(scenarioData.email)
+        memberPage.enterNote(scenarioData.bad_note)
+        memberPage.disableNewsletter()
+        memberPage.clickOnSave()
+        memberPage.clickOnMembers()
+
+        // Then Section
+        memberPage.elements.membersList().contains(name).should('exist');
+        console.log('bad_note: ', scenarioData.bad_note)
+    })
+
+    it('Scenario Pseudorandom: Add a new member using a naughty string as label', function () {
+        const scenarioData = memberFormData[Math.floor(Math.random() * memberFormData.length)]
+        const name = scenarioData.name
+
+        // When Section
+        loginPage.signIn(email, password)
+        homePage.clickOnMembers()
+        memberPage.clickOnNewMember()
+        memberPage.enterName(name)
+        memberPage.enterEmail(scenarioData.email)
+        memberPage.enterLabel(scenarioData.bad_label)
+        memberPage.clickOnAddLabel()
+        memberPage.enterNote(scenarioData.note)
+        memberPage.disableNewsletter()
+        memberPage.clickOnSave()
+        memberPage.clickOnMembers()
+
+        // Then Section
+        memberPage.elements.membersList().contains(name).should('exist');
+        console.log('bad_label: ', scenarioData.bad_label)
     })
 });
