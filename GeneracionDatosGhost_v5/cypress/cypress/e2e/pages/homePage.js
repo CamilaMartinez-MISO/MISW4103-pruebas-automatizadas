@@ -35,7 +35,7 @@ class homePage {
     }
 
     async clickOnPosts() {
-        this.elements.postsButton().first().wait(1000).click({ force: true })
+        this.elements.postsButton().first().click({ force: true })
     }
 
     async clickOnPage() {
@@ -51,7 +51,7 @@ class homePage {
     }
 
     async clickOnNewPost() {
-        this.elements.newPostButton().wait(1000).click({ force: true })
+        this.elements.newPostButton().click({ force: true })
     }
 
     async clickOnNewPage() {
@@ -59,11 +59,11 @@ class homePage {
     }
 
     async clickOnPublished() {
-        this.elements.publishedButton().wait(1000).click()
+        this.elements.publishedButton().click()
     }
 
     async clickOnPostWithTitle(title) {
-        this.elements.publishedPosts().wait(1000).contains(title).click()
+        this.elements.publishedPosts().contains(title).click()
     }
 
     async clickOnScheduled() {
@@ -71,7 +71,7 @@ class homePage {
     }
 
     async clickOnMembers() {
-        this.elements.membersButton().wait(1000).click({ force: true })
+        this.elements.membersButton().click({ force: true })
     }
 
     async clickOnSettings() {
