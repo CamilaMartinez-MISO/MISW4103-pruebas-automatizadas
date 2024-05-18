@@ -46,8 +46,22 @@ describe('Feature: Change the description of page', function () {
     })
 
 
-    it('Scenario: FU012_ESC003: As an admin user I want to change the description page with limit of characters', function () {
+    it('Scenario: FU012_ESC003: As an admin user I want to change the description page with limit of special characters', function () {
         const randomDescription = faker.string.symbol(200);
+
+        // When
+        changeDescriptionPage_steps(randomDescription)
+
+        // Then Section
+        cy.visit(baseURLHome)
+        cy.reload()
+        indexPage.elements.siteDescription().then($elemento => {
+            expect($elemento.text()).to.equal(randomDescription);
+        });
+    })
+
+    it('Scenario: FU012_ESC003: As an admin user I want to change the description page with limit of alphabetic characters', function () {
+        const randomDescription = faker.string.alphanumeric(200);
 
         // When
         changeDescriptionPage_steps(randomDescription)

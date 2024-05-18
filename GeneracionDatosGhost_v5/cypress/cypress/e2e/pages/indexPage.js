@@ -23,7 +23,7 @@ class indexPage {
     async typeOnSearchInput(search) {
         this.elements.iframeSearch().then($iframe => {
             const iframe = $iframe.prop('contentDocument');
-            cy.wrap(iframe).find(this.selectorsIframe.searchInput).type(search);
+            cy.wrap(iframe).find(this.selectorsIframe.searchInput).type(search, {parseSpecialCharSequences: false});
         });
     }
 
