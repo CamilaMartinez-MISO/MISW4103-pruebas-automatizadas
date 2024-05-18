@@ -2,9 +2,10 @@ import data from './properties.json'
 import dataPool from "./pages/dataPool";
 const loginPage = require("./pages/loginPage");
 import { faker } from "@faker-js/faker";
+import homePage from './pages/homePage';
 
 // Destructurar la data de properties.json
-const { baseURL } = data
+const { baseURL, email, password } = data
 
 describe('HU009: ', () => {
 
@@ -17,6 +18,13 @@ describe('HU009: ', () => {
       memberFormData = response.body
     });
   });
+
+  it('Scenario Apriori: Validate that is possible login with the correct data', () => {
+
+    loginPage.signIn(email, password)
+    homePage.elements.mainTitle().contains('Dashboard').should('exist')
+
+  })
 
   it('Scenario Apriori: Validate that is not possible login with wrong apriori inputs', () => {
     const email = dataPool.getRandomElement();

@@ -1,5 +1,6 @@
 class homePage {
     elements = {
+        mainTitle: () => cy.get('h2[class="gh-canvas-title"]'),
         menuButton: () => cy.get('div.gh-user-avatar'),
         tagsButton: () => cy.get('a[href="#/tags/"]'),
         newTagButton: () => cy.get('a.ember-view.gh-btn.gh-btn-primary'),

@@ -45,6 +45,22 @@ describe('FEATURE: Create Tags', function () {
 
     });
 
+    it("Scenario Random: Validate that it's not possible create a new Tag with a wrong color input", function () {
+
+        const fakeName = faker.person.firstName('male')
+        const fakeWrongColor = faker.person.fullName()
+
+        // When Section
+        loginPage.signIn(email, password)
+        cy.visit(`${baseURL}/#/tags/new`)
+        tagPage.enterTagName(fakeName)
+        tagPage.enterTagColor(fakeWrongColor)
+        tagPage.clickOnSaveButton()
+        // Then Section
+        tagPage.elements.tagNameErrorMessage().contains('The colour should be in valid hex format').should('exist')
+
+    });
+
     it("Scenario Random: Validate that it's not possible create a new Tag with a large description", function () {
 
         const fakeTitle = faker.person.firstName('male')

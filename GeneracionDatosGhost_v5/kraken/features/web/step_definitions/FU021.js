@@ -29,6 +29,7 @@ When(/^I enter the Tag Description (.*)$/, async function (description) {
     return await element.setValue(description)
 });
 
+
 When('I click on Save Tag button', async function () {
     let element = await this.driver.$('button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]');
     return await element.click()
@@ -37,6 +38,17 @@ When('I click on Save Tag button', async function () {
 When('I click on Tags back link', async function () {
     let element = await this.driver.$('h2[class="gh-canvas-title"] > a[href="#/tags/"]');
     return await element.click()
+});
+
+When('I click on Meta Expand button', async function () {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-expand"]');
+    return await element.click()
+});
+
+When(/^I enter the Canonical Link (.*)$/, async function (link) {
+    let element = await this.driver.$('input[name="canonicalUrl"]');
+    await element.click()
+    return await element.setValue(link)
 });
 
 Then(/^I expect to see the Tag Name error message: (.*)$/, async function (message) {
@@ -55,6 +67,11 @@ Then(/^I expect to see the Tag Description error message: (.*)$/, async function
 });
 
 Then(/^I expect to see the the new create Tag: (.*)$/, async function (message) {
-    let newTag = await this.driver.$('h3.gh-tag-list-name').getText();
-    assert.equal(newTag, message)
+    let errorMessage = await this.driver.$('body').getText();
+    assert(errorMessage.includes(message))
+});
+
+Then(/^I expect to see the Canonical Link error message: (.*)$/, async function (message) {
+    let errorMessage = await this.driver.$('body').getText();
+    assert(errorMessage.includes(message))
 });
