@@ -54,7 +54,7 @@ Scenario Outline: Validate that it is not possible to create a post with a long 
     |Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. |ヽ༼ຈل͜ຈ༽ﾉ ヽ༼ຈل͜ຈ༽ﾉ `⁄€‹›ﬁﬂ‡°·‚—±|Title cannot be longer than 255 characters.|
 
 @user3 @web
-Scenario Outline: validate that it is not possible to create an entry with Meta data longer than the maximum length. 
+Scenario Outline: Validate that it is not possible to create a post with Meta data longer than the maximum length. 
   Given I navigate to page "<baseURL>"
   And I wait for 3 seconds
   When I sigin "<email>" "<password>"
