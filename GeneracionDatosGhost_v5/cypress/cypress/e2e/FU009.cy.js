@@ -8,12 +8,17 @@ const { baseURL } = data
 
 describe('HU009: ', () => {
 
+  let memberFormData = []
+
   // Given Section
   beforeEach(() => {
     cy.visit(baseURL)
+    cy.request('GET', 'https://api.mockaroo.com/api/ecad2bd0?count=20&key=6a3c7e00').then((response) => {
+      memberFormData = response.body
+    });
   });
 
-  it('Scenario: HU009_ESC_001: Login failed with wrong apriori inputs', () => {
+  it('Scenario Apriori: Validate that is not possible login with wrong apriori inputs', () => {
     const email = dataPool.getRandomElement();
     const password = dataPool.getRandomElement();
 
@@ -23,7 +28,7 @@ describe('HU009: ', () => {
 
   })
 
-  it('Scenario: HU009_ESC_002: Login failed with wrong ramdom inputs', () => {
+  it('Scenario Random: Validate that is not possible login with wrong ramdom inputs', () => {
     const email = faker.internet.email()
     const password = faker.internet.password({ length: 30 })
 
@@ -32,4 +37,30 @@ describe('HU009: ', () => {
     loginPage.elements.errorMessage().contains('There is no user with that email address').should('exist')
 
   })
+
+  it('Scenario Pseudo: Validate that is not possible login with wrong pseudo-ramdom inputs with a library', () => {
+
+    const name = faker.person.firstName('female')
+    const email = faker.internet.email({ firstName: name })
+    const password = faker.internet.password({ length: 30 })
+
+    loginPage.signIn(email, password)
+
+    loginPage.elements.errorMessage().contains('There is no user with that email address').should('exist')
+
+  })
+
+  it('Scenario Pseudo: Validate that is not possible login with wrong pseudo-ramdom inputs from an API', () => {
+
+    const scenarioData = memberFormData[Math.floor(Math.random() * memberFormData.length)]
+    const email =  scenarioData.email
+    const password = scenarioData.note
+
+    loginPage.signIn(email, password)
+
+    loginPage.elements.errorMessage().contains('There is no user with that email address').should('exist')
+
+  })
+
+
 })

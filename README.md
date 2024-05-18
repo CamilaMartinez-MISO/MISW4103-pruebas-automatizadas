@@ -1,4 +1,4 @@
-# Pruebas de Regresión Visual | Ghost v5 y Ghost v3
+# Pruebas de validación de datos | Ghost v5.14.1
 
 Nombre | Email Uniandes
 -- | --
