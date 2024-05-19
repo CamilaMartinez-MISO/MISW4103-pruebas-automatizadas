@@ -11,6 +11,11 @@ When('I click on New Tag Button', async function () {
     return await element.click()
 });
 
+When('I click on the first Tag for editing', async function () {
+    let element = await this.driver.$('a[title="Edit tag"]:first-child');
+    return await element.click()
+});
+
 When(/^I enter the Tag Name (.*)$/, async function (name) {
     let element = await this.driver.$('input[name="name"]');
     await element.click()
@@ -45,6 +50,12 @@ When('I click on Meta Expand button', async function () {
     return await element.click()
 });
 
+When(/^I enter the Meta title (.*)$/, async function (metaTitle) {
+    let element = await this.driver.$('input[name="metaTitle"]');
+    await element.click()
+    return await element.setValue(metaTitle)
+});
+
 When(/^I enter the Canonical Link (.*)$/, async function (link) {
     let element = await this.driver.$('input[name="canonicalUrl"]');
     await element.click()
@@ -74,4 +85,9 @@ Then(/^I expect to see the the new create Tag: (.*)$/, async function (message) 
 Then(/^I expect to see the Canonical Link error message: (.*)$/, async function (message) {
     let errorMessage = await this.driver.$('body').getText();
     assert(errorMessage.includes(message))
+});
+
+Then(/^I expect to see the Canonical error message when edit: (.*)$/, async function (message) {
+    let errorMessage  = await this.driver.$('article.gh-alert.gh-alert-red > div.gh-alert-content').getText();
+    assert.equal(errorMessage, message)
 });
