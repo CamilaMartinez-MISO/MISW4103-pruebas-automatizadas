@@ -9,6 +9,10 @@ class tagPage {
         tagsLink: () => cy.get('h2[class="gh-canvas-title"] > a[href="#/tags/"]'),
         deleteTagButton: () => cy.get('.gh-btn.gh-btn-red.gh-btn-icon'),
         deleteConfirmButton: () => cy.get('.gh-btn.gh-btn-red.gh-btn-icon.ember-view'),
+        metaExpandButton: () => cy.get('button[class="gh-btn gh-btn-expand"]'),
+        canonicallink: () => cy.get('input[name="canonicalUrl"]'),
+        metaTitle: () => cy.get('input[name="metaTitle"]'),
+        metaDescription: () => cy.get('textarea[name="metaDescription"]'),
 
         tagNameErrorMessage: () => cy.get('p.response')
     }
@@ -47,6 +51,22 @@ class tagPage {
 
     async clickOnConfonfirmDeleteAction() {
         this.elements.deleteConfirmButton().wait(1000).click({ force: true })
+    }
+
+    async clickOnMetaExpandButton() {
+        this.elements.metaExpandButton().wait(1000).first().click({ force: true })
+    }
+
+    async enterCanonicalLink(canonicalLink = 'https://www.google.com') {
+        this.elements.canonicallink().wait(1000).type(canonicalLink, { force: true })
+    }
+
+    async enterMetaTitle(metaTitle = 'New Meta Title') {
+        this.elements.metaTitle().wait(1000).type(metaTitle, { force: true })
+    }
+
+    async enterMetaDescription(metaDescription = 'New Meta Description') {
+        this.elements.metaDescription().wait(1000).type(metaDescription, { force: true })
     }
 }
 
