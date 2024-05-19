@@ -29,7 +29,7 @@ Primero es necesario instalar un conjunto de herramientas globales que servirán
 - GIT: Versión más reciente o predefinida en sistemas UNIX
 - Visual Studio Code
 
-## 3.2 Instalación Node JS o NVM
+## 2.2 Instalación Node JS o NVM
 
 Para poder replicar bien este set de pruebas es requerido instalar en la máquina local la versión de [Node JS](https://nodejs.org/en) descrita en la sección 2.1, o mejor aún, instalar [NVM](https://github.com/nvm-sh/nvm), para poder alternar entre las diferentes versiones de Node disponibles.
 
@@ -279,6 +279,6 @@ El reporte de los issues puede ser consultado en este mismo repositorio en el m�
 
 Los issues para Pruebas de Regresión Visual tienen la siguiente nomenclatura: `GAD-00X - Nombre del issue encontrado`
 
-# 9. Documentación extra
+# 6. Documentación extra
 
 Puede ver las funcionalidades escogidas, y cómo se realizaron los escenarios con las tres técnicas de generación de datos, apriori, psuedo aleatorias y aleatorias en la [Wiki](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/wiki) del proyecto
