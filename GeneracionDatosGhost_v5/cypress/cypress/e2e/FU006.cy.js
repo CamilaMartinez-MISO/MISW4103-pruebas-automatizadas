@@ -19,7 +19,7 @@ describe('Feature: Search post', function () {
     });
 
 
-    it('Scenario: FU006_ESC001: As an external user I want to search with random value in home', function () {
+    it('Scenario Random: As an external user I want to search with random value in home', function () {
         const randomSearchValue = dataPool.getRandomElement();
 
         // When Section
@@ -29,7 +29,7 @@ describe('Feature: Search post', function () {
         indexPage.getInfoMessage().should('contain', 'No matches found')
     });
 
-    it('Scenario: FU006_ESC002: As an external user I want to search with long value', function () {
+    it('Scenario Pseudo: As an external user I want to search with long value', function () {
         const longSearchValue = faker.string.alphanumeric(1000);
 
         // When Section
@@ -39,7 +39,7 @@ describe('Feature: Search post', function () {
         indexPage.getInfoMessage().should('contain', 'No matches found')
     });
 
-    it('Scenario: FU006_ESC003: As an external user I want to search with symbols values', function () {
+    it('Scenario Random: As an external user I want to search with symbols values', function () {
         const longSearchValue = faker.string.symbol(1000);
 
         // When Section

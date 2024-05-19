@@ -10,9 +10,9 @@ import {faker} from "@faker-js/faker";
 const {baseURL, baseURLHome, email, password} = data
 
 /**
- * FEATURE: Change the description of page
+ * FEATURE: Change the navigation of app
  */
-describe('Feature: Change the description of page', function () {
+describe('Feature: Change the navigation of app', function () {
 
     // Given Section
     beforeEach(() => {
@@ -20,7 +20,7 @@ describe('Feature: Change the description of page', function () {
     });
 
 
-    it('Scenario: FU023_APR_01: As an admin user I want to change the navigation', function () {
+    it('Scenario Apriori: As an admin user I want to change the navigation', function () {
         // Given
         const label = dataPool.getRandomLabelNavigation();
         const url = dataPool.getRandomUrlNavigation();
@@ -37,7 +37,7 @@ describe('Feature: Change the description of page', function () {
         settingsPage.clickOnSaveSettings()
     })
 
-    it('Scenario: FU023_APR_02: As an admin user I want to change the navigation', function () {
+    it('Scenario Apriori: As an admin user I want to change the navigation', function () {
         // Given
         loginPage.signIn(email, password)
         homePage.clickOnSettings()
@@ -53,7 +53,7 @@ describe('Feature: Change the description of page', function () {
         settingsPage.elements.urlNavInputDescriptionError().contains("You must specify a URL or relative path").should('exist');
     })
 
-    it('Scenario: FU023_PSE_01: As an admin user I want to change the navigation', function () {
+    it('Scenario Pseudo: As an admin user I want to change the navigation', function () {
         // Given
         const label = faker.word.words(1)
         const url = faker.internet.url()
@@ -70,7 +70,7 @@ describe('Feature: Change the description of page', function () {
         settingsPage.clickOnSaveSettings()
     })
 
-    it('Scenario: FU023_ALE_01: As an admin user I want to change the navigation', function () {
+    it('Scenario Random: As an admin user I want to change the navigation', function () {
         // Given
         const label = dataPool.getRandomElement();
         const url = dataPool.getRandomElement();

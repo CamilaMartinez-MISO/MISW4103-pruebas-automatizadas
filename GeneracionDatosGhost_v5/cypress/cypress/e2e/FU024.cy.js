@@ -17,7 +17,7 @@ describe('Feature: Change the meta data of application', function () {
     });
 
 
-    it('Scenario: FU024_APR_01: As an admin user I want to change the meta data of application', function () {
+    it('Scenario Apriori: As an admin user I want to change the meta data of application', function () {
         loginPage.signIn(email, password)
         homePage.clickOnSettings()
         settingsPage.clickOnGeneralSettings()
@@ -31,7 +31,7 @@ describe('Feature: Change the meta data of application', function () {
         settingsPage.clickOnSaveSettings()
     })
 
-    it('Scenario: FU024_APR_02: As an admin user I want to change the meta data of application', function () {
+    it('Scenario Apriori: As an admin user I want to change the meta data of application', function () {
         let title = dataPool.getRandomLabelNavigation();
         let description = dataPool.getRandomLabelNavigation();
 
@@ -50,7 +50,7 @@ describe('Feature: Change the meta data of application', function () {
         settingsPage.clickOnSaveSettings()
     })
 
-    it('Scenario: FU024_PSE_01: As an admin user I want to change the meta data of application', function () {
+    it('Scenario Pseudo: As an admin user I want to change the meta data of application', function () {
         let title = faker.word.words(15);
         let description = faker.word.words(35);
 
@@ -69,7 +69,7 @@ describe('Feature: Change the meta data of application', function () {
         settingsPage.clickOnSaveSettings()
     })
 
-    it('Scenario: FU024_ALE_01: As an admin user I want to change the meta data of application', function () {
+    it('Scenario Random: As an admin user I want to change the meta data of application', function () {
         let title = dataPool.getRandomElement();
         let description = dataPool.getRandomElement();
 

@@ -1,4 +1,4 @@
-Feature: Change the description of app
+Feature: Change the navigation of app
 
   @user1 @web
   Scenario Outline: FU023_APR_01: Validate changes in navigation of application.

@@ -21,7 +21,7 @@ describe('Feature: Change the description of page', function () {
     });
 
 
-    it('Scenario: FU012_ESC001: As an admin user I want to change the description page with random pool data', function () {
+    it('Scenario Random: As an admin user I want to change the description page with random pool data', function () {
         const randomDescription = dataPool.getRandomElement();
 
         // When
@@ -34,7 +34,7 @@ describe('Feature: Change the description of page', function () {
     })
 
 
-    it('Scenario: FU012_ESC002: As an admin user I want to change the description page over limit', function () {
+    it('Scenario Pseudo: As an admin user I want to change the description page over limit', function () {
         const randomDescription = faker.string.alphanumeric(201);
         cy.once('uncaught:exception', () => false); // Ignore error in app
 
@@ -46,7 +46,7 @@ describe('Feature: Change the description of page', function () {
     })
 
 
-    it('Scenario: FU012_ESC003: As an admin user I want to change the description page with limit of special characters', function () {
+    it('Scenario Random: As an admin user I want to change the description page with limit of special characters', function () {
         const randomDescription = faker.string.symbol(200);
 
         // When
@@ -60,7 +60,7 @@ describe('Feature: Change the description of page', function () {
         });
     })
 
-    it('Scenario: FU012_ESC003: As an admin user I want to change the description page with limit of alphabetic characters', function () {
+    it('Scenario Pseudo: As an admin user I want to change the description page with limit of alphabetic characters', function () {
         const randomDescription = faker.string.alphanumeric(200);
 
         // When
