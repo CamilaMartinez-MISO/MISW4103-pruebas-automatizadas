@@ -30,7 +30,7 @@ describe('Feature: Search post', function () {
     });
 
     it('Scenario Pseudo: As an external user I want to search with long value', function () {
-        const longSearchValue = faker.string.alphanumeric(1000);
+        const longSearchValue = faker.word.words(100);
 
         // When Section
         cy.visit(baseURLHome)
