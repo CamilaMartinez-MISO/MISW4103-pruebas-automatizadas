@@ -36,6 +36,13 @@ When('I type random value in the url navigation', async function () {
     return await element.setValue(urlValue)
 });
 
+When('I type very long value in the label navigation', async function () {
+    let labelValue = faker.string.alpha(3800);
+
+    let element = await this.driver.$('#settings-navigation > div.gh-blognav-item.ember-view > div > span.gh-blognav-label.ember-view > input')
+    return await element.setValue(labelValue)
+});
+
 Then(/^I see the error (.*) in label input$/, async function (error) {
     if (error != undefined) {
         let description = await this.driver.$('span.gh-blognav-label.error  > p.response').getText()
