@@ -7,55 +7,18 @@ Manuel Felipe Bejarano | mf.bejaranob1@uniandes.edu.co
 Juan Sebastián Vargas     | js.vargasq1@uniandes.edu.co
 María Camila Martínez  | mc.martinezm12@uniandes.edu.co
 
-# 1. Consideraciones iniciales
+# 1. Descripción de las pruebas de Validación de Datos
 
-Este repositorio ya contiene los `screenshots` de ambas versiones de Ghost guardados y el `reporte HTML` de las herramientas ResembleJS y BackstopJS. Se recomienda revisar ambos insumos antes de continuar con este documento.
+Las pruebas de Software van más allá de hacer clicks y moverse entre las pantallas de la aplicación. En este set de pruebas que se va a realizar está enfocado en validar posibles fallos a la hora de realizar el input de los formularios de las aplicaciones web. 
 
-## 1.1 Reportes de HTML
-Para los reportes HTML de las dos herramientas se hizo el despliegue de ambos en Github Pages y puede ser consultado en los siguientes enlaces:
+Aquí el equipo va a poner aprueba la versión de Ghost v5.14.1 para ver qué tan bueno es el sistema de validación de inputs de la aplicación.
 
-Herramienta | Enlace Github Pages
--- | --
-ResembleJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/ResembleJS/results/report.html
-BackstopJS | https://camilamartinez-miso.github.io/MISW4103-pruebas-automatizadas/BackStopJS/backstop_data/html_report/
+Versión | URL Despliegue 
+-- | -- 
+5.14.1 | https://ghost-fcj4.onrender.com/
 
-De igual manera, se indica la ruta de cada uno de ellos dentro del repositorio a continuación:
-
-Herramienta | Ruta
--- | --
-ResembleJS | ResembleJS/results/report.html
-BackstopJS | BackStopJS/backstop_data/html_report/index.html
-
-
-## 1.2 Carpeta de Screenshots
-
-Para consultar los screenshots, acceder a las carpetas `screenshots` dentro de las siguientes rutas: 
-
-Versión Ghost | Herramienta | Ruta
--- | -- | --
-5.14.1 | Kraken | Ghost_v5/kraken/screenshots
-5.14.1 | Cypress | Ghost_5/cypress/cypress/screenshots
-3.42.0 | Cypress | Ghost_3/cypress/cypress/screenshots
-
-
-## 1.3 Continuación del proceso
-
-Ahora, el proceso que se explicará a lo largo de este README está enfocado en ejecutar todo el paso a paso de las pruebas VRT, empezando por la instalación del ambiente global, local, la ejecución inicial del ambiente de Pruebas E2E en las dos versiones de Ghost y posteriormente la ejecución de los scripts de BackstopJS y ResembleJS para las pruebas VRT `Seguir las instrucciones permitirá regenerar los Screenshots y los reportes HTML de ambas herramientas.`
-
-Si se desea realizar únicamente la ejecución de los scripts de ResembleJS y BackstopJS, dirigirse a la sección [7. Ejecución de las pruebas VRT](#7-ejecución-de-las-pruebas-vrt) no sin antes ejecutar el comando `npm install` en ruta raíz del proyecto.
-
-# 2. Descripción del set de pruebas VRT
-Las Pruebas de Regresión Visual o Visual Rregression Testing en inglés, son ampliamente usadas para detectar cambios en versiones `x + 1` de las aplicaciones y comprobar que estos cambios no afectan la experiencia del cliente y no se introdujeron bugs o fallos en el proceso de propagación de cambios.
-
-En esta entrega se realizarán Pruebas de Regresión Visual en la ABP, Ghost. Las versiones utilizadas para este propósito se listan a continuación
-
-Versión | URL Despliegue | ¿Es línea base?
--- | -- | --
-5.14.1 | https://ghost-fcj4.onrender.com/   | Sí
-3.42.0 | https://ghost-3-42-0.onrender.com/ | No
-
-# 3. Setup de las pruebas VRT
-Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de regresión visual VTT, **Kraken**, **Cypress**, **Resemble.js** y **Backstop**
+# 2. Setup de las pruebas 
+Primero es necesario instalar un conjunto de herramientas globales que servirán para instalar las herramientas de pruebas de validación de datos, **Kraken**, **Cypress** y **Faker**
 
 ## 3.1 Especificaciones técnicas del ambiente de pruebas usado:
 * SO: Windows 11+ y MacOS Sonoma 14.1.1
@@ -107,10 +70,11 @@ Si bien puede descargar el proyecto desde el apartado **release** de Github, tam
 
 ## 4.2 Estructura general del proyecto
 
-A continuación se muestra la estructura global del proyecto. Este se divide en cuatro grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS** y **BackstopJS**, y las carpetas con las versiones de Ghost se dividen a su vez en 2 subgrupos, **Kraken** y **Cypress** para Ghost v5 y **Cypress** para Ghost 3.
+A continuación se muestra la estructura global del proyecto. Este se divide en grandes grupos. **Ghost_v3** y **Ghost_v5**, **ResembleJS**, **BackstopJS**, y **GeneracionDatosGhost_v5**. 
 
+Para esta entrega, la carpeta que nos concierne es **GeneracionDatosGhost_v5**.
 
-<img width="356" alt="Screenshot 2024-05-12 at 4 58 21 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/8bb79bbb-d662-41fd-afe3-496a4f74bbea">
+<img width="355" alt="Screenshot 2024-05-18 at 10 24 17 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/9633721d-6d83-4024-9c62-c992cbae4143">
 
 ## 4.3 Instalar las librerías locales del proyecto
 Una vez se han instalado las herramientas globales en la máquina local y se ha descomprimido el proyecto, es indispensable instalar las dependencias propias de cada una de las herramientas. Para ello solo es necesario hacer dos pasos:
@@ -155,9 +119,9 @@ Las instancias de Ghost sobre las que se ejecutarán las pruebas VRT se encuentr
    * Contraseña: `AdminR00t123!`
 
 
-# 5. Ejecución de las pruebas E2E
+# 5. Ejecución de laas pruebas de Validación de datos
 
-Ahora se procederá a ejecutar las pruebas End-2-End modificadas de la entrega anterior. Las modificaciones hechas permiten la captura de screenshots o pantallazos durante la ejecución de las pruebas por cada escenario y funcionalidad probada.
+Ahora se procederá a ejecutar las pruebas End-2-End de la entrega anterior. Los escenarios nuevos contemplan unicamente pruebas que involucren el ingreso de la data mediante inputs y que puedan ser validados  
 
 ## 5.1 Herramienta Kraken
 
@@ -423,141 +387,11 @@ Ubicándonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizad
 Y repetimos los pasos ya mencionados anteriormente. 
 
 
-# 6. Funcionalidades y escenarios extra
-
-Para esta entrega se agregaron dos nuevas funcionalidades extra a las 20 ya existentes de entregas pasadas. Esto se hizo con el fin de poder cumplir el criterio de aceptación de la rúbrica de esta semana, de encontrar funcionalidades que estuvieran en ambas versiones de Ghost. Las funcionalidades extra se detallan a continuación.
-
-Código | Funcionalidad | # Escenarios
--- | -- | --
-FU021 | Crear etiquetas (tags)   | 4
-FU022 | Borrar todo el contenido | 2
-
-*NOTA: En total se tendrían 22 funcionalidades y 26 escenarios en total para esta entrega en Ghost v5, pero únicamente se escogieron 5 funcionalidades y 12 escenarios para ser replicados en Ghost v3*
-
-
-# 7. Ejecución de las pruebas VRT
-Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basándonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveídos de las secciones anteriores.
-
-## 7.1 Herramienta BackstopJS
-
-<p align="center">
-<img src="https://www.drupal.org/files/project-images/backstop-lemur.png" alt="Backstop logo"  height="193">
-<p align="center">BackstopJS</p>
-
-### 7.1.1 Estructura de carpetas Backstopjs
-
-La estructura de Backstopjs se ve de la siguiente manera
-```
-🗂️ BackStopJs
-    📄 configBackstop.js
-    🗂️ backstop_data
-    🗂️ scripts
-      📄 file.js
-```
-
-### 7.1.2 Ejecución Backstopjs
-
-Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raíz del proyecto
-
-```bash
-> cd BackStopJs
-```
-
-Si no tenemos instalada la herramienta Backstopjs, es necesario ejecutar el siguiente comando
-
-```bash
-> npm install -g backstopjs
-```
-
-Ya con la herramienta instalada solo tendremos que ejecutar el siguiente comando
-
-```bash
-> backstop test --config="configBackstop.js"
-```
-
-Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
-
-![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/d946117c-b18b-4341-a49f-3ea72289f16f)
-
-Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una salida similar a la siguiente
-
-![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/482c3c7b-3ad7-45d2-bc19-cd2feff366e6)
-
-
-### 7.1.3 Funcionamiento de Backstopjs
-
-La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
-El script revisa los screenshots almacenados por cada escenario revisando que exista el mismo en la versión 3 y 5 de Ghost, luego de esto ignora aquellas que ya se han construido previamente eliminando pantallas repetidas para comparar. 
-
-
-## 7.2 Herramienta ResembleJS
-
-<p align="center">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
-<p align="center">ResembleJS</p>
-
-### 7.2.1 Estructura de carpetas Backstopjs
-
-La estructura de ResembleJS se ve de la siguiente manera:
-
-```
-🗂️ ResembleJS
-    🗂️ results
-      🗂️ FU006_ESC001
-      🗂️ FU006_ESC002
-      🗂️ .
-      🗂️ .
-      🗂️ .
-      📄 report.html
-    📄 resemble-report.js  
-```
-
-### 7.2.2 Ejecución ResembleJS
-
-Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la raíz del proyecto
-
-```bash
-> cd ResembleJS
-```
-
-Una vez parados sobre esa ruta ejecutamos el siguiente comando de node
-
-```bash
-> node resemble-report.js
-```
-
-Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
-
-<img width="576" alt="Screenshot 2024-05-12 at 5 57 27 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a212eb14-c733-42ea-837a-6c5eddc7b566">
-
-Para poder visualizar el reporte por favor dirigirse a la siguiente ruta: 
-
-```bash
-ResembleJS/results/report.html
-```
-Recomendamos tener instalada la extensión de Visual Studio Code, Live Server para poder desplegar el html generado de una forma más sencilla
-
-<img width="703" alt="Screenshot 2024-05-12 at 5 59 28 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7cb20453-82f6-421a-92a1-8a11b17b7910">
-
-Haciendo click derecho sobre el archivo report.html y oprimiendo el botón `Open with Live Server`
-
-<img width="418" alt="Screenshot 2024-05-12 at 6 00 53 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/adc37e0a-9445-46b8-a00f-367bb84c6ea6">
-
-Esto desplegará el reporte generado por ResembleJS y debería lucir de la siguiente forma
-
-<img width="1713" alt="Screenshot 2024-05-12 at 6 03 37 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/1a6cb51e-ee75-4f9f-b281-3be712720cc9">
-
-Ahí dentro podrá interactuar con cada uno de los escenarios testeados, que son 12 en total.
-
-### 7.2.3 Funcionamiento de ResembleJS
-
-El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost V3 buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5, si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
-
 # 8 Reporte de Issues 
 
 El reporte de los issues puede ser consultado en este mismo repositorio en el módulo de ISSUES que se encuentra en el siguiente enlace: [Herramienta de gestión de Issues de Github](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/issues)
 
-Los issues para Pruebas de Regresión Visual tienen la siguiente nomenclatura: `VRT-00X - Nombre del issue encontrado`
+Los issues para Pruebas de Regresión Visual tienen la siguiente nomenclatura: `GAD-00X - Nombre del issue encontrado`
 
 
 # 9. Documentación extra
