@@ -121,7 +121,7 @@ Si desea consultar más sobre esto, puede ver el archivo `package.json`
 <img width="300" alt="Screenshot 2024-05-02 at 9 51 07 PM" src="https://ptimofeev.com/images/render.png">
 <p align="center">render.com</p>
 
-La instancia de Ghost sobre las que se ejecutarán las pruebas VRT se encuentra en la plataforma render.com y puede ser accedida desde el siguiente enlace.
+La instancia de Ghost sobre las que se ejecutarán las pruebas se encuentra en la plataforma render.com y puede ser accedida desde el siguiente enlace.
 
 - [Ghost 5.14.1](https://ghost-fcj4.onrender.com/ghost)
   - Usuario: `h.franco@uniandes.edu.co`
@@ -129,7 +129,7 @@ La instancia de Ghost sobre las que se ejecutarán las pruebas VRT se encuentra 
 
 # 4. Ejecución de las pruebas de Validación de datos
 
-Ahora se procederá a ejecutar las pruebas End-2-End de la entrega anterior. Los escenarios nuevos contemplan unicamente pruebas que involucren el ingreso de la data mediante inputs y que puedan ser validados
+Ahora se procederá a ejecutar las pruebas End-2-End. Los escenarios de esta entrega contemplan unicamente pruebas que involucren el ingreso de la data mediante inputs y que puedan ser validados
 
 ## 4.1 Herramienta Kraken
 
@@ -258,12 +258,9 @@ Una vez presionado el botón de la sección anterior, se abrirá una ventana del
 
 ```
 🗂️ cypress/e2e
-    🗂️ ALL_TESTS
-      📄 allTests.cy.js
-    🗂️ FU001
-      📄 FU001.cy.js
-    🗂️ FU002
-      📄 FU002.cy.js
+    📄 allTests.cy.js
+    📄 FU001.cy.js
+    📄 FU002.cy.js
 ```
 
 <img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
@@ -277,7 +274,7 @@ El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se eje
 
 El reporte de los issues puede ser consultado en este mismo repositorio en el módulo de ISSUES que se encuentra en el siguiente enlace: [Herramienta de gestión de Issues de Github](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/issues)
 
-Los issues para Pruebas de Regresión Visual tienen la siguiente nomenclatura: `GAD-00X - Nombre del issue encontrado`
+Los issues para Pruebas de validación de datos tienen la siguiente nomenclatura: `GAD-00X - Nombre del issue encontrado`
 
 # 6. Documentación extra
 
