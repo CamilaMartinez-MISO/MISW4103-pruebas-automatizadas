@@ -1,0 +1,6 @@
+cypress/integration/monkey/node_modules/
+cypress/screenshots
+cypress/videos
+cypress/e2e/examples/
+node_modules/
+results/
