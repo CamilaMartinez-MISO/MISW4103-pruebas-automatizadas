@@ -287,161 +287,88 @@ Versión Ghost | Herramienta | Ruta
 3.42.0 | Cypress | VRT/Ghost_3/cypress/cypress/screenshots
 
 
-## 7.2 Ejecución de las pruebas
-Una vez adentro de la respectiva carpeta se puede ejecutar el siguiente comando que iniciará la ejecución de los escenarios de prueba disponibles.
+## 7.2 Correr instancia de Cypress
+
+En este caso la prueba de regresión esta diseñada especificamente para Cypress en ambas versiones de Ghost-
+
+### 7.2.1 Lanzar prueba E2E para Ghost v5.14.1
+
+En caso de que no se hubiera ejecutado con anterioridad las pruebas E2E, procederemos a realizarlas para obtener los screenshots de esta versión. Para mas detalles se recomienda retomar la sección 5.2 (Herramienta Cypress) y seguir el paso a paso.
+
+### 7.2.2 Lanzar prueba E2E para Ghost v3.42.0
+
+En este punto es necesario repetir el proceso pero con la versión 3.42.0 de Ghost, para esto es necesario abrir una terminal e ir al directorio que almacena las pruebas E2E compatibles con dicha versión, esto se puede hacer por medio de los siguientes comandos ubicandonos en la raiz del proyecto.
+
 ```bash
-> npx kraken-node run
-```
-Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
-
-De igual manera los screenshots tomados durante la ejecución de las pruebas pueden ser encontrados en carpeta **screenshots**. La estructura de esta carpeta por dentro debe lucir de la siguiente manera.
-
-<img width="351" alt="Screenshot 2024-05-11 at 8 51 12 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/d5f7a422-020f-4390-ada1-87bdcf4cee9a">
-
-Como se puede apreciar, dentro de la ruta `Ghost_5/Kraken/screenshots` se encuentran las carpetas que contienen los screenshots por cada escenario.
-
-
-### 7.2.1 Posibles situaciones que se pueden presentar
-Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
-
-Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente. Si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
-
-Para solucionar esto, por favor asegúrese de que en la carpeta de features solo haya un escenario. Luego, ejecute cada uno de ellos individualmente.
-
-Dado que las pruebas requieren más tiempo debido a la captura de screenshots en cada paso del escenario, existe el riesgo de que el computador se suspenda durante el proceso, lo cual podría provocar que las pruebas fallen automáticamente. Para evitar este inconveniente, asegúrese de que el computador tenga suficiente carga y que en su configuración no esté activada la suspensión automática tras unos minutos de inactividad.
-
-### 7.2.2 Correr instancia de Cypress
-Después en una terminal o consola de comandos abierta corremos el siguiente comando:
-```bash
+> cd ./VRT/Ghost_v3/cypress
 > cypress open
 ```
-Una vez ejecutado el comando, debe abrirse una ventana similar a esta.
+En este punto si se desconoce el procedimiento se recomienda retomar la sección 5.2 (Herramienta Cypress) apuntando a la ruta donde nos hemos ubicado por medio de la terminal.
 
-<img width="1205" alt="Screenshot 2024-05-04 at 11 52 14 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7967dd94-6d31-4cb7-9739-8ded0aa04524">
-
-### 7.2.3 Seleccionar la carpeta del proyecto Cypress:
-Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada `MISW4103-pruebas-automatizadas/Ghost_v5/cypress`.
-
-<img width="1205" alt="Screenshot 2024-05-04 at 11 53 19 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/847aceee-48d8-464a-875d-a1ad05ec6799">
-
-<img width="1206" alt="Screenshot 2024-05-04 at 11 55 03 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/709fbd2d-a8f3-4b24-b4a5-c72784c76b62">
-
-*NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que se cargue completamente.*
-
-### 7.2.4 Seleccionar la prueba E2E
-Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
-
-<img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
-
-### 7.2.5 Iniciar la prueba E2E
-Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
-
-<img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
-
-### 7.2.6 Ejecutar la prueba
-Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
-```
-🗂️ cypress/e2e
-    🗂️ ALL_TESTS
-      📄 allTests.cy.js
-    🗂️ FU001
-      📄 FU001.cy.js
-    🗂️ FU002
-      📄 FU002.cy.js
-```
-<img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
-
-El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se ejecuten uno tras del otro. Sin embargo, si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
-
-<img width="1728" alt="Screenshot 2024-05-05 at 12 28 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/3c4807c3-1590-47c5-9549-976f9f0c3af0">
-
-
-Los screenshots tomados durante la ejecución de las pruebas pueden ser encontrados en carpeta **screenshots**. La estructura de esta carpeta por dentro debe lucir de la siguiente manera.
-
-<img width="236" alt="Screenshot 2024-05-11 at 9 17 12 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/19bbb9f0-31b0-4723-878d-9c4ac36574f7">
-
-Como se puede apreciar, dentro de la ruta `Ghost_5/cypress/cypress/screenshots` se encuentran las carpetas que contienen los screenshots por cada escenario.
-
-Los screenshots de estas carpetas llevan los nombres de los pasos realizados en Cypress para ser comparados posteriormente contra los screenshots de la versión 3.42.0 de Ghost con las herramientas de ResembleJS y BackstopJS
-
-## 7.3 Ejecución pruebas E2E en Ghost 3.42.0
-Ahora para ejecutar los nuevos escenarios construidos en Cypress para Ghost 3.42.0, se deben repetir los pasos descrito durante toda la sección 4, exceptuando la parte de la instalación global de Cypress de nuevo, ya que ya se tiene instalada por defecto. 
-
-La estructura de carpetas es completamente la misma, salvaguardando que se debe modificar los comandos de ruta de carpeta por Ghost_v3, ejemplo:
-
-Ubicándonos sobre la carpeta raíz del proyecto, **MISW4103-pruebas-automatizadas**, realizamos los siguientes comandos
-
-```bash
-> cd Ghost_v3
-> cd cypress
-```
-
-Y repetimos los pasos ya mencionados anteriormente. 
-
-# 8. Ejecución de las pruebas VRT
+## 7.3 Ejecución de las pruebas VRT
 Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basándonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveídos de las secciones anteriores.
 
-## 8.1 Herramienta BackstopJS
+### 7.3.1 Herramienta BackstopJS
 
 <p align="center">
 <img src="https://www.drupal.org/files/project-images/backstop-lemur.png" alt="Backstop logo"  height="193">
 <p align="center">BackstopJS</p>
 
-### 8.1.1 Estructura de carpetas Backstopjs
+#### 7.3.1.1 Estructura de carpetas BackstopJS
 
-La estructura de Backstopjs se ve de la siguiente manera
+La estructura de BackstopJS se ve de la siguiente manera.
 ```
-🗂️ BackStopJs
+🗂️ BackStopJS
     📄 configBackstop.js
     🗂️ backstop_data
     🗂️ scripts
       📄 file.js
 ```
 
-### 8.1.2 Ejecución Backstopjs
+#### 7.3.1.2 Ejecución Backstopjs
 
-Para realizar las pruebas con Backstopjs es necesario ubicarnos en la carpeta BackStopJs ubicada en la raíz del proyecto
+Para realizar el reporte por medio de Backstopjs es necesario ubicarnos en la carpeta BackStopJS ubicada en la carpeta VRT en la raiz del proyecto.
 
 ```bash
-> cd BackStopJs
+> cd ./VRT/BackStopJs
 ```
 
-Si no tenemos instalada la herramienta Backstopjs, es necesario ejecutar el siguiente comando
+Si no esta instalada la herramienta BackstopJS, es necesario ejecutar el siguiente comando.
 
 ```bash
 > npm install -g backstopjs
 ```
 
-Ya con la herramienta instalada solo tendremos que ejecutar el siguiente comando
+Ya con la herramienta instalada se procedera a ejecutar el siguiente comando
 
 ```bash
 > backstop test --config="configBackstop.js"
 ```
 
-Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
+Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen.
 
 ![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/d946117c-b18b-4341-a49f-3ea72289f16f)
 
-Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una salida similar a la siguiente
+Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una salida similar a la siguiente.
 
 ![image](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/42383191/482c3c7b-3ad7-45d2-bc19-cd2feff366e6)
 
 
-### 8.1.3 Funcionamiento de Backstopjs
+#### 7.3.1.3 Funcionamiento de Backstopjs
 
-La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas de Ghost_v3/screenshots y Ghost_v5/screenshots.
-El script revisa los screenshots almacenados por cada escenario revisando que exista el mismo en la versión 3 y 5 de Ghost, luego de esto ignora aquellas que ya se han construido previamente eliminando pantallas repetidas para comparar. 
+La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas comparando los screnshots de las rutas `E2E/cypress/cypress/screenshots` para Ghost v5.14.1 y la ruta `VRT/Ghost_v3/cypress/cypress/screenshots` para Ghost v3.42.0.
+El script revisa que los screenshots existen en ambas rutas por cada escenario entre las dos versiones y descartando que se repitan para minimizar el reporte final. 
 
 
-## 8.2 Herramienta ResembleJS
+### 7.3.2 Herramienta ResembleJS
 
 <p align="center">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWZS1Cpv4rCriMHPEa3FeTo5KEbf7RYI6LbfC56ABJA&s" alt="Resemble logo"  height="193">
 <p align="center">ResembleJS</p>
 
-### 8.2.1 Estructura de carpetas Backstopjs
+#### 7.3.2.1 Estructura de carpetas Backstopjs
 
-La estructura de ResembleJS se ve de la siguiente manera:
+La estructura de ResembleJS se ve de la siguiente manera.
 
 ```
 🗂️ ResembleJS
@@ -455,196 +382,98 @@ La estructura de ResembleJS se ve de la siguiente manera:
     📄 resemble-report.js  
 ```
 
-### 8.2.2 Ejecución ResembleJS
+#### 7.3.2.2 Ejecución ResembleJS
 
-Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la raíz del proyecto
+Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la carpeta VRT en la raiz del proyecto.
 
 ```bash
-> cd ResembleJS
+> cd ./VRT/ResembleJS
 ```
 
-Una vez parados sobre esa ruta ejecutamos el siguiente comando de node
+Una vez parados sobre esa ruta ejecutamos el siguiente comando de node.
 
 ```bash
 > node resemble-report.js
 ```
 
-Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen
+Luego de lanzar el comando aparecerán los logs de la ejecución, similar a la siguiente imagen.
 
 <img width="576" alt="Screenshot 2024-05-12 at 5 57 27 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/a212eb14-c733-42ea-837a-6c5eddc7b566">
 
-Para poder visualizar el reporte por favor dirigirse a la siguiente ruta: 
+Para poder visualizar el reporte es necesario dirigirnos a la ruta `ResembleJS/results` y abrir el archivo `report.html`.
 
-```bash
-ResembleJS/results/report.html
-```
-Recomendamos tener instalada la extensión de Visual Studio Code, Live Server para poder desplegar el html generado de una forma más sencilla
+Recomendamos tener instalada la extensión de Visual Studio Code, `Live Server` para poder desplegar el html generado de una manera más sencilla.
 
 <img width="703" alt="Screenshot 2024-05-12 at 5 59 28 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7cb20453-82f6-421a-92a1-8a11b17b7910">
 
-Haciendo click derecho sobre el archivo report.html y oprimiendo el botón `Open with Live Server`
+Haciendo click derecho sobre el archivo report.html y oprimiendo el botón `Open with Live Server`.
 
 <img width="418" alt="Screenshot 2024-05-12 at 6 00 53 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/adc37e0a-9445-46b8-a00f-367bb84c6ea6">
 
-Esto desplegará el reporte generado por ResembleJS y debería lucir de la siguiente forma
+Esto desplegará el reporte generado por ResembleJS y debería lucir de la siguiente forma.
 
 <img width="1713" alt="Screenshot 2024-05-12 at 6 03 37 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/1a6cb51e-ee75-4f9f-b281-3be712720cc9">
 
-Ahí dentro podrá interactuar con cada uno de los escenarios testeados, que son 12 en total.
+Ahí dentro podrá interactuar con cada uno de los escenarios testeados.
 
-### 8.2.3 Funcionamiento de ResembleJS
+####  7.3.2.3 Funcionamiento de ResembleJS
 
-El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost V3 buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5, si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
+El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost v3 (`VRT/Ghost_v3/cypress/cypress/screenshots`)  buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5 (`E2E/cypress/cypress/screenshots`), si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
 
-# 9. Validación de datos
+# 8. Validación de datos
 
+Las pruebas de validación de datos se hacen por medio de las herramientas Kraken y Cypress generando datos por medio de diferentes estrategias para validar el ingreso de la dataen los inputs, asi identificando que manejen las validaciones necesarios para datos erroneos y permitan los datos correctos.
 
+## 8.1 Herramienta Kraken
 
-Ahora se procederá a ejecutar las pruebas End-2-End. Los escenarios de esta entrega contemplan unicamente pruebas que involucren el ingreso de la data mediante inputs y que puedan ser validados
-
-## 9.1 Herramienta Kraken
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
-<p align="center">Kraken</p>
-    
-
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** ejecutaremos el siguiente comando.
 
 ```bash
-> cd GeneracionDatosGhost_v5
-> cd kraken
+> cd ./ValidacionDatos/kraken
 ```
 
-Por favor asegurarse de que está escribiendo Ghost con la G en mayúsculas para que el sistema de ficheros pueda dirigirse exitosamente a esa carpeta.
+### 8.1.1 Ejecución de las pruebas
 
-### 9.1.1 Estructura del proyecto:
-
-La estructura del proyecto debe verse de la siguiente manera
-
-<img width="317" alt="Screenshot 2024-05-05 at 9 48 05 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/93833525-cc94-4ccd-9d4d-74fef82dbf17">
-
-_NOTA:_ Cada _feature_ está nombrado con la siguiente nomenclatura **FU00X_ESC00X**, la cual hace referencia a la funcionalidad sobre la que se está haciendo el escenario de prueba.
-
-### 9.1.2 Nomenclatura de los escenarios
-
-Los escenarios cumplen la siguiente nomenclatura para diferenciar los unos de los otros y correr en instancias separadas.
-
-```
-🗂️ kraken
-  🗂️ features
-    🗂️ web
-      🗂️ steps_definitions
-        📄 steps.js
-
-    📄 FU001_ESC001.cy.js
-    📄 FU001_ESC002.cy.js
-    📄 FU002_ESC002.cy.js
-```
-
-### 9.1.3 Ejecución de las pruebas
-
-Una vez adentro de esa carpeta puede ejecutar el siguiente comando que iniciará la ejecución de los escenarios de prueba disponibles.
+Una vez adentro de la carpeta de kraken se debe ejecutar el siguiente comando.
 
 ```bash
 > npx kraken-node run
 ```
 
-Cada prueba realiza el escenario descrito y al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**
+Despues de ejecutar el comando se ejecutaran los escenarios creados y al finalizar se realizara un reporte en HTML que podra ser consultado en la carpeta **reports**.
 
-### 9.1.4 Posibles situaciones que se pueden presentar
+## 8.2 Herramienta Cypress
 
-Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
-
-Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente. Si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
-
-Para solucionar esto, por favor asegúrese de que en la carpeta de features solo haya un escenario. Luego, ejecute cada uno de ellos individualmente.
-
-## 9.2 Herramienta Cypress
-
-<p align="center">
-<img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
-<p align="center">Cypress</p>
-
-Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** realizar los siguientes comandos:
+Dentro de la base de la carpeta raíz del proyecto **MISW4103-pruebas-automatizadas** ejecutaremos el siguiente comando.
 
 ```bash
-> cd GeneracionDatosGhost_v5
-> cd cypress
+> cd ./ValidacionDatos/cypress
 ```
-
-Por favor asegurarse de que está escribiendo Ghost con la G en mayúsculas para que el sistema de ficheros pueda dirigirse exitosamente a esa carpeta.
-
-La estructura del proyecto debe verse así:
+La estructura de la carpeta cypress debe verse así.
 
 <img width="303" alt="Screenshot 2024-05-05 at 11 37 22 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/64bb1f1d-3c6f-4753-8416-226590c81311">
 
-### 9.2.1 Instalar Cypress v13.7.3
+### 8.2.1 Correr instancia de Cypress
 
-Abrir una línea de comandos o terminal de la máquina y escribir el siguiente comando:
-
-```bash
-> npm -g install cypress@13.7.3
-```
-
-Esto instalará Cypress de forma global en el PC para ser usado desde cualquier punto.
-
-### 9.2.2 Correr instancia de Cypress
-
-Después en una terminal o consola de comandos abierta corremos el siguiente comando:
+Después en una terminal o consola de comandos abierta corremos el siguiente comando.
 
 ```bash
 > cypress open
 ```
+En este punto se recomienda retomar la sección 5.2 (Herramienta Cypress) apuntando a este directorio y ejecutando todos los test por medio del archivo `allTests.cy.js`.
 
-Una vez ejecutado el comando, debe abrirse una ventana similar a esta.
-
-<img width="1205" alt="Screenshot 2024-05-04 at 11 52 14 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/7967dd94-6d31-4cb7-9739-8ded0aa04524">
-
-### 9.2.3 Seleccionar la carpeta del proyecto Cypress:
-
-Presionamos botón **Add project** de la vista principal de Cypress y seleccionamos la carpeta raíz del proyecto llamada `MISW4103-pruebas-automatizadas/GeneracionDatosGhost_v5/cypress`.
-
-<img width="1205" alt="Screenshot 2024-05-04 at 11 53 19 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/847aceee-48d8-464a-875d-a1ad05ec6799">
-
-<img width="1206" alt="Screenshot 2024-05-04 at 11 55 03 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/709fbd2d-a8f3-4b24-b4a5-c72784c76b62">
-
-_NOTA: Si a la primera vez que intentan abrir el proyecto desde Cypress este queda en una pantalla de loading que no avanza, por favor cerrar la venta del programa y volver a ejecutar y seleccionar la carpeta del proyecto de nuevo hasta que se cargue completamente._
-
-### 9.2.4 Seleccionar la prueba E2E
-
-Las pruebas de reconocimiento que se harán son del tipo E2E (Extremo a Extremo), Por ende procedemos a escoger el cuadro de texto que dice **E2E Testing**
-
-<img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
-
-### 9.2.5 Iniciar la prueba E2E
-
-Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
-
-<img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
-
-### 9.2.6 Ejecutar la prueba
-
-Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, debe lucir así:
-
-```
-🗂️ cypress/e2e
-    📄 allTests.cy.js
-    📄 FU001.cy.js
-    📄 FU002.cy.js
-```
-
-<img width="1728" alt="Screenshot 2024-05-05 at 11 40 38 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/efa22f41-32b4-4a71-807e-76fdffc9588a">
-
-El archivo `allTests.cy.js` contiene todos los escenarios juntos para que se ejecuten uno tras del otro. Sin embargo, si le damos click al archivo de una funcionalidad en específico, esta correrá todos los escenarios que tiene adentro.
+Al finalizar podremos ver el resultado por medio de la herramienta con un resultado similar a la siguiente imagen.
 
 <img width="1728" alt="Screenshot 2024-05-05 at 12 28 07 PM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/3c4807c3-1590-47c5-9549-976f9f0c3af0">
 
-# 10. Consideraciones
+# 9. Consideraciones
 
 En el proceso de pruebas automatizas es posible que ocurran algunos incidentes al correr algunas herramientas, por ende se dispone este apartado para exponer dichos casos.
 
-## 10.1 Fallo con la ejecución de Kraken
+## 9.1 Error al ejecutar el comando "cd"
+Es importante respetar las mayusculas según el nombre de los directorios para evitar problemas al realizar cambios de rutas.
+
+## 9.2 Fallo con la ejecución de Kraken
 Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
 
 Si se ejecuta la prueba en un Sistema Operativo tipo UNIX o Linux, deberían correr los escenarios uno detrás del otro automáticamente, si por el contrario se está en Windows, hay una probabilidad de que solo ejecute el primero en orden alfabético y al finalizar no siga con los demás.
@@ -653,10 +482,17 @@ Para remediar esto por favor en la carpeta de features sólo dejar un escenario 
 
 
 
-# 11. Reporte de Issues
+# 10. Reporte de Issues
 
 El reporte de los issues puede ser consultado en este mismo repositorio sobre el módulo de ISSUES. Se agregan etiquetas a cada uno de los issues para ser encontrados con mayor facilidad. 
 Enlace: [Herramienta de gestión de Issues de Github](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/issues)
 
-Los issues para Pruebas de validación de datos tienen la siguiente nomenclatura: `GAD-00X - Nombre del issue encontrado`
+## 10.1 Nomenclatura de los Issues
 
+Se dispone de una nomenclatura para cada Issue según la prueba en la que fue detectada, a continuación se explica por cada tipo de prueba.  
+
+ - **Pruebas de exploratorias manuales**: `PE-00X - Nombre del issue encontrado`
+ - **Pruebas de reconocimiento**: `PR00X - Nombre del issue encontrado`
+ - **Pruebas E2E**: `E2E00X - Nombre del issue encontrado`
+ - **Pruebas de generación de datos (normales)**: `GD00X - Nombre del issue encontrado`
+ - **Pruebas de generación de datos aleatorios**: `GDA00X - Nombre del issue encontrado`
