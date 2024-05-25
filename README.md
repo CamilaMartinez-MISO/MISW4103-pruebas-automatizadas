@@ -102,7 +102,7 @@ Una vez se tiene el entorno inicial de pruebas preparado, procedemos a instalar 
 
 ## 4.1 Descomprimir el proyecto
 
-Si bien se puede descargar la ultima versión del proyecto desde el apartado **release** de Github, también puede ser clonado directamente haciendo uso del siguiente comando:
+Si bien se puede descargar la última versión del proyecto desde el apartado **release** de Github, también puede ser clonado directamente haciendo uso del siguiente comando:
 
 ```bash
 > git clone https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas.git
@@ -141,7 +141,7 @@ Si se desea consultar más sobre esto, se puede ver el archivo `package.json`
 Para las pruebas de reconocimiento se utilizó como base el **Smart-Monkey** de la herramienta **Monkey-Cypress**. Se realizó una actualización para que funcione con la versión **13.10.0** de **Cypress**, modificando la estructura de carpetas y el archivo de configuración de cypress. Además, se realizaron ajustes en el código para que ya no se presenten errores con las acciones de scroll vertical y horizontal durante las pruebas y para que sean hechas con el viewport en vista móvil.
 
 ## 5.1 Instalación de las librerías
-* Utilizando la consola de comandos o la terminal integrada en VS Code ingrese el siguiente comando para ubicarse dentro de la carpeta **Reconocimiento** desde la ruta raiz del proyecto:
+* Utilizando la consola de comandos o la terminal integrada en VS Code ingrese el siguiente comando para ubicarse dentro de la carpeta **Reconocimiento** desde la ruta raíz del proyecto:
 
 ```bash
 > cd .\Reconocimiento\
@@ -164,7 +164,7 @@ Observará algo similar a la siguiente imagen dónde se muestra la información 
 ![reco#1](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/158099538/4a704fe7-e688-499e-985c-2a607556efc2)
 
 ## 5.3 Resultados
-Al finalizar la ejecución de la prueba podra observar un cuadro con la información del resultado, similar a la siguiente imagen:
+Al finalizar la ejecución de la prueba podrá observar un cuadro con la información del resultado, similar a la siguiente imagen:
 ![reco#2](https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/158099538/72b0b1da-09c5-4c7f-958c-1ef09fc891c4)
 
 Además, encontrará dos archivos generados automáticamente con información de la ejecución, el archivo **monkey-execution.html** contiene la información de todos los eventos ejecutados durante la prueba y el archivo **smart-monkey.cy.js.mp4** que es un video de la ejecución en la interfaz de **Cypress**.
@@ -185,7 +185,7 @@ Además, encontrará dos archivos generados automáticamente con información de
 # 6. Pruebas E2E
 Las pruebas end-to-end se hacen para realizar pruebas sobre varios flujos de ejecución como usuario final, de principio a fin, imitando las condiciones de los usuarios. Se encargan de verificar la interacción correcta de la aplicación y el intercambio de datos con otros componentes fuera y dentro del sistema como lo pueden ser bases de datos, APIs externas, almacenamiento, etc.
 
-La estrategia cuenta con pruebas E2E atraves de la herramienta de Kraken y Cypress. Estas se encuentran alojadas en la carpeta E2E.
+La estrategia cuenta con pruebas E2E a través de la herramienta de Kraken y Cypress. Estas se encuentran alojadas en la carpeta E2E.
 
 ## 6.1 Herramienta Kraken
 
@@ -193,7 +193,7 @@ La estrategia cuenta con pruebas E2E atraves de la herramienta de Kraken y Cypre
 <img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
 <p align="center">Kraken</p>
 
-Dentro de la carpeta base **E2E** se encuentra el directorio **kraken**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raiz del proyecto es el siguiente.
+Dentro de la carpeta base **E2E** se encuentra el directorio **kraken**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raíz del proyecto es el siguiente.
 
 ```bash
 > cd ./E2E/kraken
@@ -218,7 +218,7 @@ Dentro de la carpeta kraken se puede ejecutar el siguiente comando que dará ini
 ```bash
 > npx kraken-node run
 ```
-Depues de correr el comando se abrira un navegador según la configuración dispuesta y se empezaran a ejecutar las pruebas paso tras  paso. Al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**.
+Despues de correr el comando se abrirá un navegador según la configuración dispuesta y se empezaran a ejecutar las pruebas paso tras paso. Al finalizar realiza un reporte en HTML que puede ser consultado en la carpeta **reports**.
 
 
 ## 6.2 Herramienta Cypress
@@ -227,7 +227,7 @@ Depues de correr el comando se abrira un navegador según la configuración disp
 <img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
 <p align="center">Cypress</p>
 
-Dentro de la carpeta base **E2E** se encuentra el directorio **cypress**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raiz del proyecto es el siguiente.
+Dentro de la carpeta base **E2E** se encuentra el directorio **cypress**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raíz del proyecto es el siguiente.
 
 ```bash
 > cd ./E2E/cypress
@@ -254,13 +254,13 @@ Las pruebas a ejecutar son E2E (Extremo a Extremo), por ende procedemos a escoge
 
 <img width="1206" alt="Screenshot 2024-05-04 at 11 56 16 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/39b0713a-6567-4378-909c-085e189ae525">
 
-### 6.2.4 Iniciar la prubeba E2E
+### 6.2.4 Iniciar la prueba E2E
 Cypress nos abrirá una ventana donde selecciona por defecto el Navegador Chrome o Firefox, con un botón en color verde, el cual debemos presionar y que dice **Start E2E Testing in < Navegador >**,
 
 <img width="1207" alt="Screenshot 2024-05-04 at 11 56 53 AM" src="https://github.com/CamilaMartinez-MISO/MISW4103-pruebas-automatizadas/assets/157188921/e7f2f7ff-3645-4b5b-92b3-a0b9e939bb24">
 
 ### 6.2.5 Ejecutar la prueba
-Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, que debe ser similar a la siguiete estructura.
+Una vez presionado el botón de la sección anterior, se abrirá una ventana del navegador en donde aparece el proyecto mostrando el árbol de archivos de la carpeta **e2e**, que debe ser similar a la siguiente estructura.
 ```
 🗂️ cypress/e2e
     🗂️ ALL_TESTS
@@ -284,7 +284,7 @@ Para la ejecución de pruebas VRT se tiene dispuesto una serie de pruebas E2E co
 
 ## 7.1 Carpeta de Screenshots
 
-Las pruebas E2E ejecutadas en la sección anterior tienen la capacidad de almacenar screnshots por cada paso que se realice, al igual que las pruebas E2E para esta anterior versión de Ghost.
+Las pruebas E2E ejecutadas en la sección anterior tienen la capacidad de almacenar screenshots por cada paso que se realice, al igual que las pruebas E2E para esta anterior versión de Ghost.
 
 Para consultar los screenshots, se debe acceder a las carpetas `screenshots` dentro de las siguientes rutas: 
 
@@ -297,15 +297,15 @@ Versión Ghost | Herramienta | Ruta
 
 ## 7.2 Correr instancia de Cypress
 
-En este caso la prueba de regresión esta diseñada especificamente para Cypress en ambas versiones de Ghost-
+En este caso la prueba de regresión está diseñada específicamente para Cypress en ambas versiones de Ghost-
 
 ### 7.2.1 Lanzar prueba E2E para Ghost v5.14.1
 
-En caso de que no se hubiera ejecutado con anterioridad las pruebas E2E, procederemos a realizarlas para obtener los screenshots de esta versión. Para mas detalles se recomienda retomar la sección 6.2 (Herramienta Cypress) y seguir el paso a paso.
+En caso de que no se hubiera ejecutado con anterioridad las pruebas E2E, procederemos a realizarlas para obtener los screenshots de esta versión. Para más detalles se recomienda retomar la sección 6.2 (Herramienta Cypress) y seguir el paso a paso.
 
 ### 7.2.2 Lanzar prueba E2E para Ghost v3.42.0
 
-En este punto es necesario repetir el proceso pero con la versión 3.42.0 de Ghost, para esto es necesario abrir una terminal e ir al directorio que almacena las pruebas E2E compatibles con dicha versión, esto se puede hacer por medio de los siguientes comandos ubicandonos en la raiz del proyecto.
+En este punto es necesario repetir el proceso pero con la versión 3.42.0 de Ghost, para esto es necesario abrir una terminal e ir al directorio que almacena las pruebas E2E compatibles con dicha versión, esto se puede hacer por medio de los siguientes comandos ubicándonos en la raíz del proyecto.
 
 ```bash
 > cd ./VRT/Ghost_v3/cypress
@@ -335,19 +335,19 @@ La estructura de BackstopJS se ve de la siguiente manera.
 
 #### 7.3.1.2 Ejecución Backstopjs
 
-Para realizar el reporte por medio de Backstopjs es necesario ubicarnos en la carpeta BackStopJS ubicada en la carpeta VRT en la raiz del proyecto.
+Para realizar el reporte por medio de Backstopjs es necesario ubicarnos en la carpeta BackStopJS ubicada en la carpeta VRT en la raíz del proyecto.
 
 ```bash
 > cd ./VRT/BackStopJs
 ```
 
-Si no esta instalada la herramienta BackstopJS, es necesario ejecutar el siguiente comando.
+Si no está instalada la herramienta BackstopJS, es necesario ejecutar el siguiente comando.
 
 ```bash
 > npm install -g backstopjs
 ```
 
-Ya con la herramienta instalada se procedera a ejecutar el siguiente comando
+Ya con la herramienta instalada se procederá a ejecutar el siguiente comando
 
 ```bash
 > backstop test --config="configBackstop.js"
@@ -364,7 +364,7 @@ Al finalizar la ejecución se abrirá el reporte sobre el navegador teniendo una
 
 #### 7.3.1.3 Funcionamiento de Backstopjs
 
-La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas comparando los screnshots de las rutas `E2E/cypress/cypress/screenshots` para Ghost v5.14.1 y la ruta `VRT/Ghost_v3/cypress/cypress/screenshots` para Ghost v3.42.0.
+La herramienta funciona por escenarios de prueba en donde se toma una imagen de referencia y otra a comparar, para esto se dispone el script configBackstop.js capaz de construir dinámicamente los escenarios según la estructura actual de carpetas comparando los screenshots de las rutas `E2E/cypress/cypress/screenshots` para Ghost v5.14.1 y la ruta `VRT/Ghost_v3/cypress/cypress/screenshots` para Ghost v3.42.0.
 El script revisa que los screenshots existen en ambas rutas por cada escenario entre las dos versiones y descartando que se repitan para minimizar el reporte final. 
 
 
@@ -392,7 +392,7 @@ La estructura de ResembleJS se ve de la siguiente manera.
 
 #### 7.3.2.2 Ejecución ResembleJS
 
-Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la carpeta VRT en la raiz del proyecto.
+Para realizar las pruebas con ResembleJS es necesario ubicarnos en la carpeta ResembleJS ubicada en la carpeta VRT en la raíz del proyecto.
 
 ```bash
 > cd ./VRT/ResembleJS
@@ -424,13 +424,13 @@ Esto desplegará el reporte generado por ResembleJS y debería lucir de la sigui
 
 Ahí dentro podrá interactuar con cada uno de los escenarios testeados.
 
-####  7.3.2.3 Funcionamiento de ResembleJS
+#### 7.3.2.3 Funcionamiento de ResembleJS
 
-El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost v3 (`VRT/Ghost_v3/cypress/cypress/screenshots`)  buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5 (`E2E/cypress/cypress/screenshots`), si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
+El script hecho en Javascript inicia recorriendo la carpeta de screenshots de Ghost v3 (`VRT/Ghost_v3/cypress/cypress/screenshots`) buscando las carpetas creadas por cypress para cada uno de los escenarios de prueba. Para cada una de esas carpetas de escenarios se valida que exista una carpeta de igual nombre dentro de la carpeta de screenshots de Ghost V5 (`E2E/cypress/cypress/screenshots`), si existe, recorre todos los screenshots dentro de la carpeta del escenario en Ghost V3. Luego, para cada uno de esos screenshots se valida la existencia de un screenshot de igual nombre dentro de la carpeta del escenario en Ghost V5, si existe, realiza la comparación de ambos screenshots utilizando la función **compareImages**. Los resultados de la comparación de los screenshots para todos los escenarios son añadidos a una lista que después es utilizada para generar dinámicamente items de un componente **accordion** de Bootstrap, que al desplegarse muestran un card, para cada uno de los screenshots del escenario, con el resultado de la comparación, los screenshots en las dos versiones de Ghost y la imagen con las diferencias generada por ResembleJS.
 
 # 8. Validación de datos
 
-Las pruebas de validación de datos se hacen por medio de las herramientas Kraken y Cypress generando datos por medio de diferentes estrategias para validar el ingreso de la dataen los inputs, asi identificando que manejen las validaciones necesarios para datos erroneos y permitan los datos correctos.
+Las pruebas de validación de datos se hacen por medio de las herramientas Kraken y Cypress generando datos por medio de diferentes estrategias para validar el ingreso de la data en los inputs, asi identificando que manejen las validaciones necesarias para los datos erróneos y permitan los datos correctos.
 
 ## 8.1 Herramienta Kraken
 
@@ -448,7 +448,7 @@ Una vez adentro de la carpeta de kraken se debe ejecutar el siguiente comando.
 > npx kraken-node run
 ```
 
-Despues de ejecutar el comando se ejecutaran los escenarios creados y al finalizar se realizara un reporte en HTML que podra ser consultado en la carpeta **reports**.
+Después de ejecutar el comando se ejecutarán los escenarios creados y al finalizar se realizara un reporte en HTML que podrá ser consultado en la carpeta **reports**.
 
 ## 8.2 Herramienta Cypress
 
@@ -479,7 +479,7 @@ Al finalizar podremos ver el resultado por medio de la herramienta con un result
 En el proceso de pruebas automatizas es posible que ocurran algunos incidentes al correr algunas herramientas, por ende se dispone este apartado para exponer dichos casos.
 
 ## 9.1 Error al ejecutar el comando "cd"
-Es importante respetar las mayusculas según el nombre de los directorios para evitar problemas al realizar cambios de rutas.
+Es importante respetar las mayúsculas según el nombre de los directorios para evitar problemas al realizar cambios de rutas.
 
 ## 9.2 Fallo con la ejecución de Kraken
 Dependiendo del sistema operativo en el que se ejecuten las pruebas, estas pueden o no correr automáticamente una detrás de la otra.
