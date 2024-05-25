@@ -189,6 +189,10 @@ La estrategia cuenta con pruebas E2E atraves de la herramienta de Kraken y Cypre
 
 ## 6.1 Herramienta Kraken
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/TheSoftwareDesignLab/KrakenMobile/master/reporter/assets/images/kraken.png" alt="kraken logo" width="140" height="193">
+<p align="center">Kraken</p>
+
 Dentro de la carpeta base **E2E** se encuentra el directorio **kraken**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raiz del proyecto es el siguiente.
 
 ```bash
@@ -218,6 +222,10 @@ Depues de correr el comando se abrira un navegador según la configuración disp
 
 
 ## 6.2 Herramienta Cypress
+
+<p align="center">
+<img src="https://static-00.iconduck.com/assets.00/cypress-icon-2048x2045-rgul477b.png" alt="kraken logo" height="200">
+<p align="center">Cypress</p>
 
 Dentro de la carpeta base **E2E** se encuentra el directorio **cypress**, por ende hay que entrar a esta carpeta por medio de la consola de comandos o por medio de la terminal integrada en VS Code. El comando para ir a esta carpeta desde la ruta raiz del proyecto es el siguiente.
 
@@ -293,7 +301,7 @@ En este caso la prueba de regresión esta diseñada especificamente para Cypress
 
 ### 7.2.1 Lanzar prueba E2E para Ghost v5.14.1
 
-En caso de que no se hubiera ejecutado con anterioridad las pruebas E2E, procederemos a realizarlas para obtener los screenshots de esta versión. Para mas detalles se recomienda retomar la sección 5.2 (Herramienta Cypress) y seguir el paso a paso.
+En caso de que no se hubiera ejecutado con anterioridad las pruebas E2E, procederemos a realizarlas para obtener los screenshots de esta versión. Para mas detalles se recomienda retomar la sección 6.2 (Herramienta Cypress) y seguir el paso a paso.
 
 ### 7.2.2 Lanzar prueba E2E para Ghost v3.42.0
 
@@ -303,7 +311,7 @@ En este punto es necesario repetir el proceso pero con la versión 3.42.0 de Gho
 > cd ./VRT/Ghost_v3/cypress
 > cypress open
 ```
-En este punto si se desconoce el procedimiento se recomienda retomar la sección 5.2 (Herramienta Cypress) apuntando a la ruta donde nos hemos ubicado por medio de la terminal.
+En este punto si se desconoce el procedimiento se recomienda retomar la sección 6.2 (Herramienta Cypress) apuntando a la ruta donde nos hemos ubicado por medio de la terminal.
 
 ## 7.3 Ejecución de las pruebas VRT
 Una vez que ya se ejecutaron las pruebas End-2-End en Kraken y Cypress para Ghost v5.14.1 y Cypress para Ghost v3.42.0, se procede a realizar las pruebas VRT con las herramientas **ResembleJS** y **BackstopJS**, basándonos en los insumos (screenshots de cypress para cada escenario de las dos versiones de Ghost) proveídos de las secciones anteriores.
@@ -460,7 +468,7 @@ Después en una terminal o consola de comandos abierta corremos el siguiente com
 ```bash
 > cypress open
 ```
-En este punto se recomienda retomar la sección 5.2 (Herramienta Cypress) apuntando a este directorio y ejecutando todos los test por medio del archivo `allTests.cy.js`.
+En este punto se recomienda retomar la sección 6.2 (Herramienta Cypress) apuntando a este directorio y ejecutando todos los test por medio del archivo `allTests.cy.js`.
 
 Al finalizar podremos ver el resultado por medio de la herramienta con un resultado similar a la siguiente imagen.
 
