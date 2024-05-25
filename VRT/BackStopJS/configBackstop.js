@@ -1,7 +1,7 @@
 const { getFoldersArray, getFilesInPath, createFolderIfNotExists, copyAndPasteFile } = require('./scripts/file')
 
 // Constants
-const PATH_GHOST_V5 = "../Ghost_v5/cypress/cypress/screenshots";
+const PATH_GHOST_V5 = "../../E2E/cypress/cypress/screenshots";
 const PATH_GHOST_V3 = "../Ghost_v3/cypress/cypress/screenshots";
 const PATH_BIT_MAPS_REFERENCE = "backstop_data/bitmaps_reference";
 
